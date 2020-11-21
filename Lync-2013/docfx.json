@@ -1,0 +1,105 @@
+{
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**",
+          "_themes/**",
+          "_themes.pdf/**",
+          "README.md",
+          "LICENSE",
+          "LICENSE-CODE",
+          "ThirdPartyNotices"
+        ],
+        "src": "Hub",
+        "dest": "."
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**",
+          "_themes/**",
+          "_themes.pdf/**",
+          "README.md",
+          "LICENSE",
+          "LICENSE-CODE",
+          "ThirdPartyNotices"
+        ],
+        "src": "LyncServer",
+        "dest": "."
+      },
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**",
+          "_themes/**",
+          "_themes.pdf/**",
+          "README.md",
+          "LICENSE",
+          "LICENSE-CODE",
+          "ThirdPartyNotices"
+        ],
+        "src": "LyncTools",
+        "dest": "."
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "**/*.png",
+          "**/*.jpg",
+          "**/*.gif",
+          "**/*.svg",
+          "**/*.csv"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**",
+          "_themes/**",
+          "_themes.pdf/**"
+        ],
+        "src": "."
+      }
+    ],
+    "overwrite": [],
+    "externalReference": [],
+    "globalMetadata": {
+      "breadcrumb_path": "/previous-versions/office/lync-server-2013/breadcrumb/OfficeArchive-Lync2013/toc.json",
+      "extendBreadcrumb": true,
+      "uhfHeaderId": "MSDocsHeader-Archive",
+      "feedback_system": "None",
+      "hideEdit": true,
+      "ms.topic": "conceptual",
+      "ms.prod": "lync-server-2013",
+      "audience": "ITPro",
+      "ms.collection": "LyncServer",
+      "ms.manager": "serdars",
+      "titleSuffix": "Lync Server",
+      "is_archived": true,
+      "is_retired": false,
+      "docs_archive": "tool",
+      "searchScope": [
+        "Lync Server"
+       ]
+
+    },
+    "fileMetadata": {},
+    "template": [],
+    "dest": "archive-template",
+    "markdownEngineName": "markdig"
+  }
+}
+
