@@ -1,0 +1,9 @@
+- name: 読む
+  href: /
+  items:
+    - name: 以前のバージョン
+      href: /previous-versions/
+      items:
+        - name: Lync Server
+          tocHref: /
+          topicHref: /previous-versions/office/lync-server-2013/index

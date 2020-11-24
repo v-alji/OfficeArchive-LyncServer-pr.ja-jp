@@ -1,0 +1,97 @@
+---
+title: 新しい Lync Server 2013 仲介サーバーを使用するようにボイスルートを変更する
+description: 新しい Lync Server 2013 仲介サーバーを使用するようにボイスルートを変更します。
+ms.reviewer: ''
+ms.author: v-lanac
+author: lanachin
+audience: Admin
+f1.keywords:
+- NOCSH
+TOCTitle: Change voice routes to use the new Lync Server 2013 Mediation Server
+ms:assetid: acd487b3-377c-46bf-9f71-fe6152002664
+ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ205162(v=OCS.15)
+ms:contentKeyID: 48185069
+ms.date: 07/23/2014
+manager: serdars
+mtps_version: v=OCS.15
+ms.openlocfilehash: ef58ba61512b5de31a74b79e554dbb3f94b67d99
+ms.sourcegitcommit: 36fee89bb887bea4f18b19f17a8c69daf5bc423d
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "49398583"
+---
+# <a name="change-voice-routes-to-use-the-new-lync-server-2013-mediation-server"></a><span data-ttu-id="3508e-103">新しい Lync Server 2013 仲介サーバーを使用するようにボイスルートを変更する</span><span class="sxs-lookup"><span data-stu-id="3508e-103">Change voice routes to use the new Lync Server 2013 Mediation Server</span></span>
+
+<div data-xmlns="http://www.w3.org/1999/xhtml">
+
+<div class="topic" data-xmlns="http://www.w3.org/1999/xhtml" data-msxsl="urn:schemas-microsoft-com:xslt" data-cs="https://msdn.microsoft.com/">
+
+<div data-asp="https://msdn2.microsoft.com/asp">
+
+
+
+</div>
+
+<div id="mainSection">
+
+<div id="mainBody"><span data-ttu-id="3508e-104">
+
+<span> </span></span><span class="sxs-lookup"><span data-stu-id="3508e-104">
+
+<span> </span></span></span>
+
+<span data-ttu-id="3508e-105">_**最終更新日:** 2012-09-28_</span><span class="sxs-lookup"><span data-stu-id="3508e-105">_**Topic Last Modified:** 2012-09-28_</span></span>
+
+<span data-ttu-id="3508e-106">この手順では、従来の Office Communications Server 2007 R2 仲介サーバーではなく、Lync Server 2013 仲介サーバーを使用するように、ボイスルートを変更します。</span><span class="sxs-lookup"><span data-stu-id="3508e-106">This procedure changes the voice routes to use the Lync Server 2013 Mediation Server, instead of the legacy Office Communications Server 2007 R2 Mediation Server.</span></span>
+
+<div>
+
+## <a name="to-change-the-voice-routes-to-use-the-new-mediation-server"></a><span data-ttu-id="3508e-107">新しい仲介サーバーを使用するようにボイスルートを変更するには</span><span class="sxs-lookup"><span data-stu-id="3508e-107">To change the voice routes to use the new Mediation Server</span></span>
+
+1.  <span data-ttu-id="3508e-108">Lync Server 2013 コントロール パネル</span><span class="sxs-lookup"><span data-stu-id="3508e-108">Lync Server 2013 Control Panel</span></span>
+
+2.  <span data-ttu-id="3508e-109">左側のウィンドウで、[ **音声ルーティング** ]、[Route] の **順** に選択します。</span><span class="sxs-lookup"><span data-stu-id="3508e-109">In the left pane, select **Voice Routing** and then **Route**.</span></span>
+
+3.  <span data-ttu-id="3508e-110">[ **新規** ] をクリックして、新しいボイスルートを作成します。</span><span class="sxs-lookup"><span data-stu-id="3508e-110">Click **New** to create a New Voice Route.</span></span>
+
+4.  <span data-ttu-id="3508e-111">次のフィールドに入力します。</span><span class="sxs-lookup"><span data-stu-id="3508e-111">Fill in the following fields:</span></span>
+    
+      - <span data-ttu-id="3508e-112">**名前**: ボイスルートのわかりやすい名前を入力します。</span><span class="sxs-lookup"><span data-stu-id="3508e-112">**Name**: Type a descriptive name of the voice route.</span></span> <span data-ttu-id="3508e-113">このドキュメントでは、 **W15PSTNRoute** を使用します。</span><span class="sxs-lookup"><span data-stu-id="3508e-113">For this document we will use **W15PSTNRoute**.</span></span>
+    
+      - <span data-ttu-id="3508e-114">[ **Description (説明**): ボイスルートの短い説明を入力します。</span><span class="sxs-lookup"><span data-stu-id="3508e-114">**Description**: Type a short description of the voice route.</span></span>
+
+5.  <span data-ttu-id="3508e-115">**関連するゲートウェイ** に到達するまで、残りのすべてのセクションをスキップします。</span><span class="sxs-lookup"><span data-stu-id="3508e-115">Skip all remaining sections until you reach **Associated gateways**.</span></span> <span data-ttu-id="3508e-116">**[追加]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="3508e-116">Click **Add**.</span></span> <span data-ttu-id="3508e-117">新しいデフォルトゲートウェイを選択して、[ **OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="3508e-117">Select the new default gateway and click **OK**.</span></span>
+
+6.  <span data-ttu-id="3508e-118">[ **関連する PSTN 使用**] で、[ **選択**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="3508e-118">Under **Associated PSTN Usages**, click **Select**.</span></span>
+
+7.  <span data-ttu-id="3508e-119">**[PSTN 使用状況レコードの選択**] ページからレコード名を選び、[ **OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="3508e-119">From the **Select PSTN Usage Record** page, select a record name and then click **OK**.</span></span>
+
+8.  <span data-ttu-id="3508e-120">[ **新しいボイスルーティング** ] ページで [ **OK** ] をクリックして、 **ボイスルート** を作成します。</span><span class="sxs-lookup"><span data-stu-id="3508e-120">From the **New Voice Route** page, click **OK** to create the **Voice Route**.</span></span>
+
+9.  <span data-ttu-id="3508e-121">[ **音声ルーティング** ] ページで、[ **ルーティング**] を選びます。</span><span class="sxs-lookup"><span data-stu-id="3508e-121">From the **Voice Routing** page, select **Route**.</span></span>
+
+10. <span data-ttu-id="3508e-122">新しく作成されたルートを一覧の一番上に移動して、[ **コミット**] を選びます。</span><span class="sxs-lookup"><span data-stu-id="3508e-122">Move the newly created route to the top of the list and then select **Commit**.</span></span>
+
+<span data-ttu-id="3508e-123"></div>
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</span><span class="sxs-lookup"><span data-stu-id="3508e-123"></div>
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</span></span></div>
+
