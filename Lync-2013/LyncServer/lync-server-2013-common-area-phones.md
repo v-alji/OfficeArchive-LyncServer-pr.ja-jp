@@ -1,0 +1,84 @@
+---
+title: 'Lync Server 2013: 一般的なエリア電話'
+description: 'Lync Server 2013: 一般的なエリア電話。'
+ms.reviewer: ''
+ms.author: v-lanac
+author: lanachin
+f1.keywords:
+- NOCSH
+TOCTitle: Common area phones
+ms:assetid: d63bb3de-154e-4347-9251-9fa94e7d593a
+ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ994076(v=OCS.15)
+ms:contentKeyID: 51803987
+ms.date: 07/23/2014
+manager: serdars
+mtps_version: v=OCS.15
+ms.openlocfilehash: af8a68f875bba1d43a91e5a252259841d7a6bbda
+ms.sourcegitcommit: 36fee89bb887bea4f18b19f17a8c69daf5bc423d
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "49400071"
+---
+# <a name="common-area-phones-in-lync-server-2013"></a>Lync Server 2013 の一般的なエリア電話
+
+<div data-xmlns="http://www.w3.org/1999/xhtml">
+
+<div class="topic" data-xmlns="http://www.w3.org/1999/xhtml" data-msxsl="urn:schemas-microsoft-com:xslt" data-cs="https://msdn.microsoft.com/">
+
+<div data-asp="https://msdn2.microsoft.com/asp">
+
+
+
+</div>
+
+<div id="mainSection">
+
+<div id="mainBody">
+
+<span> </span>
+
+_**トピックの最終更新日:** 2013-02-20_
+
+一般的なエリア電話とは、個々のユーザーに関連付けられていない IP 電話のことです。 通常、一般的なエリアの電話は、他のユーザーのオフィスにいなくても、ロビー、cafeterias、従業員 lounges、会議室など、多数のユーザーが収集する可能性のある場所に配置されています。 Lync Server の他の電話とは異なり、個々のユーザーに割り当てられている音声ポリシーとダイヤルプランを使うことによって管理されますが、一般的なエリア電話には個々のユーザーが割り当てられるわけではありません。 これは、他の電話とは異なる方法で管理する必要があることを意味します。
+
+一般的なエリア電話を管理するために、ユーザーアカウントなどの一般的なエリアの携帯電話のための Active Directory ドメインサービスの連絡先オブジェクトを作成して、ポリシーや音声プランを割り当てることができます。 この方法により、共通のエリアの携帯電話を管理することができます。これらの電話は個々のユーザーに関連付けられているわけではありません。
+
+このセクションのトピックを使用して、一般的なエリア携帯電話の連絡先オブジェクトの作成、変更、削除、展開での一般的なエリア電話に関する構成情報の構成と表示を行う方法について説明します。
+
+<div>
+
+
+> [!NOTE]  
+> 一般的なエリア携帯電話には、Aastra 6721ip 共通エリア電話、HP 4110 IP 電話、Polycom CX500 IP 共通エリア電話の3つのオプションがあります。 Polycom CX3000 IP 会議電話は、別のバリエーションの一般的な市外電話です。 ただし、会議室での使用を目的としています。 一般的なエリア電話の詳細については、「 <A href="https://technet.microsoft.com/library/gg398958(v=ocs.14).aspx">新しいデバイスを選択</A>する」の「一般的な市外局番」のセクションを参照してください。
+
+
+
+</div>
+
+<div>
+
+## <a name="in-this-section"></a>このセクション中
+
+  - [Lync Server 2013 で一般的な市外局番情報を表示する](lync-server-2013-view-common-area-phone-information.md)
+
+  - [Lync Server 2013 で一般的なエリア電話の連絡先オブジェクトを作成または変更する](lync-server-2013-create-or-modify-a-common-area-phone-contact-object.md)
+
+  - [Lync Server 2013 でホット desking を有効または無効にする](lync-server-2013-enable-or-disable-hot-desking.md)
+
+  - [Lync Server 2013 で一般的なエリア電話の連絡先オブジェクトを削除する](lync-server-2013-delete-a-common-area-phone-contact-object.md)
+
+  - [Lync Server 2013 で共通の市外局番にポリシーを割り当てる](lync-server-2013-assign-policies-to-a-common-area-phone.md)
+
+</div>
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</div>
+
