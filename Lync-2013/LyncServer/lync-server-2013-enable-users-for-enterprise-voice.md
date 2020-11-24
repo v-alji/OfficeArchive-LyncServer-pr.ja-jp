@@ -1,0 +1,182 @@
+---
+title: 'Lync Server 2013: エンタープライズ Voip のユーザーを有効にする'
+description: 'Lync Server 2013: エンタープライズ Voip のユーザーを有効にします。'
+ms.reviewer: ''
+ms.author: v-lanac
+author: lanachin
+f1.keywords:
+- NOCSH
+TOCTitle: Enable users for Enterprise Voice
+ms:assetid: f252b23b-9641-4160-aa81-bf06dc2eced3
+ms:mtpsurl: https://technet.microsoft.com/en-us/library/Gg413011(v=OCS.15)
+ms:contentKeyID: 48185800
+ms.date: 07/23/2014
+manager: serdars
+mtps_version: v=OCS.15
+ms.openlocfilehash: 8aa8dbbeb507ced5217e517c1608c3a2a9259668
+ms.sourcegitcommit: 36fee89bb887bea4f18b19f17a8c69daf5bc423d
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "49400023"
+---
+# <a name="enable-users-for-enterprise-voice-in-lync-server-2013"></a><span data-ttu-id="40b5e-103">Lync Server 2013 でのエンタープライズ Voip のユーザーの有効化</span><span class="sxs-lookup"><span data-stu-id="40b5e-103">Enable users for Enterprise Voice in Lync Server 2013</span></span>
+
+<div data-xmlns="http://www.w3.org/1999/xhtml">
+
+<div class="topic" data-xmlns="http://www.w3.org/1999/xhtml" data-msxsl="urn:schemas-microsoft-com:xslt" data-cs="https://msdn.microsoft.com/">
+
+<div data-asp="https://msdn2.microsoft.com/asp">
+
+
+
+</div>
+
+<div id="mainSection">
+
+<div id="mainBody"><span data-ttu-id="40b5e-104">
+
+<span> </span></span><span class="sxs-lookup"><span data-stu-id="40b5e-104">
+
+<span> </span></span></span>
+
+<span data-ttu-id="40b5e-105">_**最終更新日:** 2012-11-01_</span><span class="sxs-lookup"><span data-stu-id="40b5e-105">_**Topic Last Modified:** 2012-11-01_</span></span>
+
+<span data-ttu-id="40b5e-106">1つ以上の仲介サーバーのファイルをインストールして、発信通話ルーティングを構成し、必要に応じて1つ以上の高度なエンタープライズ音声機能を展開するには、次の手順を使用して、ユーザーがエンタープライズ Voip を使用して電話をかけることができるようにします。</span><span class="sxs-lookup"><span data-stu-id="40b5e-106">After you install files for one or more Mediation Servers, configure outbound call routing, and optionally deploy one or more advanced Enterprise Voice features, you can use the following procedures to enable a user to make calls by using Enterprise Voice:</span></span>
+
+<div>
+
+
+> [!NOTE]  
+> <span data-ttu-id="40b5e-107">次の手順では、最初の操作は Lync Server コントロールパネルを使用して行うことができます。</span><span class="sxs-lookup"><span data-stu-id="40b5e-107">Of the following procedures, only the first can be performed by using Lync Server Control Panel.</span></span> <span data-ttu-id="40b5e-108">残りの手順については、Lync Server 管理シェルのみを使用できます。</span><span class="sxs-lookup"><span data-stu-id="40b5e-108">For the remaining procedures, you can use only Lync Server Management Shell.</span></span>
+
+
+
+</div>
+
+  - <span data-ttu-id="40b5e-109">エンタープライズ Voip のユーザーアカウントを有効にします。</span><span class="sxs-lookup"><span data-stu-id="40b5e-109">Enable the user account for Enterprise Voice.</span></span>
+
+  - <span data-ttu-id="40b5e-110">(オプション) ユーザー アカウントにユーザー固有の音声ポリシーを割り当てます。</span><span class="sxs-lookup"><span data-stu-id="40b5e-110">(Optional) Assign the user account a user-specific voice policy.</span></span>
+
+  - <span data-ttu-id="40b5e-111">(オプション) ユーザー アカウントにユーザー固有のダイヤル プランを割り当てます。</span><span class="sxs-lookup"><span data-stu-id="40b5e-111">(Optional) Assign the user account a user-specific dial plan.</span></span>
+
+<div>
+
+## <a name="to-enable-a-user-account-for-enterprise-voice"></a><span data-ttu-id="40b5e-112">エンタープライズ Voip のユーザーアカウントを有効にするには</span><span class="sxs-lookup"><span data-stu-id="40b5e-112">To enable a user account for Enterprise Voice</span></span>
+
+1.  <span data-ttu-id="40b5e-113">CsUserAdministrator または CsAdministrator の役割に割り当てられているユーザー アカウントから、内部展開の任意のコンピューターにログオンします。</span><span class="sxs-lookup"><span data-stu-id="40b5e-113">From a user account that is assigned to the CsUserAdministrator role or the CsAdministrator role, log on to any computer in your internal deployment.</span></span>
+
+2.  <span data-ttu-id="40b5e-114">ブラウザーウィンドウを開き、管理 URL を入力して Lync Server コントロールパネルを開きます。</span><span class="sxs-lookup"><span data-stu-id="40b5e-114">Open a browser window, and then enter the Admin URL to open the Lync Server Control Panel.</span></span> <span data-ttu-id="40b5e-115">Lync Server コントロールパネルを起動するために使用できるさまざまな方法について詳しくは、「 [Lync server 2013 管理ツールを開く](lync-server-2013-open-lync-server-administrative-tools.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="40b5e-115">For details about the different methods you can use to start Lync Server Control Panel, see [Open Lync Server 2013 administrative tools](lync-server-2013-open-lync-server-administrative-tools.md).</span></span>
+
+3.  <span data-ttu-id="40b5e-116">左側のナビゲーション バーで [**ユーザー**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="40b5e-116">In the left navigation bar, click **Users**.</span></span>
+
+4.  <span data-ttu-id="40b5e-117">[**ユーザーの検索**] ボックスに、有効にするユーザー アカウントの表示名、名、姓、セキュリティ アカウント マネージャー (SAM) のアカウント名、SIP アドレス、または回線 URI (Uniform Resource Identifier) の全体か先頭の部分の文字列を入力して、[**検索**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="40b5e-117">In the **Search users** box, type all or the first portion of the display name, first name, last name, Security Accounts Manager (SAM) account name, SIP address, or line Uniform Resource Identifier (URI) of the user account that you want to enable, and then click **Find**.</span></span>
+
+5.  <span data-ttu-id="40b5e-118">表で、エンタープライズ Voip を有効にするユーザーアカウントをクリックします。</span><span class="sxs-lookup"><span data-stu-id="40b5e-118">In the table, click the user account that you want to enable for Enterprise Voice.</span></span>
+
+6.  <span data-ttu-id="40b5e-119">[**編集**] メニューの [**詳細の表示**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="40b5e-119">On the **Edit** menu, click **Show details**.</span></span>
+
+7.  <span data-ttu-id="40b5e-120">[ **Lync Server ユーザーの編集** ] ページの [ **テレフォニー**] で、[ **エンタープライズ voip**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="40b5e-120">On the **Edit Lync Server User** page, under **Telephony**, click **Enterprise Voice**.</span></span>
+
+8.  <span data-ttu-id="40b5e-121">[**回線 URI**] をクリックし、正規化された一意の電話番号 (たとえば、tel:+14255550200) を入力します。</span><span class="sxs-lookup"><span data-stu-id="40b5e-121">Click **Line URI**, and then type a unique, normalized phone number (for example, tel:+14255550200).</span></span>
+
+9.  <span data-ttu-id="40b5e-122">[**確定**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="40b5e-122">Click **Commit**.</span></span>
+
+<span data-ttu-id="40b5e-123">エンタープライズ Voip のユーザーを有効にするには、そのユーザーに、グローバル (既定で割り当てられている) か、またはユーザー固有かにかかわらず、ボイスポリシーとダイヤルプランが割り当てられていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="40b5e-123">To finish enabling a user for Enterprise Voice, be sure that the user is assigned a voice policy and a dial plan, whether global (assigned by default) or user-specific.</span></span>
+
+<span data-ttu-id="40b5e-124">既定では、すべてのユーザーにグローバル音声ポリシーとダイヤル プランが割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="40b5e-124">By default, all users are assigned a global voice policy and dial plan.</span></span> <span data-ttu-id="40b5e-125">ユーザー アカウントが属しているサイトにサイト レベルの音声ポリシーとダイヤル プランが存在する場合は、それらのサイト ポリシーがユーザーに自動的に適用されます。</span><span class="sxs-lookup"><span data-stu-id="40b5e-125">If a voice policy or dial plan exists at the site level for the site on which the user account is homed, those site policies will automatically apply to the user.</span></span> <span data-ttu-id="40b5e-126">ユーザーごとの音声ポリシーまたはダイヤル プランをユーザーに適用するには、**Grant-CsVoicePolicy** および **Grant-CsDialPlan** コマンドレットを実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="40b5e-126">To apply a per-user voice policy or dial plan to a user, you must run the **Grant-CsVoicePolicy** and **Grant-CsDialPlan** cmdlets.</span></span> <span data-ttu-id="40b5e-127">詳細については、「 [Lync Server 2013 管理シェル](lync-server-2013-lync-server-management-shell.md) のドキュメント」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="40b5e-127">For details, see the [Lync Server 2013 Management Shell](lync-server-2013-lync-server-management-shell.md) documentation.</span></span>
+
+</div>
+
+<div>
+
+## <a name="voice-policy-assignment"></a><span data-ttu-id="40b5e-128">音声ポリシーの割り当て</span><span class="sxs-lookup"><span data-stu-id="40b5e-128">Voice Policy Assignment</span></span>
+
+<span data-ttu-id="40b5e-129">グローバルおよびサイトレベルのボイスポリシーは、エンタープライズ Voip が有効になっているすべてのユーザーアカウントに自動的に割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="40b5e-129">Global and site-level voice policies are automatically assigned to all user accounts that are enabled for Enterprise Voice.</span></span> <span data-ttu-id="40b5e-130">特定のユーザーまたはグループに適用する音声ポリシーを作成することもできます。</span><span class="sxs-lookup"><span data-stu-id="40b5e-130">You can also create voice policies that apply to specific users or groups.</span></span> <span data-ttu-id="40b5e-131">このようなユーザーごとのポリシーは、ユーザーまたはグループに明示的に割り当てる必要があります。</span><span class="sxs-lookup"><span data-stu-id="40b5e-131">These per-user policies must be explicitly assigned to the users or groups.</span></span> <span data-ttu-id="40b5e-132">エンタープライズ Voip を有効にしているすべてのユーザーに対して、グローバルまたはサイトのボイスポリシーを使用する場合は、このセクションをスキップして、このトピックの後半の「プランの割り当てを続行する」セクションを参照してください。</span><span class="sxs-lookup"><span data-stu-id="40b5e-132">If you want to use the global or site voice policy for all users who are enabled for Enterprise Voice, you can skip this section and continue to Dial Plan Assignment section later in this topic.</span></span>
+
+<div>
+
+## <a name="to-assign-a-user-specific-voice-policy"></a><span data-ttu-id="40b5e-133">ユーザー固有の音声ポリシーを割り当てるには</span><span class="sxs-lookup"><span data-stu-id="40b5e-133">To assign a user-specific voice policy</span></span>
+
+1.  <span data-ttu-id="40b5e-134">CsUserAdministrator または CsAdministrator の役割に割り当てられているユーザー アカウントから、内部展開の任意のコンピューターにログオンします。</span><span class="sxs-lookup"><span data-stu-id="40b5e-134">From a user account that is assigned to the CsUserAdministrator role or the CsAdministrator role, log on to any computer in your internal deployment.</span></span>
+
+2.  <span data-ttu-id="40b5e-135">Lync Server 管理シェルを起動します。 [ **スタート**] をクリックし、[ **すべてのプログラム**]、[ **Microsoft Lync Server 2013**]、[ **lync server 管理シェル**] の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="40b5e-135">Start the Lync Server Management Shell: Click **Start**, click **All Programs**, click **Microsoft Lync Server 2013**, and then click **Lync Server Management Shell**.</span></span>
+
+3.  <span data-ttu-id="40b5e-136">既存のユーザー音声ポリシーをユーザーに割り当てるには、コマンド プロンプトで次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="40b5e-136">To assign an existing user voice policy to a user, run the following at the command prompt:</span></span>
+    
+        Grant-CsVoicePolicy -Identity <UserIdParameter> -PolicyName <String>
+    
+    <span data-ttu-id="40b5e-137">例:</span><span class="sxs-lookup"><span data-stu-id="40b5e-137">For example:</span></span>
+    
+        Grant-CsVoicePolicy -Identity "Bob Kelly" -PolicyName VoicePolicyJapan
+    
+    <span data-ttu-id="40b5e-138">この例では、表示名が Bob 友野のユーザーに、 **VoicePolicyJapan** という名前のボイスポリシーが割り当てられています。</span><span class="sxs-lookup"><span data-stu-id="40b5e-138">In this example, the user with the display name Bob Kelly is assigned the voice policy with the name **VoicePolicyJapan**.</span></span>
+
+<span data-ttu-id="40b5e-139">ユーザー固有の音声ポリシーを割り当てる方法、または **Grant-CsVoicePolicy** コマンドレットを実行する方法の詳細については、「 [Lync Server 2013 管理シェル](lync-server-2013-lync-server-management-shell.md) のドキュメント」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="40b5e-139">For details about assigning a user-specific voice policy or about running the **Grant-CsVoicePolicy** cmdlet, see the [Lync Server 2013 Management Shell](lync-server-2013-lync-server-management-shell.md) documentation.</span></span>
+
+</div>
+
+</div>
+
+<span id="BKMK_DialPlanAssignment"></span>
+
+<div>
+
+## <a name="dial-plan-assignment"></a><span data-ttu-id="40b5e-140">ダイヤル プランの割り当て</span><span class="sxs-lookup"><span data-stu-id="40b5e-140">Dial Plan Assignment</span></span>
+
+<span data-ttu-id="40b5e-141">ダイヤルイン会議のエンタープライズボイスまたはユーザーのいずれかのユーザーアカウント構成を完了するには、ユーザーにダイヤルプランを割り当てる必要があります。</span><span class="sxs-lookup"><span data-stu-id="40b5e-141">To complete user account configuration for either users of Enterprise Voice or users of dial-in conferencing, the user must be assigned a dial plan.</span></span> <span data-ttu-id="40b5e-142">既存のユーザーごとのダイヤル プランを明示的に割り当てないと、ユーザー アカウントでは、グローバル ダイヤル プランまたは存在する場合はサイト レベルのダイヤル プランが自動的に使用されます。</span><span class="sxs-lookup"><span data-stu-id="40b5e-142">User accounts will automatically use the global dial plan or, if one exists, the site-level dial plan, when you do not explicitly assign an existing per-user dial plan.</span></span> <span data-ttu-id="40b5e-143">エンタープライズ Voip を有効にしているすべてのユーザーに対してグローバルまたはサイトダイヤルプランを使用する場合は、このセクションをスキップできます。</span><span class="sxs-lookup"><span data-stu-id="40b5e-143">If you want to use the global or site dial plan for all users who are enabled for Enterprise Voice, you can skip this section.</span></span>
+
+<div>
+
+## <a name="to-assign-a-dial-plan"></a><span data-ttu-id="40b5e-144">ダイヤルプランを割り当てるには</span><span class="sxs-lookup"><span data-stu-id="40b5e-144">To assign a dial plan</span></span>
+
+1.  <span data-ttu-id="40b5e-145">CsUserAdministrator または CsAdministrator の役割に割り当てられているユーザー アカウントから、内部展開の任意のコンピューターにログオンします。</span><span class="sxs-lookup"><span data-stu-id="40b5e-145">From a user account that is assigned to the CsUserAdministrator role or the CsAdministrator role, log on to any computer in your internal deployment.</span></span>
+
+2.  <span data-ttu-id="40b5e-146">Lync Server 管理シェルを起動します。 [ **スタート**] をクリックし、[ **すべてのプログラム**]、[ **Microsoft Lync Server 2013**]、[ **lync server 管理シェル**] の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="40b5e-146">Start the Lync Server Management Shell: Click **Start**, click **All Programs**, click **Microsoft Lync Server 2013**, and then click **Lync Server Management Shell**.</span></span>
+
+3.  <span data-ttu-id="40b5e-147">ユーザー固有のダイヤル プランを割り当てるには、コマンド プロンプトで次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="40b5e-147">To assign a user-specific dial plan, run the following at the command prompt:</span></span>
+    
+        Grant-CsDialPlan -Identity <UserIdParameter> -PolicyName <String>
+    
+    <span data-ttu-id="40b5e-148">例:</span><span class="sxs-lookup"><span data-stu-id="40b5e-148">For example:</span></span>
+    
+        Grant-CsDialPlan -Identity "Bob Kelly" -PolicyName DialPlanJapan
+    
+    <span data-ttu-id="40b5e-149">この例では、"Bob 友野" という名前のユーザーにダイヤルプランが割り当てられ **ています。**</span><span class="sxs-lookup"><span data-stu-id="40b5e-149">In this example, the user with the display name Bob Kelly is assigned the user dial plan with the name **DialPlanJapan**.</span></span>
+
+<span data-ttu-id="40b5e-150">ユーザーダイヤルプランの割り当てまたは **Grant-CsDialPlan** コマンドレットの実行について詳しくは、「 [Lync Server 2013 管理シェル](lync-server-2013-lync-server-management-shell.md) のドキュメント」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="40b5e-150">For details about assigning a user dial plan or about running the **Grant-CsDialPlan** cmdlet, see the [Lync Server 2013 Management Shell](lync-server-2013-lync-server-management-shell.md) documentation.</span></span>
+
+</div>
+
+</div>
+
+<div>
+
+## <a name="see-also"></a><span data-ttu-id="40b5e-151">関連項目</span><span class="sxs-lookup"><span data-stu-id="40b5e-151">See Also</span></span>
+
+
+[<span data-ttu-id="40b5e-152">Lync Server 2013 でエンタープライズ Voip のユーザーを無効にする</span><span class="sxs-lookup"><span data-stu-id="40b5e-152">Disable a user for Enterprise Voice in Lync Server 2013</span></span>](lync-server-2013-disable-a-user-for-enterprise-voice.md)  
+  
+
+<span data-ttu-id="40b5e-153"></div>
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</span><span class="sxs-lookup"><span data-stu-id="40b5e-153"></div>
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</span></span></div>
+
