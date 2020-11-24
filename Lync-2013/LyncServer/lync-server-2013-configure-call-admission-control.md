@@ -1,0 +1,112 @@
+---
+title: 'Lync Server 2013: 通話受付制御の構成'
+description: 'Lync Server 2013: 通話受付制御を構成します。'
+ms.reviewer: ''
+ms.author: v-lanac
+author: lanachin
+f1.keywords:
+- NOCSH
+TOCTitle: Configure call admission control
+ms:assetid: ce3e6e71-1e33-4cff-849a-c0468e61fef6
+ms:mtpsurl: https://technet.microsoft.com/en-us/library/Gg398870(v=OCS.15)
+ms:contentKeyID: 48185464
+ms.date: 07/23/2014
+manager: serdars
+mtps_version: v=OCS.15
+ms.openlocfilehash: 1c6da7e20f45e61f7364af3e8b749def05bd29fd
+ms.sourcegitcommit: 36fee89bb887bea4f18b19f17a8c69daf5bc423d
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "49399614"
+---
+# <a name="configure-call-admission-control-in-lync-server-2013"></a><span data-ttu-id="ff8db-103">Lync Server 2013 での通話受付制御の構成</span><span class="sxs-lookup"><span data-stu-id="ff8db-103">Configure call admission control in Lync Server 2013</span></span>
+
+<div data-xmlns="http://www.w3.org/1999/xhtml">
+
+<div class="topic" data-xmlns="http://www.w3.org/1999/xhtml" data-msxsl="urn:schemas-microsoft-com:xslt" data-cs="https://msdn.microsoft.com/">
+
+<div data-asp="https://msdn2.microsoft.com/asp">
+
+
+
+</div>
+
+<div id="mainSection">
+
+<div id="mainBody"><span data-ttu-id="ff8db-104">
+
+<span> </span></span><span class="sxs-lookup"><span data-stu-id="ff8db-104">
+
+<span> </span></span></span>
+
+<span data-ttu-id="ff8db-105">_**最終更新日:** 2012-09-21_</span><span class="sxs-lookup"><span data-stu-id="ff8db-105">_**Topic Last Modified:** 2012-09-21_</span></span>
+
+<span data-ttu-id="ff8db-106">通話受付制御 (CAC) は、使用可能な帯域幅に基づいてリアルタイムのセッションを確立して、混雑したネットワークのユーザーに対して低品質のオーディオ/ビデオ品質を防ぐことができるかどうかを決定するソリューションです。</span><span class="sxs-lookup"><span data-stu-id="ff8db-106">Call admission control (CAC) is a solution that determines whether a real-time session can be established based on the available bandwidth to help prevent poor audio/video quality for users on congested networks.</span></span> <span data-ttu-id="ff8db-107">CAC は、オーディオとビデオについてのみリアルタイムのトラフィックを制御し、データトラフィックには影響しません。</span><span class="sxs-lookup"><span data-stu-id="ff8db-107">CAC controls real-time traffic only for audio and video, and does not affect data traffic.</span></span> <span data-ttu-id="ff8db-108">既定の WAN パスに必要な帯域幅がない場合、CAC はインターネットパス経由で通話をルーティングすることがあります。</span><span class="sxs-lookup"><span data-stu-id="ff8db-108">CAC may route the call through an Internet path when the default WAN path does not have the required bandwidth.</span></span> <span data-ttu-id="ff8db-109">詳細については、計画ドキュメントの「 [Lync Server 2013 での通話受付制御の計画](lync-server-2013-planning-for-call-admission-control.md) 」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ff8db-109">For details, see [Planning for call admission control in Lync Server 2013](lync-server-2013-planning-for-call-admission-control.md) in the Planning documentation.</span></span>
+
+<span data-ttu-id="ff8db-110">このセクションでは、ネットワークで CAC を展開して管理する方法を説明する一連の手順を示します。</span><span class="sxs-lookup"><span data-stu-id="ff8db-110">This section provides a set of example procedures that illustrate how to deploy and manage CAC in your network.</span></span>
+
+<div>
+
+
+> [!IMPORTANT]  
+> <span data-ttu-id="ff8db-111">CAC を展開する前に、計画ドキュメントの「 <A href="lync-server-2013-example-of-gathering-your-requirements-for-call-admission-control.md">Lync Server 2013 での通話受付制御の要件の収集</A> 」で説明されているように、エンタープライズネットワークトポロジに必要なすべての情報を収集する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ff8db-111">Before you deploy CAC, you must gather all of the required information for your enterprise network topology, as described in <A href="lync-server-2013-example-of-gathering-your-requirements-for-call-admission-control.md">Example: Gathering your requirements for call admission control in Lync Server 2013</A> in the Planning documentation.</span></span> <span data-ttu-id="ff8db-112">また、展開ドキュメントの「 <A href="lync-server-2013-define-and-configure-a-front-end-pool-or-standard-edition-server.md">Lync server 2013 でフロントエンドプールまたは Standard Edition サーバーを定義して構成</A> する」で説明されているように、CAC コンポーネントがインストールされ、有効になっていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="ff8db-112">Also be sure that CAC components have been installed and activated, as described in <A href="lync-server-2013-define-and-configure-a-front-end-pool-or-standard-edition-server.md">Define and configure a Front End pool or Standard Edition server in Lync Server 2013</A> in the Deployment documentation.</span></span>
+
+
+
+</div>
+
+<div>
+
+
+> [!NOTE]  
+> <span data-ttu-id="ff8db-113">このセクションのすべての CAC の展開と管理の例は、Lync Server 管理シェルを使用して実行されます。</span><span class="sxs-lookup"><span data-stu-id="ff8db-113">All CAC deployment and management examples in this section are performed by using the Lync Server Management Shell.</span></span> <span data-ttu-id="ff8db-114">代わりに、Lync Server コントロールパネルの [ <STRONG>ネットワーク構成</STRONG> ] セクションを使用して、CAC を管理することもできます。</span><span class="sxs-lookup"><span data-stu-id="ff8db-114">As an alternative, you can also use the <STRONG>Network Configuration</STRONG> section of Lync Server Control Panel to manage CAC.</span></span>
+
+
+
+</div>
+
+<div>
+
+## <a name="in-this-section"></a><span data-ttu-id="ff8db-115">このセクション中</span><span class="sxs-lookup"><span data-stu-id="ff8db-115">In This Section</span></span>
+
+  - [<span data-ttu-id="ff8db-116">Lync Server 2013 での CAC のネットワーク領域の構成</span><span class="sxs-lookup"><span data-stu-id="ff8db-116">Configure network regions for CAC in Lync Server 2013</span></span>](lync-server-2013-configure-network-regions-for-cac.md)
+
+  - [<span data-ttu-id="ff8db-117">Lync Server 2013 で帯域幅ポリシープロファイルを作成する</span><span class="sxs-lookup"><span data-stu-id="ff8db-117">Create bandwidth policy profiles in Lync Server 2013</span></span>](lync-server-2013-create-bandwidth-policy-profiles.md)
+
+  - [<span data-ttu-id="ff8db-118">Lync Server 2013 での CAC 用のネットワークサイトの構成</span><span class="sxs-lookup"><span data-stu-id="ff8db-118">Configure network sites for CAC in Lync Server 2013</span></span>](lync-server-2013-configure-network-sites-for-cac.md)
+
+  - [<span data-ttu-id="ff8db-119">Lync Server 2013 で、サブネットとネットワークサイトを CAC に関連付ける</span><span class="sxs-lookup"><span data-stu-id="ff8db-119">Associate subnets with network sites for CAC in Lync Server 2013</span></span>](lync-server-2013-associate-subnets-with-network-sites-for-cac.md)
+
+  - [<span data-ttu-id="ff8db-120">Lync Server 2013 でネットワークの地域リンクを作成する</span><span class="sxs-lookup"><span data-stu-id="ff8db-120">Create network region links in Lync Server 2013</span></span>](lync-server-2013-create-network-region-links.md)
+
+  - [<span data-ttu-id="ff8db-121">Lync Server 2013 でのネットワーク間通信領域ルートの作成</span><span class="sxs-lookup"><span data-stu-id="ff8db-121">Create network interregion routes in Lync Server 2013</span></span>](lync-server-2013;-create-network-interregion-routes.md)
+
+  - [<span data-ttu-id="ff8db-122">Lync Server 2013 でネットワークのサイト間ポリシーを作成する</span><span class="sxs-lookup"><span data-stu-id="ff8db-122">Create network intersite policies in Lync Server 2013</span></span>](lync-server-2013-create-network-intersite-policies.md)
+
+  - [<span data-ttu-id="ff8db-123">Lync Server 2013 で通話受付制御を有効にする</span><span class="sxs-lookup"><span data-stu-id="ff8db-123">Enable call admission control in Lync Server 2013</span></span>](lync-server-2013-enable-call-admission-control.md)
+
+  - [<span data-ttu-id="ff8db-124">Lync Server 2013 の通話受付制御の展開チェックリスト</span><span class="sxs-lookup"><span data-stu-id="ff8db-124">Call admission control deployment checklist for Lync Server 2013</span></span>](lync-server-2013-call-admission-control-deployment-checklist.md)
+
+<span data-ttu-id="ff8db-125"></div>
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</span><span class="sxs-lookup"><span data-stu-id="ff8db-125"></div>
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</span></span></div>
+
