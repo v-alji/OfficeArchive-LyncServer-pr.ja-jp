@@ -1,0 +1,68 @@
+---
+title: 'Lync Server 2013: Outlook の有効化リストを更新する'
+description: 'Lync Server 2013: Outlook の有効化リストを更新しています。'
+ms.reviewer: ''
+ms.author: v-lanac
+author: lanachin
+f1.keywords:
+- NOCSH
+TOCTitle: Updating the Outlook enable list
+ms:assetid: 5db120dc-52f9-4dde-acb9-3824ae245086
+ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ215438(v=OCS.15)
+ms:contentKeyID: 48242739
+ms.date: 07/23/2014
+manager: serdars
+mtps_version: v=OCS.15
+ms.openlocfilehash: 96edc327fa1b63d5da95eb6ea36a2296659910d6
+ms.sourcegitcommit: 36fee89bb887bea4f18b19f17a8c69daf5bc423d
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "49399471"
+---
+# <a name="updating-the-outlook-enable-list-in-lync-server-2013"></a>Lync Server 2013 の Outlook 有効化リストを更新する
+
+<div data-xmlns="http://www.w3.org/1999/xhtml">
+
+<div class="topic" data-xmlns="http://www.w3.org/1999/xhtml" data-msxsl="urn:schemas-microsoft-com:xslt" data-cs="https://msdn.microsoft.com/">
+
+<div data-asp="https://msdn2.microsoft.com/asp">
+
+
+
+</div>
+
+<div id="mainSection">
+
+<div id="mainBody">
+
+<span> </span>
+
+_**最終更新日:** 2013-01-07_
+
+Microsoft Lync 2013 用のオンライン会議アドインは、Outlook のアドイン管理リストに含めるポリシーを作成することによって、ユーザーが常に有効にしていることを確認できます。 アドイン管理リストポリシーは、グループポリシー管理コンソールの Office 管理用テンプレートファイルに含まれています。 [HKCU Software ポリシー] の下に、レジストリキーが作成さ \\ \\ \\ \\ \\ \\ れます。 Microsoft Office 15.0 Outlook15 \\ 弾力性 \\ AddinList。 このキーに ucaddin.dll の値を追加して、常に有効にし、ユーザーが手動で無効にすることができないように ucaddin.dll 値を構成することができます。
+
+<div>
+
+## <a name="to-add-ucaddindll-to-the-outlook-add-in-list"></a>Outlook アドインの一覧に ucaddin.dll を追加するには
+
+  - AddinList レジストリキーに、[HKCU \\ Software \\ ポリシー \\ Microsoft \\ Office \\ 15.0 \\ Outlook15 弾力性 AddinList] にある \\ \\ 次の値を追加します。
+    
+      - レジストリの種類 = REG \_ SZ
+    
+      - Name = ucaddin.dll
+    
+      - 値 = 1 (アドインを常に有効にし、エンドユーザーが管理できないことを指定します)
+
+</div>
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</div>
+

@@ -1,0 +1,74 @@
+---
+title: 'Lync Server 2013: アクセス許可の付与'
+description: 'Lync Server 2013: アクセス許可を付与します。'
+ms.reviewer: ''
+ms.author: v-lanac
+author: lanachin
+f1.keywords:
+- NOCSH
+TOCTitle: Granting permissions
+ms:assetid: d1c9ea66-bd07-480e-99a0-011108f97e42
+ms:mtpsurl: https://technet.microsoft.com/en-us/library/Gg398901(v=OCS.15)
+ms:contentKeyID: 48185446
+ms.date: 07/23/2014
+manager: serdars
+mtps_version: v=OCS.15
+ms.openlocfilehash: 4bdb2b1ef39b85caa89c7597f455e6e4fc08e44e
+ms.sourcegitcommit: 36fee89bb887bea4f18b19f17a8c69daf5bc423d
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "49399734"
+---
+# <a name="granting-permissions-in-lync-server-2013"></a>Lync Server 2013 でのアクセス許可の付与
+
+<div data-xmlns="http://www.w3.org/1999/xhtml">
+
+<div class="topic" data-xmlns="http://www.w3.org/1999/xhtml" data-msxsl="urn:schemas-microsoft-com:xslt" data-cs="https://msdn.microsoft.com/">
+
+<div data-asp="https://msdn2.microsoft.com/asp">
+
+
+
+</div>
+
+<div id="mainSection">
+
+<div id="mainBody">
+
+<span> </span>
+
+_**最終更新日:** 2012-10-15_
+
+セットアップの場合、特定の Active Directory 組織単位 (OU) の RTCUniversalServerAdmins ユニバーサルグループにアクセス許可を付与し、その OU の RTCUniversalServerAdmins グループのメンバーが、指定したドメインに Lync Server 2013 をインストールできるようにすることができます。 OU にアクセス許可を付与すると、次のアクセス許可が付与されます。
+
+  - モード
+
+  - 書き込み
+
+  - ReadSPN
+
+  - WriteSPN
+
+管理者は、特定の Ou にアクセス許可を追加して、フォレストの準備によって作成された RTC ユニバーサルグループのメンバーが、Domain Admins グループのメンバーではなくても Ou にアクセスできるようにすることができます。 指定した OU に追加されたアクセス許可は、[ユーザーの **有効化** ] と同じアクセス許可であり、[コンピューター] と [ユーザー] のコンテナーに追加します。
+
+<div>
+
+## <a name="in-this-section"></a>このセクション中
+
+  - [Lync Server 2013 でのセットアップ アクセス許可の付与](lync-server-2013-granting-setup-permissions.md)
+
+  - [Lync Server 2013 での組織単位アクセス許可の付与](lync-server-2013-granting-organizational-unit-permissions.md)
+
+</div>
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</div>
+
