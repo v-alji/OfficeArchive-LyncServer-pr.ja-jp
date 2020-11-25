@@ -1,0 +1,13 @@
+{
+  "redirections": [
+    {
+      "source_path": "Lync-2013/LyncServer/migration-from-lync-server-2010-group-chat-or-office-communications-server-2007-r2-group-chat-to-lync-server-2013-persistent-chat-server.md",
+      "redirect_url": "/LyncServer/migration-from-lync-server-2010-group-chat-or-office-communications-server-2007-r2-group-chat-to-lync-server-2013-persistent-chat-server"
+    },
+    {
+      "source_path": "Lync-2013/Hub/index.md",
+      "redirect_url": "https://docs.microsoft.com/previous-versions/office/lync-server-2013/microsoft-lync-server-2013",
+      "redirect_document_id": true
+    }
+  ]
+}
