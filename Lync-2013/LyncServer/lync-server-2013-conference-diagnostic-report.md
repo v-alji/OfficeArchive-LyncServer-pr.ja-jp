@@ -1,0 +1,249 @@
+---
+title: 'Lync Server 2013: 会議の診断レポート'
+description: 'Lync Server 2013: 会議診断レポート。'
+ms.reviewer: ''
+ms.author: v-lanac
+author: lanachin
+f1.keywords:
+- NOCSH
+TOCTitle: Conference Diagnostic Report
+ms:assetid: e9edc23c-8ce8-4ab8-8786-9d22e1e51e14
+ms:mtpsurl: https://technet.microsoft.com/en-us/library/Gg615042(v=OCS.15)
+ms:contentKeyID: 48185901
+ms.date: 07/23/2014
+manager: serdars
+mtps_version: v=OCS.15
+ms.openlocfilehash: 9d3ef3c78bc2145d907d5a40e1aed95a2f4cb4c4
+ms.sourcegitcommit: 36fee89bb887bea4f18b19f17a8c69daf5bc423d
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "49434546"
+---
+# <a name="conference-diagnostic-report-in-lync-server-2013"></a>Lync Server 2013 での会議の診断レポート
+
+<div data-xmlns="http://www.w3.org/1999/xhtml">
+
+<div class="topic" data-xmlns="http://www.w3.org/1999/xhtml" data-msxsl="urn:schemas-microsoft-com:xslt" data-cs="https://msdn.microsoft.com/">
+
+<div data-asp="https://msdn2.microsoft.com/asp">
+
+
+
+</div>
+
+<div id="mainSection">
+
+<div id="mainBody">
+
+<span> </span>
+
+_**最終更新日:** 2012-10-22_
+
+電話会議診断レポートは、すべての電話会議セッションの成功とエラーに関する情報を提供します。 Microsoft Lync Server では、さまざまな種類のエラーを区別していることに注意してください。
+
+  - **予期されたエラー**。予期されたエラーは通常、単に技術的な意味においてのエラーです。たとえば、誰かが会議を始めたものの、1 人も参加しないうちに切断したとします。会議は開始されたのに完了しなかったので、技術的にはエラーです。しかし 1 人も参加しないうちに開催者が会議をキャンセルした場合に会議が完了しないのは当然なので、発生が予期されたエラーです。
+
+  - **予期しないエラー**。予期しないエラーは名前が示すとおり、その状況下では発生が予期されないエラーです。たとえば、開催者の会議ポリシーが取得できないために会議が開催できないとします。どのような場合でもユーザーの会議ポリシーは常に取得できるはずなので、これは予期しないエラーです。
+
+成功、予期されたエラー、および予期しないエラーの指標はセッションの合計数の指標に加算されない場合があることに注意してください。たとえば、レポートに次の値が表示されることがあります。
+
+
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>成功</th>
+<th>予期されたエラー</th>
+<th>予期しないエラー</th>
+<th>セッションの合計数</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>2024</p></td>
+<td><p>469</p></td>
+<td><p>16</p></td>
+<td><p>2521</p></td>
+</tr>
+</tbody>
+</table>
+
+
+2,024 + 469 + 16 は合計 2,509 セッションになりますが、[セッションの合計数] 列には合計 2,521 セッションと表示されています。 "不足分" の 12 セッションは、システムが成功または失敗に分類できなかったセッションです。 このような場合には、サードパーティ製の製品で、サーバーの監視に馴染みのない新しい診断コードが導入されていることがあります。 その場合、当該製品を使用した通話や当該診断コードのレポートは、成功、予期されたエラー、または予期しないエラーに分類できるとは限りません。
+
+<div>
+
+## <a name="accessing-the-conference-diagnostic-report"></a>電話会議診断レポートへのアクセス
+
+電話会議診断レポートは [監視レポート] ホーム ページからアクセスします。 次の指標のいずれかをクリックして、 [Lync Server 2013 でエラー配布レポート](lync-server-2013-failure-distribution-report.md) にアクセスできます。
+
+  - 予期しないエラー ボリューム
+
+  - 予期されるエラー ボリューム
+
+</div>
+
+<div>
+
+## <a name="making-the-best-use-of-the-conference-diagnostic-report"></a>電話会議診断レポートの活用
+
+電話会議診断レポートには一連のグラフが含まれています。 グラフの各列は実際にはハイパーリンクです。 列をクリックすると、その期間 [内の Lync Server 2013 のエラー配布レポート](lync-server-2013-failure-distribution-report.md) とその会議の種類が表示されます。
+
+</div>
+
+<div>
+
+## <a name="filters"></a>フィルター
+
+フィルターは、細かく絞り込んだデータ セットを返したり、返されたデータをさまざまな方法で表示したりする方法として利用できます。たとえば、電話会議診断レポートでは、実行した電話会議の種類 (フォーカスベースの電話会議など) や、電話会議で使用したエッジ サーバーに基づくフィルターを行えます。また、データをグループ化する方法を選択することもできます。この場合は、時間、日、週、または月を基準に会議がグループ化されます。
+
+次の表に、電話会議診断レポートで使用できるフィルターを示します。
+
+### <a name="conference-diagnostic-report-filters"></a>電話会議診断レポートのフィルター
+
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>名前</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><strong>開始</strong></p></td>
+<td><p>時間範囲の開始日と開始時刻。データを時間単位で表示するには、次のように開始日と開始時刻の両方を入力します。</p>
+<p>7/7/2012 1:00 PM</p>
+<p>開始時刻を入力しないと、レポートは自動的に指定日の午前 12:00 に開始します。データを日単位で表示するには、次のように日付のみを入力します。</p>
+<p>7/7/2012</p>
+<p>週単位または月単位で表示するには、表示する週または月の任意の日付を入力します (その週または月の最初の日である必要はありません)。</p>
+<p>7/3/2012</p>
+<p>一週間は、日曜日から始まり、土曜日で終わるものとします。</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>終了</strong></p></td>
+<td><p>時間範囲の終了日と終了時刻。データを時間単位で表示するには、次のように終了日と終了時刻の両方を入力します。</p>
+<p>7/7/2012 1:00 PM</p>
+<p>終了時刻を入力しないと、レポートは自動的に指定日の午前 12:00 に終了します。データを日単位で表示するには、次のように日付のみを入力します。</p>
+<p>7/7/2012</p>
+<p>週単位または月単位で表示するには、表示する週または月の任意の日付を入力します (その週または月の最初の日である必要はありません)。</p>
+<p>7/3/2012</p>
+<p>一週間は、日曜日から始まり、土曜日で終わるものとします。</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>[間隔]</strong></p></td>
+<td><p>時間間隔です。次のいずれかを選択します。</p>
+<ul>
+<li><p>毎時 (最大 25 時間の表示が可能)</p></li>
+<li><p>毎日 (最大 31 日の表示が可能)</p></li>
+<li><p>毎週 (最大 12 週の表示が可能)</p></li>
+<li><p>毎月 (最大 12 か月の表示が可能)</p></li>
+</ul>
+<p>入力した開始日と終了日が選択した間隔で使用できる値の最大数を超える場合は、最大数の値 (開始日からカウント) のみが表示されます。 たとえば、開始日が7/7/2012 で、終了日が2/28/2012 の [日] 間隔を選択した場合は、8/7/2012 12:00 AM から 9/7/2012 12:00 AM (つまり、31日分のデータ) のデータが表示されます。</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>プール</strong></p></td>
+<td><p>レジストラー プールまたはエッジ サーバーの完全修飾ドメイン名 (FQDN)。個別のプールを選択するか、[<strong>すべて</strong>] をクリックしてすべてのプールのデータを表示できます。このドロップダウン リストは、データベース内のレコードに基づいて自動的に設定されます。</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>電話会議セッション</strong></p></td>
+<td><p>電話会議セッションの種類を示します。次のいずれかを選択します。</p>
+<ul>
+<li><p>[すべて]</p></li>
+<li><p>フォーカス セッション</p></li>
+<li><p>すべての MCU セッション</p></li>
+<li><p>IM 電話会議</p></li>
+<li><p>アプリケーション共有</p></li>
+<li><p>音声ビデオ会議</p></li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+
+<div>
+
+## <a name="metrics"></a>指標
+
+次の表に、電話会議診断レポートでそれぞれの種類の電話会議セッションについて表示される情報を示します。
+
+### <a name="conference-diagnostic-report-metrics"></a>電話会議診断レポートの指標
+
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>名前</th>
+<th>この項目での並べ替え</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><strong>成功ボリューム</strong></p></td>
+<td><p>不可</p></td>
+<td><p>成功した電話会議の合計数。</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>成功率</strong></p></td>
+<td><p>不可</p></td>
+<td><p>大きな問題なく完了した電話会議の比率。成功ボリュームをセッションの合計数で割ることにより計算されます。</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>予期されるエラー ボリューム</strong></p></td>
+<td><p>不可</p></td>
+<td><p>予期しない &quot; エラー &quot; が発生した会議の合計数です。</p>
+<p>予期されるエラーとは、発生が予想されるエラーです。たとえば、ステータスを "応答不可" に設定しているユーザーへの通話は、すべてエラーになることが予想されます。</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>予期されるエラー率</strong></p></td>
+<td><p>不可</p></td>
+<td><p>予期されるエラーが発生した電話会議の比率。予期されるエラー ボリュームをセッションの合計数で割ることにより計算されます。</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>予期しないエラー ボリューム</strong></p></td>
+<td><p>不可</p></td>
+<td><p>&quot;予期しないエラー &quot; が発生した電話会議の合計数です。</p>
+<p>予期しないエラーとは、一見すると正常と思われるシステムで発生するエラーです。たとえば、呼び出し元が保留中になっている通話は終了してはなりません。この操作を行うと、予期しないエラーとしてフラグが設定されます。</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>予期しないエラー率</strong></p></td>
+<td><p>不可</p></td>
+<td><p>予期しないエラーが発生した電話会議の比率。予期しないエラー ボリュームをセッションの合計数で割ることにより計算されます。</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>セッションの合計数</strong></p></td>
+<td><p>不可</p></td>
+<td><p>電話会議の合計数。成功した電話会議、エラーが発生した電話会議 (予期されるエラーと予期しないエラーの両方)、および未分類の電話会議を含みます。</p></td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</div>
+
