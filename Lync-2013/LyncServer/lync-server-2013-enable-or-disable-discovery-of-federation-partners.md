@@ -1,0 +1,126 @@
+---
+title: 'Lync Server 2013: フェデレーション パートナーの検出の有効化または無効化'
+description: 'Lync Server 2013: フェデレーションパートナーの検出を有効または無効にします。'
+ms.reviewer: ''
+ms.author: v-lanac
+author: lanachin
+f1.keywords:
+- NOCSH
+TOCTitle: Enable or disable discovery of federation partners
+ms:assetid: 91fd036b-b1af-47cf-b1cf-0aa0a783c2aa
+ms:mtpsurl: https://technet.microsoft.com/en-us/library/Gg182550(v=OCS.15)
+ms:contentKeyID: 48184857
+ms.date: 07/23/2014
+manager: serdars
+mtps_version: v=OCS.15
+ms.openlocfilehash: 36b91120ffc1ce2bd6cd8b8114f0330e6d39d996
+ms.sourcegitcommit: 36fee89bb887bea4f18b19f17a8c69daf5bc423d
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "49428903"
+---
+# <a name="enable-or-disable-discovery-of-federation-partners-in-lync-server-2013"></a><span data-ttu-id="a4884-103">Lync Server 2013 でのフェデレーション パートナーの検出の有効化または無効化</span><span class="sxs-lookup"><span data-stu-id="a4884-103">Enable or disable discovery of federation partners in Lync Server 2013</span></span>
+
+<div data-xmlns="http://www.w3.org/1999/xhtml">
+
+<div class="topic" data-xmlns="http://www.w3.org/1999/xhtml" data-msxsl="urn:schemas-microsoft-com:xslt" data-cs="https://msdn.microsoft.com/">
+
+<div data-asp="https://msdn2.microsoft.com/asp">
+
+
+
+</div>
+
+<div id="mainSection">
+
+<div id="mainBody"><span data-ttu-id="a4884-104">
+
+<span> </span></span><span class="sxs-lookup"><span data-stu-id="a4884-104">
+
+<span> </span></span></span>
+
+<span data-ttu-id="a4884-105">_**トピックの最終更新日:** 2013-02-23_</span><span class="sxs-lookup"><span data-stu-id="a4884-105">_**Topic Last Modified:** 2013-02-23_</span></span>
+
+<span data-ttu-id="a4884-106">エッジサーバーを展開して組織のフェデレーションを有効にした時点で、フェデレーションパートナードメインの自動検出をサポートするかどうかを指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a4884-106">At the time you deployed your Edge Servers and enabled federation for your organization, you should have specified whether to support automatic discovery of federated partner domains.</span></span> <span data-ttu-id="a4884-107">この設定を変更するには、このトピックの手順を使用します。</span><span class="sxs-lookup"><span data-stu-id="a4884-107">Use the procedure in this topic to change that configuration.</span></span>
+
+<div>
+
+
+> [!NOTE]  
+> <span data-ttu-id="a4884-108">次の手順では、組織のフェデレーションを既に有効にしていることを前提としています。</span><span class="sxs-lookup"><span data-stu-id="a4884-108">The following procedure assumes that you have already enabled federation for your organization.</span></span> <span data-ttu-id="a4884-109">フェデレーションを有効にする方法について詳しくは、展開ドキュメントまたは運用ドキュメントの「 <A href="lync-server-2013-enable-or-disable-remote-user-access.md">Lync Server 2013 でのリモートユーザーアクセスを有効または無効</A> にする」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a4884-109">For details about enabling federation, see <A href="lync-server-2013-enable-or-disable-remote-user-access.md">Enable or disable remote user access in Lync Server 2013</A> in the Deployment documentation or the Operations documentation.</span></span>
+
+
+
+</div>
+
+<div>
+
+## <a name="to-enable-or-disable-automatic-discovery-of-federated-domains-for-your-organization"></a><span data-ttu-id="a4884-110">組織のフェデレーションドメインの自動検出を有効または無効にするには</span><span class="sxs-lookup"><span data-stu-id="a4884-110">To enable or disable automatic discovery of federated domains for your organization</span></span>
+
+1.  <span data-ttu-id="a4884-111">RTCUniversalServerAdmins グループ (または同等のユーザー権限を持つグループ) のメンバーであるユーザー アカウントまたは CsAdministrator の役割に割り当てられているユーザー アカウントから、内部展開の任意のコンピューターにログオンします。</span><span class="sxs-lookup"><span data-stu-id="a4884-111">From a user account that is a member of the RTCUniversalServerAdmins group (or has equivalent user rights), or is assigned to the CsAdministrator role, log on to any computer in your internal deployment.</span></span>
+
+2.  <span data-ttu-id="a4884-112">ブラウザーウィンドウを開き、管理 URL を入力して Lync Server コントロールパネルを開きます。</span><span class="sxs-lookup"><span data-stu-id="a4884-112">Open a browser window, and then enter the Admin URL to open the Lync Server Control Panel.</span></span> <span data-ttu-id="a4884-113">Lync Server コントロールパネルを起動するために使用できるさまざまな方法について詳しくは、「 [Lync server 2013 管理ツールを開く](lync-server-2013-open-lync-server-administrative-tools.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="a4884-113">For details about the different methods you can use to start Lync Server Control Panel, see [Open Lync Server 2013 administrative tools](lync-server-2013-open-lync-server-administrative-tools.md).</span></span>
+
+3.  <span data-ttu-id="a4884-114">左側のナビゲーションバーで、[ **外部ユーザーアクセス**] をクリックし、[ **アクセスエッジ構成**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="a4884-114">In the left navigation bar, click **External User Access**, click **Access Edge Configuration**.</span></span>
+
+4.  <span data-ttu-id="a4884-115">[ **アクセスエッジの構成** ] ページで [ **グローバル**] をクリックし、[ **編集**] をクリックして、[ **詳細の表示**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="a4884-115">On the **Access Edge Configuration** page, click **Global**, click **Edit**, and then click **Show details**.</span></span>
+
+5.  <span data-ttu-id="a4884-116">[ **Access Edge 構成の編集**] の [ **フェデレーションユーザーとの通信を有効** にする] で、パートナードメインの自動検出を有効または無効にするには、[ **パートナードメインの検出を有効** にする] チェックボックスをオンまたはオフにします。</span><span class="sxs-lookup"><span data-stu-id="a4884-116">In **Edit Access Edge Configuration**, under **Enable communications with federated users**, select or clear the **Enable partner domain discovery** check box to enable or disable automatic discovery of partner domains.</span></span>
+
+6.  <span data-ttu-id="a4884-117">[**コミット**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="a4884-117">Click **Commit**.</span></span>
+
+<span data-ttu-id="a4884-118">フェデレーションされたユーザーが Lync Server の展開でユーザーと共同作業できるようにするには、フェデレーションされたユーザーアクセスをサポートするために、少なくとも1つの外部アクセスポリシーを構成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a4884-118">To enable federated users to collaborate with users in your Lync Server deployment, you must have also configured at least one external access policy to support federated user access.</span></span> <span data-ttu-id="a4884-119">詳細については、展開ドキュメントまたは運用マニュアルの「 [Lync Server 2013 でフェデレーションとパブリック IM 接続を有効または無効](lync-server-2013-enable-or-disable-federation-and-public-im-connectivity.md) にする」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a4884-119">For details, see [Enable or disable federation and public IM connectivity in Lync Server 2013](lync-server-2013-enable-or-disable-federation-and-public-im-connectivity.md) in the Deployment documentation or the Operations documentation.</span></span> <span data-ttu-id="a4884-120">特定のフェデレーションドメインのアクセス制御の詳細については、「 [lync server 2013 で組織の sip フェデレーションドメインを管理](lync-server-2013-manage-sip-federated-domains-for-your-organization.md)する」、「lync server [2013 で組織の sip フェデレーションプロバイダーを管理](lync-server-2013-manage-sip-federated-providers-for-your-organization.md) する」、「操作ドキュメントで [LYNC server 2013 で Xmpp フェデレーションパートナーを管理](lync-server-2013-manage-xmpp-federated-partners-for-your-organization.md) する」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a4884-120">For details about controlling access for specific federated domains, see [Manage SIP federated domains for your organization in Lync Server 2013](lync-server-2013-manage-sip-federated-domains-for-your-organization.md), [Manage SIP federated providers for your organization in Lync Server 2013](lync-server-2013-manage-sip-federated-providers-for-your-organization.md) and [Manage XMPP federated partners in Lync Server 2013](lync-server-2013-manage-xmpp-federated-partners-for-your-organization.md) in the Operations documentation.</span></span>
+
+</div>
+
+<div>
+
+## <a name="enabling-or-disabling-discovery-of-federation-partners-by-using-windows-powershell-cmdlets"></a><span data-ttu-id="a4884-121">Windows PowerShell コマンドレットを使用して、フェデレーションパートナーの検出を有効または無効にする</span><span class="sxs-lookup"><span data-stu-id="a4884-121">Enabling or Disabling Discovery of Federation Partners by Using Windows PowerShell Cmdlets</span></span>
+
+<span data-ttu-id="a4884-122">フェデレーションパートナーの検出は、Windows PowerShell と Set-CsAccessEdgeConfiguration コマンドレットを使用して管理できます。</span><span class="sxs-lookup"><span data-stu-id="a4884-122">Discovery of federation partners can be managed by using Windows PowerShell and the Set-CsAccessEdgeConfiguration cmdlet.</span></span> <span data-ttu-id="a4884-123">このコマンドレットは、Lync Server 2013 管理シェルまたは Windows PowerShell のリモート セッションから実行できます。</span><span class="sxs-lookup"><span data-stu-id="a4884-123">This cmdlet can be run either from the Lync Server 2013 Management Shell or from a remote session of Windows PowerShell.</span></span> <span data-ttu-id="a4884-124">リモートの Windows PowerShell を使用して Lync Server に接続する方法について詳しくは、Lync Server Windows PowerShell のブログ記事「Quick Start: Managing Microsoft Lync Server 2010 Using Remote PowerShell (クイックスタート: リモート PowerShell を使用した Microsoft Lync Server 2010 の管理)」を[https://go.microsoft.com/fwlink/p/?linkId=255876](https://go.microsoft.com/fwlink/p/?linkid=255876)で参照してください。</span><span class="sxs-lookup"><span data-stu-id="a4884-124">For details about using remote Windows PowerShell to connect to Lync Server, see the Lync Server Windows PowerShell blog article "Quick Start: Managing Microsoft Lync Server 2010 Using Remote PowerShell" at [https://go.microsoft.com/fwlink/p/?linkId=255876](https://go.microsoft.com/fwlink/p/?linkid=255876).</span></span>
+
+<div>
+
+## <a name="to-enable-discovery-of-federation-partners"></a><span data-ttu-id="a4884-125">フェデレーションパートナーの検出を有効にするには</span><span class="sxs-lookup"><span data-stu-id="a4884-125">To enable discovery of federation partners</span></span>
+
+  - <span data-ttu-id="a4884-126">フェデレーションパートナーの検出を有効にするには、 **Enablepartnerdiscovery** プロパティの値を True ($True) に設定します。</span><span class="sxs-lookup"><span data-stu-id="a4884-126">To enable discovery of federation partners, set the value of the **EnablePartnerDiscovery** property to True ($True).</span></span> <span data-ttu-id="a4884-127">このプロパティ値を変更するには、DNS SRV ルーティングを有効にする必要があることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="a4884-127">Note that you must enable DNS SRV routing in order to change this property value.</span></span>
+    
+        Set-CsAccessEdgeConfiguration -UseDnsSrvRouting -EnablePartnerDiscovery $True
+
+</div>
+
+<div>
+
+## <a name="to-disable-discovery-of-federation-partners"></a><span data-ttu-id="a4884-128">フェデレーションパートナーの検出を無効にするには</span><span class="sxs-lookup"><span data-stu-id="a4884-128">To disable discovery of federation partners</span></span>
+
+  - <span data-ttu-id="a4884-129">フェデレーションパートナーの検出を無効にするには、 **Enablepartnerdiscovery** プロパティの値を False ($False) に設定します。</span><span class="sxs-lookup"><span data-stu-id="a4884-129">To disable discovery of federation partners, set the value of the **EnablePartnerDiscovery** property to False ($False):</span></span>
+    
+        Set-CsAccessEdgeConfiguration -UseDnsSrvRouting -EnablePartnerDiscovery $False
+
+<span data-ttu-id="a4884-130"></div>
+
+</div>
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</span><span class="sxs-lookup"><span data-stu-id="a4884-130"></div>
+
+</div>
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</span></span></div>
+
