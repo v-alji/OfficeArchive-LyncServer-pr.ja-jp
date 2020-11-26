@@ -1,0 +1,119 @@
+---
+title: 'Lync Server 2013: ユーザーごとの場所ポリシーを割り当てる'
+description: 'Lync Server 2013: ユーザーごとの場所ポリシーを割り当てます。'
+ms.reviewer: ''
+ms.author: v-lanac
+author: lanachin
+f1.keywords:
+- NOCSH
+TOCTitle: Assign a per-user location policy
+ms:assetid: 343f2de3-a0ae-4403-8456-6e520b579d32
+ms:mtpsurl: https://technet.microsoft.com/en-us/library/Gg520974(v=OCS.15)
+ms:contentKeyID: 48183794
+ms.date: 07/23/2014
+manager: serdars
+mtps_version: v=OCS.15
+ms.openlocfilehash: 81631740e0a6c908c392ccacb6b37d7033d9224c
+ms.sourcegitcommit: 36fee89bb887bea4f18b19f17a8c69daf5bc423d
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "49443217"
+---
+# <a name="assign-a-per-user-location-policy-in-lync-server-2013"></a><span data-ttu-id="67b11-103">Lync Server 2013 でユーザーごとの場所ポリシーを割り当てる</span><span class="sxs-lookup"><span data-stu-id="67b11-103">Assign a per-user location policy in Lync Server 2013</span></span>
+
+ 
+
+
+<span data-ttu-id="67b11-104">場所のポリシーは、Lync Server コントロールパネルで構成できるユーザーアカウントの個別の設定の1つです。</span><span class="sxs-lookup"><span data-stu-id="67b11-104">The location policy is one of the individual settings of a user account that you can configure in the Lync Server Control Panel.</span></span>
+
+<span data-ttu-id="67b11-105">1つまたは複数のユーザーごとの場所のポリシーを展開することは任意です。</span><span class="sxs-lookup"><span data-stu-id="67b11-105">Deploying one or more per-user location policies is optional.</span></span> <span data-ttu-id="67b11-106">グローバルレベルの場所のポリシーまたはサブネットレベルの場所のポリシーのみを展開することもできます。</span><span class="sxs-lookup"><span data-stu-id="67b11-106">You can also deploy only a global-level location policy or subnet-level location policy.</span></span> <span data-ttu-id="67b11-107">ユーザー単位のポリシーを展開する場合は、ポリシーをユーザー、グループ、または連絡先オブジェクトに明示的に割り当てる必要があります。</span><span class="sxs-lookup"><span data-stu-id="67b11-107">If you do deploy per-user policies, you must explicitly assign them to users, groups, or contact object.</span></span> <span data-ttu-id="67b11-108">特定のサブネットレベルまたはユーザーごとのポリシーが割り当てられていない場合、9-1-1 (E9) の設定がグローバルレベルのポリシーで定義されているものに自動的に既定で設定されます。</span><span class="sxs-lookup"><span data-stu-id="67b11-108">Enhanced 9-1-1 (E9-1-1) settings automatically default to those defined in the global-level location policy when no specific subnet-level or per-user policy is assigned.</span></span>
+
+<span data-ttu-id="67b11-109">ユーザーごとの場所ポリシーを1つ以上作成したら、このトピックの手順を使用して、特定のユーザーによって設定された緊急通話にサーバーが適用する設定を指定するポリシーに割り当てます。</span><span class="sxs-lookup"><span data-stu-id="67b11-109">After creating at least one per-user location policy, use the procedures in this topic to assign to the policy that specifies the settings that you want the server to apply for emergency calls placed by a particular user.</span></span>
+
+<span data-ttu-id="67b11-110">利用可能なすべての場所のポリシー設定の一覧については、「 [Lync Server 2013 の位置情報ポリシーを定義](lync-server-2013-defining-the-location-policy.md)する」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="67b11-110">For a list of all available location policy settings, see [Defining the location policy for Lync Server 2013](lync-server-2013-defining-the-location-policy.md).</span></span>
+
+<span data-ttu-id="67b11-111">場所のポリシーの作成について詳しくは、「 [Lync Server 2013 で場所のポリシーを作成](lync-server-2013-create-location-policies.md)する」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="67b11-111">For details about creating location policies, see [Create location policies in Lync Server 2013](lync-server-2013-create-location-policies.md).</span></span>
+
+## <a name="to-assign-a-per-user-location-policy-with-the-lync-server-control-panel"></a><span data-ttu-id="67b11-112">Lync Server コントロールパネルを使用して、ユーザーごとの場所のポリシーを割り当てるには</span><span class="sxs-lookup"><span data-stu-id="67b11-112">To assign a per-user location policy with the Lync Server Control Panel</span></span>
+
+1.  <span data-ttu-id="67b11-113">CsUserAdministrator または CsAdministrator の役割に割り当てられているユーザー アカウントから、内部展開の任意のコンピューターにログオンします。</span><span class="sxs-lookup"><span data-stu-id="67b11-113">From a user account that is assigned to the CsUserAdministrator role or the CsAdministrator role, log on to any computer in your internal deployment.</span></span>
+
+2.  <span data-ttu-id="67b11-114">ブラウザーウィンドウを開き、管理 URL を入力して Lync Server コントロールパネルを開きます。</span><span class="sxs-lookup"><span data-stu-id="67b11-114">Open a browser window, and then enter the Admin URL to open the Lync Server Control Panel.</span></span> <span data-ttu-id="67b11-115">Lync Server コントロールパネルを起動するために使用できるさまざまな方法について詳しくは、「 [Lync server 2013 管理ツールを開く](lync-server-2013-open-lync-server-administrative-tools.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="67b11-115">For details about the different methods you can use to start Lync Server Control Panel, see [Open Lync Server 2013 administrative tools](lync-server-2013-open-lync-server-administrative-tools.md).</span></span>
+
+3.  <span data-ttu-id="67b11-116">左側のナビゲーション バーで [**ユーザー**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="67b11-116">In the left navigation bar, click **Users**.</span></span>
+
+4.  <span data-ttu-id="67b11-117">ユーザーを探すには、次のいずれかの方法を使用します。</span><span class="sxs-lookup"><span data-stu-id="67b11-117">Use one of the following methods to locate a user:</span></span>
+    
+      - <span data-ttu-id="67b11-118">[**ユーザーの検索**] ボックスに、表示名、名、姓、セキュリティ アカウント マネージャー (SAM) のアカウント名、SIP アドレス、またはユーザー アカウントの回線 URI (Uniform Resource Identifier) の全体か先頭部分の文字列を入力して、[**検索**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="67b11-118">In the **Search users** box, type all or the first portion of the display name, first name, last name, Security Accounts Manager (SAM) account name, SIP address, or line Uniform Resource Identifier (URI) of the user account, and then click **Find**.</span></span>
+    
+      - <span data-ttu-id="67b11-119">保存したクエリがある場合は、[**クエリを開く**] アイコンをクリックして、[**開く**] ダイアログ ボックスを使用してそのクエリ (.usf ファイル) を取得してから、[**検索**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="67b11-119">If you have a saved query, click the **Open query** icon, use the **Open** dialog box to retrieve the query (a .usf file), and then click **Find**.</span></span>
+
+5.  <span data-ttu-id="67b11-120">(オプション) 結果を絞り込むための追加の検索条件を次のように指定します。</span><span class="sxs-lookup"><span data-stu-id="67b11-120">(Optional) Specify additional search criteria to narrow the results:</span></span>
+    
+    1.  <span data-ttu-id="67b11-121">[**フィルターの追加**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="67b11-121">Click **Add Filter**.</span></span>
+    
+    2.  <span data-ttu-id="67b11-122">ユーザーのプロパティを入力するか、ドロップダウン リストの矢印をクリックして選択し、プロパティを指定します。</span><span class="sxs-lookup"><span data-stu-id="67b11-122">Enter the user property by typing it or by clicking the arrow in the drop-down list to select the property.</span></span>
+    
+    3.  <span data-ttu-id="67b11-123">[**次の値に等しい**] ドロップダウン リストで、演算子 (例: [**次の値に等しい**]、[**次の値に等しくない**]) をクリックします。</span><span class="sxs-lookup"><span data-stu-id="67b11-123">In the **Equal to** drop-down list, click the operator (for example, **Equal to** or **Not equal to**).</span></span>
+    
+    4.  <span data-ttu-id="67b11-124">選択したユーザー プロパティによっては、検索結果のフィルターに使用する条件を入力するか、ドロップダウン リストの矢印をクリックして指定します。</span><span class="sxs-lookup"><span data-stu-id="67b11-124">Depending on the user property you selected, enter the criteria you want to use to filter the search results by typing it or by clicking the arrow in the drop-down list.</span></span>
+        
+
+        > [!TIP]  
+        > <span data-ttu-id="67b11-125">クエリにその他の検索句を追加するには、[<STRONG>フィルターの追加</STRONG>] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="67b11-125">To add additional search clauses to your query, click <STRONG>Add Filter</STRONG>.</span></span>
+
+    
+    5.  <span data-ttu-id="67b11-126">[**検索**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="67b11-126">Click **Find**.</span></span>
+
+6.  <span data-ttu-id="67b11-127">検索結果のユーザーをクリックして、[**アクション**] をクリックしてから、[**ポリシーの割り当て**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="67b11-127">Click a user in the search results, click **Action**, and then click **Assign policies**.</span></span>
+    
+
+    > [!TIP]  
+    > <span data-ttu-id="67b11-128">複数のユーザーに同じ1つの場所のポリシーを適用する場合は、検索結果で複数のユーザーを選び、[ <STRONG>操作</STRONG>] をクリックして、[ <STRONG>ポリシーの割り当て</STRONG>] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="67b11-128">If you want the same per-user location policy to apply to multiple users, select multiple users in the search results, then click <STRONG>Actions</STRONG>, and then click <STRONG>Assign policies</STRONG>.</span></span>
+
+
+
+7.  <span data-ttu-id="67b11-129">[ **ポリシーの割り当て**] の [ **場所のポリシー**] で、次のいずれかの操作を行います。</span><span class="sxs-lookup"><span data-stu-id="67b11-129">In **Assign Policies**, under **Location policy**, do one of the following:</span></span>
+    
+
+    > [!NOTE]  
+    > <span data-ttu-id="67b11-130">[<STRONG>ポリシーの割り当て</STRONG>] ダイアログボックスを使って構成できる複数のポリシーがあるため、ダイアログボックスのすべてのポリシーで既定で [ <STRONG> &lt; その &gt; まま</STRONG>実行する] が選択されています。</span><span class="sxs-lookup"><span data-stu-id="67b11-130">Because there are multiple policies that you can configure by using the <STRONG>Assign Policies</STRONG> dialog box, <STRONG>&lt;Keep as is&gt;</STRONG> is selected by default for every policy in the dialog box.</span></span> <span data-ttu-id="67b11-131">この設定を変更しないで、以前にユーザーに割り当てたポリシーを使用して続行します。</span><span class="sxs-lookup"><span data-stu-id="67b11-131">Continue using the policy previously assigned to the user by making no changes to this setting.</span></span>
+
+    
+      - <span data-ttu-id="67b11-132">[Lync Server 2013 でグローバルレベルポリシー] または [定義されている場合はサブネットレベルポリシー] のいずれかを自動的に選択することを許可します。</span><span class="sxs-lookup"><span data-stu-id="67b11-132">Allow Lync Server 2013 to automatically choose either the global-level policy or, if defined, the subnet-level policy.</span></span>
+    
+      - <span data-ttu-id="67b11-133">**新しい-CsLocationPolicy** コマンドレットを実行して以前に定義した、ユーザーごとの場所ポリシーの名前をクリックします。</span><span class="sxs-lookup"><span data-stu-id="67b11-133">Click the name of a per-user location policy you previously defined by running the **New-CsLocationPolicy** cmdlet.</span></span>
+        
+
+        > [!TIP]  
+        > <span data-ttu-id="67b11-134">割り当てるポリシーを決定するには、ポリシー名をクリックした後、[ <STRONG>表示</STRONG> ] をクリックして、ポリシーで定義されたユーザー権限とアクセス許可を表示します。</span><span class="sxs-lookup"><span data-stu-id="67b11-134">To help you decide the policy that you want to assign, after you click a policy name, click <STRONG>View</STRONG> to view the user rights and permissions defined in the policy.</span></span>
+
+
+
+8.  <span data-ttu-id="67b11-135">終了したら、[**OK**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="67b11-135">When you are finished, click **OK**.</span></span>
+
+## <a name="assigning-a-per-user-location-policy-by-using-lync-server-management-shell-cmdlets"></a><span data-ttu-id="67b11-136">Lync Server Management Shell コマンドレットを使用して Per-User 場所ポリシーを割り当てる</span><span class="sxs-lookup"><span data-stu-id="67b11-136">Assigning a Per-User Location Policy by Using Lync Server Management Shell Cmdlets</span></span>
+
+<span data-ttu-id="67b11-137">Grant-CsLocationPolicy コマンドレットを使用して、ユーザーごとの場所のポリシーを割り当てることができます。</span><span class="sxs-lookup"><span data-stu-id="67b11-137">You can assign per-user location policies by using the Grant-CsLocationPolicy cmdlet.</span></span> <span data-ttu-id="67b11-138">このコマンドレットは、Lync Server 2013 管理シェルから、または Windows PowerShell のリモートセッションから実行できます。</span><span class="sxs-lookup"><span data-stu-id="67b11-138">You can run this cmdlet either from the Lync Server 2013 Management Shell or from a remote session of Windows PowerShell.</span></span> <span data-ttu-id="67b11-139">リモートの Windows PowerShell を使用して Lync Server に接続する方法について詳しくは、Lync Server Windows PowerShell のブログ記事「Quick Start: Managing Microsoft Lync Server 2010 Using Remote PowerShell (クイックスタート: リモート PowerShell を使用した Microsoft Lync Server 2010 の管理)」を[https://go.microsoft.com/fwlink/p/?linkId=255876](https://go.microsoft.com/fwlink/p/?linkid=255876)で参照してください。</span><span class="sxs-lookup"><span data-stu-id="67b11-139">For details about using remote Windows PowerShell to connect to Lync Server, see the Lync Server Windows PowerShell blog article "Quick Start: Managing Microsoft Lync Server 2010 Using Remote PowerShell" at [https://go.microsoft.com/fwlink/p/?linkId=255876](https://go.microsoft.com/fwlink/p/?linkid=255876).</span></span>
+
+## <a name="to-assign-a-per-user-location-policy-to-a-single-user"></a><span data-ttu-id="67b11-140">ユーザーごとの場所のポリシーを1人のユーザーに割り当てるには</span><span class="sxs-lookup"><span data-stu-id="67b11-140">To assign a per-user location policy to a single user</span></span>
+
+  - <span data-ttu-id="67b11-141">次のコマンドを実行すると、ユーザーごとの場所ポリシーの RedmondLocationPolicy がユーザー Ken Myer に割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="67b11-141">The following command assigns the per-user location policy RedmondLocationPolicy to the user Ken Myer.</span></span>
+    
+        Grant-CsLocationPolicy -Identity "Ken Myer" -PolicyName "RedmondLocationPolicy"
+
+## <a name="to-assign-a-per-user-location-policy-to-multiple-users"></a><span data-ttu-id="67b11-142">ユーザーごとの場所ポリシーを複数のユーザーに割り当てるには</span><span class="sxs-lookup"><span data-stu-id="67b11-142">To assign a per-user location policy to multiple users</span></span>
+
+  - <span data-ttu-id="67b11-143">このコマンドを実行すると、ユーザーごとの場所のポリシー AccountingDepartmentLocationPolicy が、会計部門で作業するすべてのユーザーに割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="67b11-143">This command assigns the per-user location policy AccountingDepartmentLocationPolicy to all the users who work for the Accounting department.</span></span> <span data-ttu-id="67b11-144">このコマンドで使用される LdapFilter パラメーターの詳細については、「 [ユーザーの取得](https://technet.microsoft.com/library/gg398125\(v=ocs.15\)) 」コマンドレットのドキュメントを参照してください。</span><span class="sxs-lookup"><span data-stu-id="67b11-144">For more information on the LdapFilter parameter used in this command, see the documentation for the [Get-CsUser](https://technet.microsoft.com/library/gg398125\(v=ocs.15\)) cmdlet.</span></span>
+    
+        Get-CsUser -LdapFilter "Department=Accounting" | Grant-CsLocationPolicy -PolicyName "AccountingDepartmentLocationPolicy"
+
+## <a name="to-unassign-a-per-user-location-policy"></a><span data-ttu-id="67b11-145">ユーザーごとの場所ポリシーを割り当て解除するには</span><span class="sxs-lookup"><span data-stu-id="67b11-145">To unassign a per-user location policy</span></span>
+
+  - <span data-ttu-id="67b11-146">次のコマンドは、以前に Ken Myer に割り当てられているユーザーごとの場所ポリシーを割り当て解除します。</span><span class="sxs-lookup"><span data-stu-id="67b11-146">The following command unassigns any per-user location policy previously assigned to Ken Myer.</span></span> <span data-ttu-id="67b11-147">ユーザー単位の PIN ポリシーが割り当て解除された後、Ken Myer は、グローバル ポリシー、または存在する場合は Ken Myer のローカル サイト ポリシーによって、自動的に管理されます。</span><span class="sxs-lookup"><span data-stu-id="67b11-147">After the per-user policy is unassigned, Ken Myer will automatically be managed by using the global policy or, if one exists, his local site policy.</span></span> <span data-ttu-id="67b11-148">サイト ポリシーは、グローバル ポリシーよりも優先されます。</span><span class="sxs-lookup"><span data-stu-id="67b11-148">A site policy takes precedence over the global policy.</span></span>
+    
+        Grant-CsLocationPolicy -Identity "Ken Myer" -PolicyName $Null
+
+<span data-ttu-id="67b11-149">詳細については、「 [Grant-CsLocationPolicy](https://technet.microsoft.com/library/gg413049\(v=ocs.15\)) 」コマンドレットのヘルプトピックを参照してください。</span><span class="sxs-lookup"><span data-stu-id="67b11-149">For more information, see the help topic for the [Grant-CsLocationPolicy](https://technet.microsoft.com/library/gg413049\(v=ocs.15\)) cmdlet.</span></span>
+

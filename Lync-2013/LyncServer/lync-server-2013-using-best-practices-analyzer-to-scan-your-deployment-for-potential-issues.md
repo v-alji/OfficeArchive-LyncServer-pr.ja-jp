@@ -1,0 +1,124 @@
+---
+title: ベストプラクティスアナライザーを使用して展開をスキャンし、潜在的な問題がないか確認する
+description: ベストプラクティスアナライザーを使用して展開をスキャンし、潜在的な問題がないかを確認します。
+ms.reviewer: ''
+ms.author: v-lanac
+author: lanachin
+f1.keywords:
+- NOCSH
+TOCTitle: Using Best Practices Analyzer to scan your deployment for potential issues
+ms:assetid: 09c84509-dc91-4e7b-882b-3c467b6b026d
+ms:mtpsurl: https://technet.microsoft.com/en-us/library/Gg591343(v=OCS.15)
+ms:contentKeyID: 48183359
+ms.date: 07/23/2014
+manager: serdars
+mtps_version: v=OCS.15
+ms.openlocfilehash: 032f5b46d8d5a28894e5f746e0cbc2aff6c5eaa2
+ms.sourcegitcommit: 36fee89bb887bea4f18b19f17a8c69daf5bc423d
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "49443483"
+---
+# <a name="using-best-practices-analyzer-to-scan-your-lync-server-2013-deployment-for-potential-issues"></a><span data-ttu-id="3a3f6-103">ベストプラクティスアナライザーを使用して Lync Server 2013 の展開をスキャンし、潜在的な問題を検出する</span><span class="sxs-lookup"><span data-stu-id="3a3f6-103">Using Best Practices Analyzer to scan your Lync Server 2013 deployment for potential issues</span></span>
+
+<div data-xmlns="http://www.w3.org/1999/xhtml">
+
+<div class="topic" data-xmlns="http://www.w3.org/1999/xhtml" data-msxsl="urn:schemas-microsoft-com:xslt" data-cs="https://msdn.microsoft.com/">
+
+<div data-asp="https://msdn2.microsoft.com/asp">
+
+
+
+</div>
+
+<div id="mainSection">
+
+<div id="mainBody"><span data-ttu-id="3a3f6-104">
+
+<span> </span></span><span class="sxs-lookup"><span data-stu-id="3a3f6-104">
+
+<span> </span></span></span>
+
+<span data-ttu-id="3a3f6-105">_**最終更新日:** 2012-10-21_</span><span class="sxs-lookup"><span data-stu-id="3a3f6-105">_**Topic Last Modified:** 2012-10-21_</span></span>
+
+<span data-ttu-id="3a3f6-106">ベストプラクティスアナライザースキャンを実行するには、次のように指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="3a3f6-106">To run a Best Practices Analyzer scan, you must specify the following:</span></span>
+
+  - <span data-ttu-id="3a3f6-107">**資格情報**   スキャンを実行するには、ローカル管理者グループのメンバーであるアカウントを使用して、ベストプラクティスアナライザーがインストールされているコンピューターにログオンする必要があります。</span><span class="sxs-lookup"><span data-stu-id="3a3f6-107">**Credentials**   To run a scan, you must log on to a computer on which Best Practices Analyzer is installed by using an account that is a member of the local Administrators group.</span></span> <span data-ttu-id="3a3f6-108">さらに、適切なスキャンを実行するために必要なユーザー権限とアクセス許可を持つユーザーアカウントを使用してログオンするか、ベストプラクティスアナライザーを実行するときに適切なユーザー権限とアクセス許可を持つ資格情報を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="3a3f6-108">Additionally, you need to log on by using a user account that has the user rights and permissions required to run the appropriate scans, or you must specify credentials that have the appropriate user rights and permissions when you run Best Practices Analyzer.</span></span> <span data-ttu-id="3a3f6-109">詳細については、「 [Lync Server 2013 のベストプラクティスアナライザーのグループメンバーシップとユーザー権利の要件](lync-server-2013-group-memberships-and-user-rights-requirements-for-best-practices-analyzer.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="3a3f6-109">For details, see [Group memberships and user rights requirements for Best Practices Analyzer in Lync Server 2013](lync-server-2013-group-memberships-and-user-rights-requirements-for-best-practices-analyzer.md).</span></span>
+
+  - <span data-ttu-id="3a3f6-110">**スキャンの範囲**   スキャンの範囲を指定するには、スキャンするカテゴリとサーバーを選びます。</span><span class="sxs-lookup"><span data-stu-id="3a3f6-110">**Scope of scan**   To specify the scope of the scan, select the categories and servers that you want to scan.</span></span> <span data-ttu-id="3a3f6-111">Lync Server 環境の特定のカテゴリ内のすべてのカテゴリ、1つ以上のカテゴリ、または1つ以上のサーバーを選ぶことができます。</span><span class="sxs-lookup"><span data-stu-id="3a3f6-111">You can select all categories, one or more categories, or one or more servers within a specific category in your Lync Server environment.</span></span>
+
+  - <span data-ttu-id="3a3f6-112">**スキャンの種類**   現時点では、正常性チェックスキャンは利用可能なスキャンの種類は1個だけです (既定で選択されています)。</span><span class="sxs-lookup"><span data-stu-id="3a3f6-112">**Type of scan**   Currently, the Health Check scan is the only type of scan available (selected by default).</span></span> <span data-ttu-id="3a3f6-113">正常性チェックスキャンでは、スコープで指定されたすべてのサーバーのエラー、警告、その他の情報を含むレポートが生成されます。</span><span class="sxs-lookup"><span data-stu-id="3a3f6-113">The Health Check scan generates a report that includes errors, warnings, and other information for all servers specified in the scope.</span></span>
+
+  - <span data-ttu-id="3a3f6-114">**ネットワーク速度**   ネットワーク速度のオプションには、高速 LAN (100 Mbps 以上)、LAN (10 Mbps)、高速 WAN (1.5 Mbps)、または WAN (64 kbps) があります。</span><span class="sxs-lookup"><span data-stu-id="3a3f6-114">**Network speed**   Network speed options include Fast LAN (100 Mbps or more), LAN (10 Mbps), Fast WAN (1.5 Mbps), or WAN (64 kbps).</span></span> <span data-ttu-id="3a3f6-115">スキャンを完了するための推定時間は、この設定に基づいています。</span><span class="sxs-lookup"><span data-stu-id="3a3f6-115">The estimated time to complete the scan is based on this setting.</span></span> <span data-ttu-id="3a3f6-116">この設定は、タイムアウト期間を設定するためにも使用されます。</span><span class="sxs-lookup"><span data-stu-id="3a3f6-116">This setting is also used to set the time-out period.</span></span> <span data-ttu-id="3a3f6-117">スキャン中は、ベストプラクティスアナライザーは、指定した時間、サーバーからの応答を待ちます。</span><span class="sxs-lookup"><span data-stu-id="3a3f6-117">During the scan, the Best Practices Analyzer waits for a response from a server for a specified time.</span></span> <span data-ttu-id="3a3f6-118">指定した期間内に応答を受け取らない場合は、スキャンの次のサーバーに移動します。</span><span class="sxs-lookup"><span data-stu-id="3a3f6-118">If it does not receive a response within the specified time-out period, it moves to the next server in the scan.</span></span> <span data-ttu-id="3a3f6-119">低速のネットワークでは、この指定されたタイムアウト期間は長いネットワーク待ち時間を考慮しています。</span><span class="sxs-lookup"><span data-stu-id="3a3f6-119">On slower networks, this specified time-out period is longer to account for longer network latencies.</span></span> <span data-ttu-id="3a3f6-120">このパラメーターのトポロジで最も低速のリンクを選択して、ツールが短時間でタイムアウトしないようにすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="3a3f6-120">We recommend that you select the slowest link in your topology for this parameter so that the tool does not time out too quickly.</span></span>
+
+<div>
+
+## <a name="to-scan-your-lync-server-2013-deployment"></a><span data-ttu-id="3a3f6-121">Lync Server 2013 の展開をスキャンするには</span><span class="sxs-lookup"><span data-stu-id="3a3f6-121">To scan your Lync Server 2013 deployment</span></span>
+
+1.  <span data-ttu-id="3a3f6-122">[ローカル管理者] グループのメンバーであり、他に必要なユーザー権限と権限があるアカウントを使用して、ベストプラクティスアナライザーがインストールされているコンピューターにログオンします。</span><span class="sxs-lookup"><span data-stu-id="3a3f6-122">Log on to a computer on which Best Practices Analyzer is installed by using an account that is a member of the local Administrators group, and has other required user rights and permissions.</span></span>
+
+2.  <span data-ttu-id="3a3f6-123">[ **スタート**] をクリックし、[ **すべてのプログラム**]、[ **Microsoft Lync Server 2013**]、[ **ベストプラクティスアナライザー**] の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="3a3f6-123">Click **Start**, point to **All Programs**, click **Microsoft Lync Server 2013**, and then click **Best Practices Analyzer**.</span></span>
+
+3.  <span data-ttu-id="3a3f6-124">[ **ようこそ** ] 画面で、[ **新しいスキャンのオプションを選択** します] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="3a3f6-124">On the **Welcome** screen, click **Select options for a new scan**.</span></span>
+
+4.  <span data-ttu-id="3a3f6-125">[ **Active directory に接続する** ] ページで、[ **active directory Server**] で指定された名前を確認し、次のいずれかの操作を行います。</span><span class="sxs-lookup"><span data-stu-id="3a3f6-125">On the **Connect to Active Directory** page, verify the name specified in **Active Directory Server**, and then do one of the following:</span></span>
+    
+      - <span data-ttu-id="3a3f6-126">コンピューターにログオンするために使用した資格情報を使ってスキャンを実行するには、[ **Active Directory サーバーに接続** する] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="3a3f6-126">To run a scan using the credentials that you used to log on to the computer, click **Connect to the Active Directory server**.</span></span>
+    
+      - <span data-ttu-id="3a3f6-127">Active Directory ドメインサービス、エッジサーバー、または Exchange Server に使用する別の資格情報を指定するには、[ **詳細なログオンオプションの表示**] をクリックし、個別の資格情報が必要な各チェックボックスをオンにして、選択したチェックボックスの資格情報を指定してから、[ **Active Directory サーバーに接続**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="3a3f6-127">To specify different credentials that you want to use for Active Directory Domain Services, Edge Server, or Exchange Server, click **Show advanced logon options**, select each check box for which separate credentials are required, specify the credentials for each selected check box, and then click **Connect to the Active Directory server**.</span></span>
+    
+    <div>
+    
+
+    > [!NOTE]
+    > <span data-ttu-id="3a3f6-128">スキャンを開始する前に、ベストプラクティスアナライザーがネットワークとアクセス許可のチェックを実行して、指定されたアカウントの資格情報が有効であり、ベストプラクティスアナライザーが Active Directory ドメインサービスに接続できることを確認します。</span><span class="sxs-lookup"><span data-stu-id="3a3f6-128">Before beginning the scan, Best Practices Analyzer performs a network and permissions check to ensure that the specified account credentials are valid and that Best Practices Analyzer can connect to Active Directory Domain Services.</span></span> <span data-ttu-id="3a3f6-129">ツールがワークグループサーバー上で実行されている場合は、ツールは境界ネットワーク (スキャンに含まれている場合) でエッジサーバーに接続できるかどうかも確認します。</span><span class="sxs-lookup"><span data-stu-id="3a3f6-129">If the tool is running on a workgroup server, the tool also verifies that it can connect to Edge Servers in the perimeter network (that is, if they are included in the scan).</span></span>
+
+    
+    </div>
+
+5.  <span data-ttu-id="3a3f6-130">[ **新しいベストプラクティススキャンを開始** する] ページで、スキャンに含めるオプションを選択し、ネットワークの速度を指定して、[ **スキャンの開始**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="3a3f6-130">On the **Start a new Best Practices scan** page, select the options that you want to include in the scan, specify the network speed, and then click **Start scanning**.</span></span>
+
+6.  <span data-ttu-id="3a3f6-131">[ **スキャンが完了しました** ] ページで、[ **このベストプラクティススキャンのレポートを表示** します] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="3a3f6-131">On the **Scanning Completed** page, click **View a report of this Best Practices scan**.</span></span>
+
+7.  <span data-ttu-id="3a3f6-132">[ **ベストプラクティスレポートの表示** ] ページで、次のいずれかの操作を行います。</span><span class="sxs-lookup"><span data-stu-id="3a3f6-132">On the **View Best Practices Report** page, do one of the following:</span></span>
+    
+      - <span data-ttu-id="3a3f6-133">サーバーコンポーネントによって整理されたリストのレポートを表示するには、[ **リストレポート**] をクリックし、[ **すべての問題** ] タブまたは [ **情報アイテム** ] タブのいずれかをクリックします。</span><span class="sxs-lookup"><span data-stu-id="3a3f6-133">To view reports in a list organized by server component, click **List Reports**, and then click either the **All Issues** tab or the **Informational Items** tab.</span></span>
+    
+      - <span data-ttu-id="3a3f6-134">結果の種類によって整理された階層リストとしてレポートを表示するには、[ **ツリーレポート**] をクリックし、[ **詳細表示** ] タブまたは [ **概要ビュー** ] タブのいずれかをクリックします。</span><span class="sxs-lookup"><span data-stu-id="3a3f6-134">To view reports as a hierarchical list organized by types of results, click **Tree Reports**, and then click either the **Detailed View** tab or the **Summary View** tab.</span></span>
+    
+      - <span data-ttu-id="3a3f6-135">他のレポートを表示するには、[ **その他のレポート**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="3a3f6-135">To view other reports, click **Other Reports**.</span></span>
+    
+    <div>
+    
+
+    > [!NOTE]
+    > <span data-ttu-id="3a3f6-136">ベストプラクティスアナライザーレポートとその報告事項について詳しくは、「 <A href="lync-server-2013-viewing-and-working-with-reports-created-by-best-practices-analyzer.md">Lync server 2013 のベストプラクティスアナライザーで作成されたレポートの表示と操作</A> 」と「 <A href="lync-server-2013-analyzing-and-resolving-issues-identified-by-best-practices-analyzer.md">lync server 2013 でのベストプラクティスアナライザーによって識別される問題の分析と解決</A>」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="3a3f6-136">For details about the Best Practices Analyzer reports and the issues they identify, see <A href="lync-server-2013-viewing-and-working-with-reports-created-by-best-practices-analyzer.md">Viewing and working with reports created by Best Practices Analyzer in Lync Server 2013</A> and <A href="lync-server-2013-analyzing-and-resolving-issues-identified-by-best-practices-analyzer.md">Analyzing and resolving issues identified by Best Practices Analyzer in Lync Server 2013</A>.</span></span>
+
+    
+    <span data-ttu-id="3a3f6-137"></div>
+
+</div>
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</span><span class="sxs-lookup"><span data-stu-id="3a3f6-137"></div>
+
+</div>
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</span></span></div>
+
