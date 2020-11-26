@@ -1,0 +1,201 @@
+---
+title: 'Lync Server 2013: 証明書の概要-自動検出'
+description: 'Lync Server 2013: 証明書の概要-自動検出。'
+ms.reviewer: ''
+ms.author: v-lanac
+author: lanachin
+f1.keywords:
+- NOCSH
+TOCTitle: Certificate summary - Autodiscover
+ms:assetid: 16ac96bb-882a-4141-b75c-9530637548d9
+ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ945616(v=OCS.15)
+ms:contentKeyID: 51541451
+ms.date: 07/23/2014
+manager: serdars
+mtps_version: v=OCS.15
+ms.openlocfilehash: ae421401421434a4c4069c1d90ee287dfb016997
+ms.sourcegitcommit: 36fee89bb887bea4f18b19f17a8c69daf5bc423d
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "49435350"
+---
+# <a name="certificate-summary---autodiscover-in-lync-server-2013"></a><span data-ttu-id="7e5d8-103">証明書の概要-Lync Server 2013 での自動検出</span><span class="sxs-lookup"><span data-stu-id="7e5d8-103">Certificate summary - Autodiscover in Lync Server 2013</span></span>
+
+<div data-xmlns="http://www.w3.org/1999/xhtml">
+
+<div class="topic" data-xmlns="http://www.w3.org/1999/xhtml" data-msxsl="urn:schemas-microsoft-com:xslt" data-cs="https://msdn.microsoft.com/">
+
+<div data-asp="https://msdn2.microsoft.com/asp">
+
+
+
+</div>
+
+<div id="mainSection">
+
+<div id="mainBody"><span data-ttu-id="7e5d8-104">
+
+<span> </span></span><span class="sxs-lookup"><span data-stu-id="7e5d8-104">
+
+<span> </span></span></span>
+
+<span data-ttu-id="7e5d8-105">_**最終更新日:** 2013-02-14_</span><span class="sxs-lookup"><span data-stu-id="7e5d8-105">_**Topic Last Modified:** 2013-02-14_</span></span>
+
+<span data-ttu-id="7e5d8-106">Lync Server 2013 自動検出サービスは、監督およびフロントエンドプールサーバー上で実行され、DNS で公開されると、Lync クライアントがサーバーおよびユーザーサービスを見つけるために使うことができます。</span><span class="sxs-lookup"><span data-stu-id="7e5d8-106">The Lync Server 2013 Autodiscover Service runs on the Director and Front End pool servers, and when published in DNS, can be used by Lync clients to locate server and user services.</span></span> <span data-ttu-id="7e5d8-107">Lync Server 2010 からアップグレードしていて、モビリティを展開していない場合は、クライアントで自動検出を使用できるようにする前に、自動検出サービスを実行しているすべてのディレクターおよびフロントエンドサーバーで、証明書のサブジェクトの代替名の一覧を変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7e5d8-107">If you are upgrading from Lync Server 2010 and did not deploy Mobility, before clients can use automatic discovery, you must modify certificate subject alternative name lists on any Director and Front End Server running the Autodiscover Service.</span></span> <span data-ttu-id="7e5d8-108">さらに、リバースプロキシの外部 web サービス公開ルールに使用されている証明書のサブジェクト代替名の一覧を変更することが必要になる場合もあります。</span><span class="sxs-lookup"><span data-stu-id="7e5d8-108">In addition, it may be necessary to modify the subject alternative name lists on certificates used for external web service publishing rules on reverse proxies.</span></span>
+
+<span data-ttu-id="7e5d8-109">リバースプロキシでサブジェクト代替名の一覧を使用するかどうかは、自動検出サービスをポート80またはポート443のどちらに発行するかに基づいて決定されます。</span><span class="sxs-lookup"><span data-stu-id="7e5d8-109">The decision about whether to use subject alternative name lists on reverse proxies is based on whether you publish the Autodiscover Service on port 80 or on port 443:</span></span>
+
+  - <span data-ttu-id="7e5d8-110">**ポート80で公開**   自動検出サービスへの初期クエリがポート80経由で行われる場合、証明書の変更は必要ありません。</span><span class="sxs-lookup"><span data-stu-id="7e5d8-110">**Published on port 80**   No certificate changes are required if the initial query to the Autodiscover Service occurs over port 80.</span></span> <span data-ttu-id="7e5d8-111">これは、Lync を実行しているモバイルデバイスは、ポート80の逆プロキシに外部からアクセスして、ポート8080の内部でディレクターまたはフロントエンドサーバーにブリッジするためです。</span><span class="sxs-lookup"><span data-stu-id="7e5d8-111">This is because mobile devices running Lync will access the reverse proxy on port 80 externally and then be bridged to a Director or Front End Server on port 8080 internally.</span></span> <span data-ttu-id="7e5d8-112">詳細については、「 [Lync Server 2013 でのモビリティの技術要件](lync-server-2013-technical-requirements-for-mobility.md)」を参照してください。「ポート80を使った最初の自動検出プロセス」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7e5d8-112">For details, see the "Initial Autodiscover Process Using Port 80" section [Technical requirements for mobility in Lync Server 2013](lync-server-2013-technical-requirements-for-mobility.md).</span></span>
+
+  - <span data-ttu-id="7e5d8-113">**ポート443で公開**  外部 web サービス公開ルールによって使用される証明書のサブジェクト代替名リストには、lyncdiscover が含まれている必要があり *ます。 \<sipdomain\>*</span><span class="sxs-lookup"><span data-stu-id="7e5d8-113">**Published on port 443**   The subject alternative name list on certificates used by the external web services publishing rule must contain a *lyncdiscover.\<sipdomain\>*</span></span> <span data-ttu-id="7e5d8-114">組織内の各 SIP ドメインのエントリ。</span><span class="sxs-lookup"><span data-stu-id="7e5d8-114">entry for each SIP domain within your organization.</span></span>
+    
+    <div>
+    
+
+    > [!IMPORTANT]  
+    > <span data-ttu-id="7e5d8-115">HTTP 経由で HTTPS を使用することを強くお勧めします。</span><span class="sxs-lookup"><span data-stu-id="7e5d8-115">We highly recommend using HTTPS over HTTP.</span></span> <span data-ttu-id="7e5d8-116">HTTPS は、証明書を使ってトラフィックを暗号化します。</span><span class="sxs-lookup"><span data-stu-id="7e5d8-116">HTTPS uses certificates to encrypt traffic.</span></span> <span data-ttu-id="7e5d8-117">HTTP では暗号化は提供されず、送信されたデータはすべてプレーンテキストになります。</span><span class="sxs-lookup"><span data-stu-id="7e5d8-117">HTTP does not provide for encryption, and any data sent will be plain text.</span></span>
+
+    
+    </div>
+
+<span data-ttu-id="7e5d8-118">内部証明機関を使った証明書の再発行は、通常、単純なプロセスです。</span><span class="sxs-lookup"><span data-stu-id="7e5d8-118">Reissuing certificates by using an internal certificate authority is typically a simple process.</span></span> <span data-ttu-id="7e5d8-119">ただし、web サービスの公開ルールで使用されているパブリック証明書の場合、複数のサブジェクト代替名エントリを追加すると、負荷が高くなる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="7e5d8-119">But for public certificates used on the web service publishing rule, adding multiple subject alternative name entries can become expensive.</span></span> <span data-ttu-id="7e5d8-120">この問題を回避するには、ポート80経由の最初の自動検出接続をサポートします。その後、ディレクターまたはフロントエンドサーバー上のポート8080にリダイレクトされます。</span><span class="sxs-lookup"><span data-stu-id="7e5d8-120">To work around this issue, we support the initial automatic discovery connection over port 80, which is then redirected to port 8080 on the Director or Front End Server.</span></span>
+
+<div>
+
+
+> [!NOTE]  
+> <span data-ttu-id="7e5d8-121">Lync Server 2013 インフラストラクチャで内部証明機関 (CA) から発行された内部証明書を使用していて、ワイヤレス接続のモバイルデバイスをサポートする予定の場合は、内部 CA からのルート証明書チェーンをモバイルデバイスにインストールするか、Lync Server 2013 インフラストラクチャの公開証明書に変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7e5d8-121">If your Lync Server 2013 infrastructure uses internal certificates that are issued from an internal certification authority (CA) and you plan to support mobile devices connecting wirelessly, either the root certificate chain from the internal CA must be installed on the mobile devices or you must change to a public certificate on your Lync Server 2013 infrastructure.</span></span>
+
+
+
+</div>
+
+<span data-ttu-id="7e5d8-122">このトピックでは、監督、フロントエンドサーバー、リバースプロキシに必要な追加サブジェクトの代替名について説明します。</span><span class="sxs-lookup"><span data-stu-id="7e5d8-122">This topic describes the added subject alternative names required for the Director, Front End Server and reverse proxy.</span></span> <span data-ttu-id="7e5d8-123">追加されたサブジェクト代替名 (SAN) のみが参照されます。</span><span class="sxs-lookup"><span data-stu-id="7e5d8-123">Only the added subject alternative names (SAN) are referenced.</span></span> <span data-ttu-id="7e5d8-124">証明書の他のエントリに関するガイダンスについては、計画セクションを参照してください。</span><span class="sxs-lookup"><span data-stu-id="7e5d8-124">Refer to the planning sections for guidance on the other entries on certificates.</span></span> <span data-ttu-id="7e5d8-125">詳細については、「lync [server 2013 のディレクターのシナリオ](lync-server-2013-scenarios-for-the-director.md)」、「 [lync server 2013 の外部ユーザーアクセスのシナリオ](lync-server-2013-scenarios-for-external-user-access.md)」、「 [lync server 2013 でのリバースプロキシの](lync-server-2013-scenarios-for-reverse-proxy.md)シナリオ」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7e5d8-125">For details, see [Scenarios for the Director in Lync Server 2013](lync-server-2013-scenarios-for-the-director.md), [Scenarios for external user access in Lync Server 2013](lync-server-2013-scenarios-for-external-user-access.md), and [Scenarios for reverse proxy in Lync Server 2013](lync-server-2013-scenarios-for-reverse-proxy.md).</span></span>
+
+<span data-ttu-id="7e5d8-126">次の表では、ディレクタープール、フロントエンドプール、リバースプロキシの自動検出 SAN エントリを定義しています。</span><span class="sxs-lookup"><span data-stu-id="7e5d8-126">The following tables define the Autodiscover SAN entries for the Director pool, the Front End pool, and the reverse proxy:</span></span>
+
+### <a name="director-pool-certificate-requirements"></a><span data-ttu-id="7e5d8-127">ディレクタープール証明書の要件</span><span class="sxs-lookup"><span data-stu-id="7e5d8-127">Director Pool Certificate Requirements</span></span>
+
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><span data-ttu-id="7e5d8-128">説明</span><span class="sxs-lookup"><span data-stu-id="7e5d8-128">Description</span></span></th>
+<th><span data-ttu-id="7e5d8-129">サブジェクトの代替名エントリ</span><span class="sxs-lookup"><span data-stu-id="7e5d8-129">Subject alternative name entry</span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><span data-ttu-id="7e5d8-130">内部自動検出サービス URL</span><span class="sxs-lookup"><span data-stu-id="7e5d8-130">Internal Autodiscover Service URL</span></span></p></td>
+<td><p><span data-ttu-id="7e5d8-131">SAN = lyncdiscoverinternal。 &lt;内部ドメイン名&gt;</span><span class="sxs-lookup"><span data-stu-id="7e5d8-131">SAN=lyncdiscoverinternal.&lt;internal domain name&gt;</span></span></p></td>
+</tr>
+<tr class="even">
+<td><p><span data-ttu-id="7e5d8-132">外部自動検出サービスの URL</span><span class="sxs-lookup"><span data-stu-id="7e5d8-132">External Autodiscover Service URL</span></span></p></td>
+<td><p><span data-ttu-id="7e5d8-133">SAN = lyncdiscover。 &lt;sipdomain&gt;</span><span class="sxs-lookup"><span data-stu-id="7e5d8-133">SAN=lyncdiscover.&lt;sipdomain&gt;</span></span></p></td>
+</tr>
+</tbody>
+</table>
+
+
+<div>
+
+
+> [!NOTE]  
+> <span data-ttu-id="7e5d8-134">新しい SAN エントリを使って、新しく更新された証明書を既定の証明書に割り当てます。</span><span class="sxs-lookup"><span data-stu-id="7e5d8-134">You assign the newly updated certificate with the new SAN entry to the Default certificate.</span></span> <span data-ttu-id="7e5d8-135">または、SAN = \* を使用することもできます。 &lt;sipdomain &gt; 。</span><span class="sxs-lookup"><span data-stu-id="7e5d8-135">Alternatively, you can use SAN=\*.&lt;sipdomain&gt;.</span></span>
+
+
+
+</div>
+
+### <a name="front-end-pool-certificate-requirements"></a><span data-ttu-id="7e5d8-136">フロントエンドプール証明書の要件</span><span class="sxs-lookup"><span data-stu-id="7e5d8-136">Front End Pool Certificate Requirements</span></span>
+
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><span data-ttu-id="7e5d8-137">説明</span><span class="sxs-lookup"><span data-stu-id="7e5d8-137">Description</span></span></th>
+<th><span data-ttu-id="7e5d8-138">サブジェクトの代替名エントリ</span><span class="sxs-lookup"><span data-stu-id="7e5d8-138">Subject alternative name entry</span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><span data-ttu-id="7e5d8-139">内部自動検出サービス URL</span><span class="sxs-lookup"><span data-stu-id="7e5d8-139">Internal Autodiscover Service URL</span></span></p></td>
+<td><p><span data-ttu-id="7e5d8-140">SAN = lyncdiscoverinternal。 &lt;内部ドメイン名&gt;</span><span class="sxs-lookup"><span data-stu-id="7e5d8-140">SAN=lyncdiscoverinternal.&lt;internal domain name&gt;</span></span></p></td>
+</tr>
+<tr class="even">
+<td><p><span data-ttu-id="7e5d8-141">外部自動検出サービスの URL</span><span class="sxs-lookup"><span data-stu-id="7e5d8-141">External Autodiscover Service URL</span></span></p></td>
+<td><p><span data-ttu-id="7e5d8-142">SAN = lyncdiscover。 &lt;sipdomain&gt;</span><span class="sxs-lookup"><span data-stu-id="7e5d8-142">SAN=lyncdiscover.&lt;sipdomain&gt;</span></span></p></td>
+</tr>
+</tbody>
+</table>
+
+
+<div>
+
+
+> [!NOTE]  
+> <span data-ttu-id="7e5d8-143">新しい SAN エントリを使って、新しく更新された証明書を既定の証明書に割り当てます。</span><span class="sxs-lookup"><span data-stu-id="7e5d8-143">You assign the newly updated certificate with the new SAN entry to the Default certificate.</span></span> <span data-ttu-id="7e5d8-144">または、SAN = \* を使用することもできます。 &lt;sipdomain&gt;</span><span class="sxs-lookup"><span data-stu-id="7e5d8-144">Alternatively, you can use SAN=\*.&lt;sipdomain&gt;</span></span>
+
+
+
+</div>
+
+### <a name="reverse-proxy-public-ca-certificate-requirements"></a><span data-ttu-id="7e5d8-145">リバースプロキシ (パブリック CA) 証明書の要件</span><span class="sxs-lookup"><span data-stu-id="7e5d8-145">Reverse Proxy (Public CA) Certificate Requirements</span></span>
+
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><span data-ttu-id="7e5d8-146">説明</span><span class="sxs-lookup"><span data-stu-id="7e5d8-146">Description</span></span></th>
+<th><span data-ttu-id="7e5d8-147">サブジェクトの代替名エントリ</span><span class="sxs-lookup"><span data-stu-id="7e5d8-147">Subject alternative name entry</span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><span data-ttu-id="7e5d8-148">外部自動検出サービスの URL</span><span class="sxs-lookup"><span data-stu-id="7e5d8-148">External Autodiscover Service URL</span></span></p></td>
+<td><p><span data-ttu-id="7e5d8-149">SAN = lyncdiscover。 &lt;sipdomain&gt;</span><span class="sxs-lookup"><span data-stu-id="7e5d8-149">SAN=lyncdiscover.&lt;sipdomain&gt;</span></span></p></td>
+</tr>
+</tbody>
+</table>
+
+
+<div>
+
+
+> [!NOTE]  
+> <span data-ttu-id="7e5d8-150">新しい SAN エントリを使って、新しく更新された証明書をリバースプロキシの SSL リスナーに割り当てます。</span><span class="sxs-lookup"><span data-stu-id="7e5d8-150">You assign the newly updated certificate with the new SAN entry to the SSL Listener on the reverse proxy.</span></span>
+
+
+
+<span data-ttu-id="7e5d8-151"></div>
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</span><span class="sxs-lookup"><span data-stu-id="7e5d8-151"></div>
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</span></span></div>
+
