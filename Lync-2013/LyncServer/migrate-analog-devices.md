@@ -1,0 +1,72 @@
+---
+title: アナログ デバイスの移行
+description: アナログデバイスを移行します。
+ms.reviewer: ''
+ms.author: serdars
+author: serdarsoysal
+f1.keywords:
+- NOCSH
+TOCTitle: Migrate analog devices
+ms:assetid: ad072916-87ed-4d44-8289-aab87da86250
+ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ721846(v=OCS.15)
+ms:contentKeyID: 49733779
+ms.date: 07/23/2014
+manager: serdars
+mtps_version: v=OCS.15
+ms.openlocfilehash: 63f7f92142fb6a3ced37cded1a223038ec1876d8
+ms.sourcegitcommit: 36fee89bb887bea4f18b19f17a8c69daf5bc423d
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "49443833"
+---
+# <a name="migrate-analog-devices"></a>アナログ デバイスの移行
+
+<div data-xmlns="http://www.w3.org/1999/xhtml">
+
+<div class="topic" data-xmlns="http://www.w3.org/1999/xhtml" data-msxsl="urn:schemas-microsoft-com:xslt" data-cs="https://msdn.microsoft.com/">
+
+<div data-asp="https://msdn2.microsoft.com/asp">
+
+
+
+</div>
+
+<div id="mainSection">
+
+<div id="mainBody">
+
+<span> </span>
+
+_**最終更新日:** 2012-10-16_
+
+Lync Server は、アナログデバイスのサポートを提供します。 特に、サポートされているアナログデバイスはアナログオーディオ電話とアナログ fax マシンです。 Lync Server 環境でのアナログデバイスの使用をサポートするために、修飾ゲートウェイを構成することができます。 Lync Server 2010 から Lync Server 2013 に移行した後、アナログデバイスに関連付けられた連絡先オブジェクトも移行する必要があります。 Lync server 管理シェルを使用して、Lync Server 2010 アナログデバイスに関連付けられたすべての連絡先オブジェクトを取得してから、それらのオブジェクトを Lync Server 2013 プールに移動します。
+
+<div>
+
+## <a name="to-migrate-analog-devices"></a>アナログデバイスを移行するには
+
+1.  Lync Server 管理シェルを起動します。 [ **スタート**] をクリックし、[ **すべてのプログラム**]、[ **Microsoft Lync Server 2013**]、[ **lync server 管理シェル**] の順にクリックします。
+
+2.  コマンド ラインで次を入力します。
+    
+        Get-CsAnalogDevice -Filter {RegistrarPool -eq "pool01.contoso.net"} | Move-CsAnalogDevice -Target pool02.contoso.net
+
+3.  すべての連絡先オブジェクトが Lync Server 2013 プールに移動されていることを確認します。 コマンド ラインで次を入力します。
+    
+        Get-CsAnalogDevice -Filter {RegistrarPool -eq "pool02.contoso.net"}
+
+4.  すべての連絡先オブジェクトが Lync Server 2013 プールと関連付けられていることを確認します。
+
+</div>
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</div>
+

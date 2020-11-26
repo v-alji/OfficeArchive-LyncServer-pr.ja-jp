@@ -1,0 +1,79 @@
+---
+title: 'Lync Server 2013: ユーザーごとの音声ポリシーを割り当てる'
+description: 'Lync Server 2013: ユーザーごとの音声ポリシーを割り当てます。'
+ms.reviewer: ''
+ms.author: v-lanac
+author: lanachin
+f1.keywords:
+- NOCSH
+TOCTitle: Assign a per-user voice policy
+ms:assetid: 9ee47ee7-1030-43b8-a4dc-bf685ea24659
+ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ688155(v=OCS.15)
+ms:contentKeyID: 49733758
+ms.date: 07/23/2014
+manager: serdars
+mtps_version: v=OCS.15
+ms.openlocfilehash: e7ea0b171e10302b4c466187c54324cc2548e821
+ms.sourcegitcommit: 36fee89bb887bea4f18b19f17a8c69daf5bc423d
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "49443163"
+---
+# <a name="assign-a-per-user-voice-policy-in-lync-server-2013"></a>Lync Server 2013 でユーザーごとの音声ポリシーを割り当てる
+
+ 
+
+
+グローバルおよびサイトレベルのボイスポリシーは、エンタープライズ Voip が有効になっているすべての Lync Server 2013 ユーザーアカウントに自動的に割り当てられます。 Lync Server 2013 コントロールパネルまたは Lync Server 2013 Management Shell を使用して、特定のユーザーに音声ポリシーを割り当てることもできます。 このトピックの手順を使用して、ユーザーごとのポリシーを Lync Server ユーザーに明示的に割り当てます。
+
+## <a name="to-assign-a-user-specific-voice-policy-using-the-lync-server-control-panel"></a>Lync Server コントロールパネルを使用してユーザー固有のボイスポリシーを割り当てるには
+
+1.  CsUserAdministrator または CsAdministrator の役割に割り当てられているユーザー アカウントから、内部展開の任意のコンピューターにログオンします。
+
+2.  ブラウザーウィンドウを開き、管理 URL を入力して Lync Server コントロールパネルを開きます。 Lync Server コントロールパネルを起動するために使用できるさまざまな方法について詳しくは、「 [Lync server 2013 管理ツールを開く](lync-server-2013-open-lync-server-administrative-tools.md)」をご覧ください。
+
+3.  左側のナビゲーション バーで [**ユーザー**] をクリックし、構成するユーザー アカウントを検索します。
+
+4.  検索結果一覧の表でユーザー アカウントをクリックし、[**編集**] をクリックして、[**詳細の表示**] をクリックします。
+
+5.  [**ボイスポリシー**] で **Lync Server ユーザーを編集** するには、適用するユーザーポリシーを選びます。
+    
+
+    > [!NOTE]  
+    > <STRONG> &lt; 自動 &gt; </STRONG>設定では、既定のサーバーまたはグローバルポリシーの設定が適用されます。
+
+
+
+## <a name="assign-per-user-voice-policies"></a>ユーザーごとの音声ポリシーを割り当てる
+
+ユーザーごとの音声ポリシーを割り当てるには、Windows PowerShell と **Grant-CsVoicePolicy** コマンドレットを使用します。 このコマンドレットは、Lync Server 2013 管理シェルから、または Windows PowerShell のリモートセッションから実行できます。 リモートの Windows PowerShell を使用して Lync Server に接続する方法については、「Lync Server Windows PowerShell ブログの投稿: [クイックスタート: リモート PowerShell を使用して Microsoft Lync server 2010 を管理](https://go.microsoft.com/fwlink/p/?linkId=255876)する」を参照してください。
+
+### <a name="assign-a-per-user-voice-policy-to-a-single-user"></a>ユーザーごとの音声ポリシーを1人のユーザーに割り当てる
+
+  - 次のコマンドでは、ユーザーごとのボイスポリシー RedmondVoicePolicy が Ken Myer に割り当てられます。
+    
+        Grant-CsVoicePolicy -Identity "Ken Myer" -PolicyName "RedmondVoicePolicy"
+
+## <a name="assign-a-per-user-voice-policy-to-multiple-users"></a>ユーザーごとの音声ポリシーを複数のユーザーに割り当てる
+
+  - このコマンドを実行すると、ユーザーごとのボイスポリシー FinanceVoicePolicy が、Active Directory の Finance OU にアカウントを持つすべてのユーザーに割り当てられます。 このコマンドで使用される OU パラメーターの詳細については、「 [ユーザーの取得](https://technet.microsoft.com/library/gg398125\(v=ocs.15\)) 」コマンドレットのドキュメントを参照してください。
+    
+        Get-CsUser -OU "ou=Finance,ou=North America,dc=litwareinc,dc=com" | Grant-CsVoicePolicy -PolicyName "FinanceVoicePolicy"
+
+## <a name="unassign-a-per-user-voice-policy"></a>ユーザーごとの音声ポリシーの割り当てを解除する
+
+  - 次のコマンドは、以前 Ken Myer に割り当てられていたユーザーごとの音声ポリシーを割り当て解除します。 ユーザー単位の PIN ポリシーが割り当て解除された後、Ken Myer は、グローバル ポリシー、または存在する場合は Ken Myer のローカル サイト ポリシーによって、自動的に管理されます。 サイト ポリシーは、グローバル ポリシーよりも優先されます。
+    
+        Grant-CsVoicePolicy -Identity "Ken Myer" -PolicyName $Null
+
+詳細については、「 [Grant-CsVoicePolicy](https://technet.microsoft.com/library/gg398828\(v=ocs.15\)) コマンドレットのヘルプトピックを参照してください。
+
+## <a name="see-also"></a>関連項目
+
+
+[Lync Server 2013 でエンタープライズ Voip のユーザーを無効にする](lync-server-2013-disable-a-user-for-enterprise-voice.md)  
+
+
+[Lync Server 2013 管理シェル](lync-server-2013-lync-server-management-shell.md)
+
