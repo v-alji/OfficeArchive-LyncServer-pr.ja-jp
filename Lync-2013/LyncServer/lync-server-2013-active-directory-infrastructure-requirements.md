@@ -1,0 +1,87 @@
+---
+title: 'Lync Server 2013: Active Directory インフラストラクチャの要件'
+description: 'Lync Server 2013: Active Directory インフラストラクチャの要件。'
+ms.reviewer: ''
+ms.author: v-lanac
+author: lanachin
+f1.keywords:
+- NOCSH
+TOCTitle: Active Directory infrastructure requirements
+ms:assetid: c2086f7b-662f-4179-ab99-2c0311ebd903
+ms:mtpsurl: https://technet.microsoft.com/en-us/library/Gg412955(v=OCS.15)
+ms:contentKeyID: 48185318
+ms.date: 07/23/2014
+manager: serdars
+mtps_version: v=OCS.15
+ms.openlocfilehash: 62218605c9b3fac20743d0b6bb475515c9498f9a
+ms.sourcegitcommit: 36fee89bb887bea4f18b19f17a8c69daf5bc423d
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "49439416"
+---
+# <a name="active-directory-infrastructure-requirements-for-lync-server-2013"></a>Lync Server 2013 に関する Active Directory インフラストラクチャの要件
+
+<div data-xmlns="http://www.w3.org/1999/xhtml">
+
+<div class="topic" data-xmlns="http://www.w3.org/1999/xhtml" data-msxsl="urn:schemas-microsoft-com:xslt" data-cs="https://msdn.microsoft.com/">
+
+<div data-asp="https://msdn2.microsoft.com/asp">
+
+
+
+</div>
+
+<div id="mainSection">
+
+<div id="mainBody">
+
+<span> </span>
+
+_**最終更新日:** 2013-11-07_
+
+Lync Server 2013 用の Active Directory ドメインサービスの準備プロセスを開始する前に、Active Directory インフラストラクチャが次の前提条件を満たしていることを確認してください。
+
+  - Lync Server を展開したフォレストのすべてのドメインコントローラー (すべてのグローバルカタログサーバーを含む) は、次のいずれかのオペレーティングシステムを実行します。
+    
+      - Windows Server 2012 R2 オペレーティングシステム
+    
+      - Windows Server 2012 オペレーティングシステム
+    
+      - Windows Server 2008 R2 オペレーティング システム
+    
+      - Windows Server 2008 オペレーティング システム
+    
+      - Windows Server 2008 Enterprise 32 ビット
+    
+      - 32ビット版または64ビット版の Windows Server 2003 R2 オペレーティングシステム
+    
+      - 32ビット版または64ビット版の Windows Server 2003 オペレーティングシステム
+
+  - Lync Server を展開するすべてのドメインは、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008、または少なくとも Windows Server 2003 のドメイン機能レベルに発生します。
+
+  - Lync Server を展開するフォレストは、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008、または Windows server 2003 以上のフォレストの機能レベルに上げられます。
+    
+    <div>
+    
+
+    > [!NOTE]  
+    > ドメインまたはフォレストの機能レベルを変更するには、TechNet ライブラリの「ドメインとフォレストの機能レベルを上げる」を参照してください <A href="https://go.microsoft.com/fwlink/p/?linkid=263775">https://go.microsoft.com/fwlink/p/?LinkId=263775</A> 。
+
+    
+    </div>
+
+  - グローバルカタログは、Lync Server コンピューターまたはユーザーを展開するすべてのドメインに展開されます。
+
+Lync Server 2013 は、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2、Windows Server 2008、Windows Server 2003 オペレーティングシステムのユニバーサルグループをサポートしています。 ユニバーサルグループのメンバーには、ドメインツリーまたはフォレスト内の任意のドメインの他のグループとアカウントを含めることができ、ドメインツリーまたはフォレスト内の任意のドメインでアクセス許可を割り当てることができます。 ユニバーサルグループのサポートは、管理者の委任と組み合わせて、Lync Server の展開の管理を簡素化します。 たとえば、あるドメインを別のドメインに追加して、管理者が両方を管理できるようにする必要はありません。
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</div>
+

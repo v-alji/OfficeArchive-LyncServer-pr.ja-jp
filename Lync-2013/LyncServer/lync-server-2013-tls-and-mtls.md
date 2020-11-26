@@ -1,0 +1,66 @@
+---
+title: 'Lync Server 2013: TLS と MTLS'
+description: 'Lync Server 2013: TLS と MTLS。'
+ms.reviewer: ''
+ms.author: v-lanac
+author: lanachin
+f1.keywords:
+- NOCSH
+TOCTitle: TLS and MTLS for Lync Server 2013
+ms:assetid: b32a5b85-fc82-42dc-a9b2-96400f8cd2b8
+ms:mtpsurl: https://technet.microsoft.com/en-us/library/Dn481133(v=OCS.15)
+ms:contentKeyID: 59893873
+ms.date: 07/23/2014
+manager: serdars
+mtps_version: v=OCS.15
+ms.openlocfilehash: a0ccee47e635435dd5f0d5eae03711c0cd5e517b
+ms.sourcegitcommit: 36fee89bb887bea4f18b19f17a8c69daf5bc423d
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "49439704"
+---
+# <a name="tls-and-mtls-for-lync-server-2013"></a>Lync Server 2013 の TLS と MTLS
+
+<div data-xmlns="http://www.w3.org/1999/xhtml">
+
+<div class="topic" data-xmlns="http://www.w3.org/1999/xhtml" data-msxsl="urn:schemas-microsoft-com:xslt" data-cs="https://msdn.microsoft.com/">
+
+<div data-asp="https://msdn2.microsoft.com/asp">
+
+
+
+</div>
+
+<div id="mainSection">
+
+<div id="mainBody">
+
+<span> </span>
+
+_**最終更新日:** 2013-11-07_
+
+TLS プロトコルと MTLS プロトコルにより、インターネット上での通信の暗号化とエンドポイント認証機能が提供されます。 Microsoft Lync Server 2013 は、これら2つのプロトコルを使って、信頼されたサーバーのネットワークを作成し、そのネットワーク上のすべての通信を暗号化します。 サーバー間のすべての SIP 通信は MTLS により行われます。 クライアントからサーバーへの SIP 通信は TLS により行われます。
+
+TLS は、ユーザーがクライアントソフトウェアを通じて、接続先の Lync Server 2013 サーバーを認証できるようにします。 TLS 接続では、クライアントはサーバーから有効な証明書を要求します。 証明書が有効であると見なされるためには、証明書の発行元の CA がクライアントからも信頼されていること、およびサーバーの DNS 名が証明書の DNS 名に一致していることが必要です。 証明書が有効な場合、クライアントは証明書内の公開キーを使用して、通信に使う対称暗号化キーを暗号化し、証明書の最初の所有者だけが、その秘密キーを使用して通信の内容を暗号化することができます。 この接続は信頼済みと見なされ、それ以降は他の信頼されたサーバーやクライアントからチャレンジされません。 このような意味合いで、Web サービスで使用される SSL (Secure Sockets Layer) は TLS ベースであるということができます。
+
+サーバー間接続は、相互認証に MTLS を利用します。 MTLS 接続では、サーバーが発信したメッセージをサーバーが受信すると、相互に信頼できる CA からの証明書を交換します。 証明書は、各サーバーの ID を他のサーバーに証明します。 Lync Server 2013 の展開では、有効期間中にエンタープライズ CA によって発行された証明書は、そのドメイン内のエンタープライズ CA を信頼する Active Directory ドメインのすべてのメンバーによって自動的に有効と見なされます。 フェデレーションシナリオでは、発行 CA は両方のフェデレーションパートナーによって信頼されている必要があります。 各パートナーは、必要に応じて異なる CA を使用できます。その CA は、他のパートナーによっても信頼されている必要があります。 この信頼は、エッジサーバーが信頼されたルート ca でパートナーのルート CA 証明書を持っているか、または両方の当事者が信頼しているサードパーティ CA を使用して、最も簡単に実現できます。
+
+TLS と MTLS は、盗聴および中間者 (man-in-the-middle) 攻撃の両方を防ぐのに役立ちます。 中間者 (man-in-the-middle) 攻撃では、攻撃者は 2 つのネットワーク エンティティ間の通信を、双方に気付かれることなく、攻撃者のコンピューターを経由して再ルーティングします。 TLS および Lync Server 2013 の信頼されたサーバー (Topology Builder で指定されたもののみ) の仕様は、2つのエンドポイント間の公開キー暗号化を使用して調整されたエンドツーエンドの暗号化を使用することによって、アプリケーションレイヤーの一部である中間攻撃のリスクを軽減します。また、攻撃者は、対応する秘密キーを持つ有効な信頼できる証明書を持ち、クライアントが通信して通信を解読するサービスの名前に発行する必要があります。 とはいえ、結局は、現在のネットワーク インフラストラクチャ (このケースでは社内 DNS) でのセキュリティのベスト プラクティスに従う必要があります。 Lync Server 2013 は、ドメインコントローラーとグローバルカタログが信頼されているのと同じ方法で DNS サーバーが信頼されていることを前提としていますが、DNS は、攻撃者のサーバーが不正な名前への要求に正常に応答できないようにすることによって、dns ハイジャック攻撃に対する保護レベルを提供します。
+
+次の図は、Lync Server 2013 で MTLS を使用して信頼されたサーバーのネットワークを作成する方法を示しています。
+
+**Lync Server ネットワークの信頼された接続**
+
+![437749da-c372-4f・・・・・・・・・・・・・・・・ナイン](images/Dn481133.437749da-c372-4f0d-ac72-ccfd5191696b(OCS.15).jpg "437749da-c372-4f・・・・・・・・・・・・・・・・ナイン")
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</div>
+
