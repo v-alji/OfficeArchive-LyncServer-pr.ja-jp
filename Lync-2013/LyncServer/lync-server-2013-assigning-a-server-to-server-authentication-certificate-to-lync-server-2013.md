@@ -1,0 +1,122 @@
+---
+title: サーバー間認証証明書を Lync Server 2013 に割り当てる
+description: サーバー間認証証明書を Lync Server 2013 に割り当てます。
+ms.reviewer: ''
+ms.author: v-lanac
+author: lanachin
+f1.keywords:
+- NOCSH
+TOCTitle: Assigning a server-to-server authentication certificate to Microsoft Lync Server 2013
+ms:assetid: c7413954-2504-47f4-a073-44548aff1c0c
+ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ205253(v=OCS.15)
+ms:contentKeyID: 48185367
+ms.date: 07/23/2014
+manager: serdars
+mtps_version: v=OCS.15
+ms.openlocfilehash: 042158167f89dc2b6e743e8db94149d4f1cbc1a2
+ms.sourcegitcommit: 36fee89bb887bea4f18b19f17a8c69daf5bc423d
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "49438324"
+---
+# <a name="assigning-a-server-to-server-authentication-certificate-to-microsoft-lync-server-2013"></a><span data-ttu-id="74ad2-103">サーバー間認証証明書を Microsoft Lync Server 2013 に割り当てる</span><span class="sxs-lookup"><span data-stu-id="74ad2-103">Assigning a server-to-server authentication certificate to Microsoft Lync Server 2013</span></span>
+
+<div data-xmlns="http://www.w3.org/1999/xhtml">
+
+<div class="topic" data-xmlns="http://www.w3.org/1999/xhtml" data-msxsl="urn:schemas-microsoft-com:xslt" data-cs="https://msdn.microsoft.com/">
+
+<div data-asp="https://msdn2.microsoft.com/asp">
+
+
+
+</div>
+
+<div id="mainSection">
+
+<div id="mainBody"><span data-ttu-id="74ad2-104">
+
+<span> </span></span><span class="sxs-lookup"><span data-stu-id="74ad2-104">
+
+<span> </span></span></span>
+
+<span data-ttu-id="74ad2-105">_**最終更新日:** 2013-10-24_</span><span class="sxs-lookup"><span data-stu-id="74ad2-105">_**Topic Last Modified:** 2013-10-24_</span></span>
+
+<span data-ttu-id="74ad2-106">サーバー間認証証明書が Microsoft Lync Server 2013 に既に割り当てられているかどうかを確認するには、Lync Server 2013 管理シェルから次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="74ad2-106">To determine whether or not a server-to-server authentication certificate has already been assigned to Microsoft Lync Server 2013, run the following command from the Lync Server 2013 Management Shell:</span></span>
+
+    Get-CsCertificate -Type OAuthTokenIssuer
+
+<span data-ttu-id="74ad2-107">証明書情報が返されない場合は、サーバー間認証を使用する前に、トークン発行元の証明書を割り当てる必要があります。</span><span class="sxs-lookup"><span data-stu-id="74ad2-107">If no certificate information is returned you must assign a token issuer certificate before you can use server-to-server authentication.</span></span> <span data-ttu-id="74ad2-108">一般的な規則として、すべての Lync Server 2013 証明書を OAuthTokenIssuer 証明書として使うことができます。たとえば、Lync Server 2013 の既定の証明書は、OAuthTokenIssuer 証明書としても使うことができます。</span><span class="sxs-lookup"><span data-stu-id="74ad2-108">As a general rule, any Lync Server 2013 certificate can be used as your OAuthTokenIssuer certificate; for example, your Lync Server 2013 default certificate can also be used as the OAuthTokenIssuer certificate.</span></span> <span data-ttu-id="74ad2-109">(OAUthTokenIssuer 証明書には、[件名] フィールドに SIP ドメイン名を含む Web サーバー証明書でもかまいません)。サーバー間認証に使用される証明書の主な2つの要件を次に示します。 1) 同じ証明書をすべてのフロントエンドサーバー上の OAuthTokenIssuer 証明書として構成する必要があります。および 2) 証明書は、2048ビット以上である必要があります。</span><span class="sxs-lookup"><span data-stu-id="74ad2-109">(The OAUthTokenIssuer certificate can also be any Web server certificate that includes the name of your SIP domain in the Subject field.) The primary two requirements for the certificate used for server-to-server authentication are these: 1)the same certificate must be configured as the OAuthTokenIssuer certificate on all of your Front End Servers; and, 2) the certificate must be at least 2048 bits.</span></span>
+
+<span data-ttu-id="74ad2-110">サーバー対サーバーの認証に使用できる証明書がない場合は、新しい証明書をインポートして、その証明書をサーバー対サーバーの認証に使用します。</span><span class="sxs-lookup"><span data-stu-id="74ad2-110">If you do not have a certificate that can be used for server-to-server authentication you can obtain a new certificate, import the new certificate, and then use that certificate for server-to-server authentication.</span></span> <span data-ttu-id="74ad2-111">新しい証明書を要求して取得したら、いずれかのフロントエンドサーバーにログオンし、次のような Windows PowerShell コマンドを使用して、その証明書をインポートして割り当てることができます。</span><span class="sxs-lookup"><span data-stu-id="74ad2-111">After you have requested and obtained the new certificate you can then log on to any one of your Front End Servers and use a Windows PowerShell command similar to this one to import and assign that certificate:</span></span>
+
+    Import-CsCertificate -Identity global -Type OAuthTokenIssuer -Path C:\Certificates\ServerToServerAuth.pfx  -Password "P@ssw0rd"
+
+<span data-ttu-id="74ad2-112">上記のコマンドパスパラメーターは、証明書ファイルへの完全なパスを表し、Password パラメーターは証明書に割り当てられたパスワードを表します。</span><span class="sxs-lookup"><span data-stu-id="74ad2-112">In the preceding command the Path parameter represents the full path to the certificate file, and the Password parameter represents the password that was assigned to the certificate.</span></span> <span data-ttu-id="74ad2-113">この手順は1回だけ実行する必要があります。 Lync Server のレプリケーションサービスは、証明書を解読してすべてのフロントエンドサーバーに展開する一連のスケジュールされたタスクを自動的に作成します。</span><span class="sxs-lookup"><span data-stu-id="74ad2-113">This procedure should be run just one time: Lync Server's replication service will then automatically create a set of scheduled tasks that will decrypt and deploy the certificate to all your Front End Servers.</span></span>
+
+<span data-ttu-id="74ad2-114">または、既存の証明書をサーバー間認証証明書として使うこともできます。</span><span class="sxs-lookup"><span data-stu-id="74ad2-114">Alternatively, you can use an existing certificate as your server-to-server authentication certificate.</span></span> <span data-ttu-id="74ad2-115">(前述のように、既定の証明書をサーバー間認証証明書として使用できます。)次のペアの Windows PowerShell コマンドは、既定の証明書の拇印プロパティの値を取得し、その値を使って、サーバー間認証証明書の既定の証明書を作成します。</span><span class="sxs-lookup"><span data-stu-id="74ad2-115">(As noted, the default certificate can be used as the server-to-server authentication certificate.) The following pair of Windows PowerShell commands retrieve the value of the default certificate's Thumbprint property, then use that value to make the default certificate the server-to-server authentication certificate:</span></span>
+
+    $x = (Get-CsCertificate -Type Default).Thumbprint
+    Set-CsCertificate -Identity global -Type OAuthTokenIssuer -Thumbprint $x
+
+<span data-ttu-id="74ad2-116">上のコマンドでは、取得された証明書がグローバルサーバー間認証証明書として機能するように構成されています。これは、証明書がすべてのフロントエンドサーバーにレプリケートされ、使用されることを意味します。</span><span class="sxs-lookup"><span data-stu-id="74ad2-116">In the preceding command, the retrieved certificate is configured to function as the global server-to-server authentication certificate; that means that the certificate will be replicated to, and used by, all your Front End Servers.</span></span> <span data-ttu-id="74ad2-117">このコマンドは、1つのフロントエンドサーバーでのみ実行できます。</span><span class="sxs-lookup"><span data-stu-id="74ad2-117">Again, this command should only be run one time, and only on one of your Front End Servers.</span></span> <span data-ttu-id="74ad2-118">フロントエンドサーバーはすべて同じ証明書を使用する必要がありますが、各フロントエンドサーバーで OAuthTokenIssuer 証明書を構成しないでください。</span><span class="sxs-lookup"><span data-stu-id="74ad2-118">Although all Front End Servers must use the same certificate, you should not configure the OAuthTokenIssuer certificate on each Front End Server.</span></span> <span data-ttu-id="74ad2-119">代わりに、証明書を1回構成して、Lync Server のレプリケーションサーバーがその証明書を各サーバーにコピーできるようにします。</span><span class="sxs-lookup"><span data-stu-id="74ad2-119">Instead, configure the certificate once, then let Lync Server's replication server take care of copying that certificate to each server.</span></span>
+
+<span data-ttu-id="74ad2-120">Set-CsCertificate コマンドレットは、該当する証明書を受け取り、現在の OAuthTokenIssuer 証明書として機能するようにその証明書を直ちに構成します。</span><span class="sxs-lookup"><span data-stu-id="74ad2-120">The Set-CsCertificate cmdlet takes the certificate in question and immediately configures that certificate to act as the current OAuthTokenIssuer certificate.</span></span> <span data-ttu-id="74ad2-121">(Lync Server 2013 では、証明書の種類は、現在の証明書と前の証明書の2つのコピーが保持されます)。新しい証明書を直ちに OAuthTokenIssuer 証明書として使用する必要がある場合は、Set-CsCertificate コマンドレットを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="74ad2-121">(Lync Server 2013 keeps two copies of a certificate type: the current certificate and the previous certificate.) If you need the new certificate to immediately begin to act as the OAuthTokenIssuer certificate then you should use the Set-CsCertificate cmdlet.</span></span>
+
+<span data-ttu-id="74ad2-122">Set-CsCertificate コマンドレットを使用して、新しい証明書を "ロール" することもできます。</span><span class="sxs-lookup"><span data-stu-id="74ad2-122">You can also use the Set-CsCertificate cmdlet to "roll" a new certificate.</span></span> <span data-ttu-id="74ad2-123">証明書の "ロール" とは、指定した時点から新しい証明書を現在の OAuthTokenIssuer 証明書にするように構成することを意味します。</span><span class="sxs-lookup"><span data-stu-id="74ad2-123">"Rolling" a certificate simply means that you configure a new certificate to become the current OAuthTokenIssuer certificate at a specified point in time.</span></span> <span data-ttu-id="74ad2-124">たとえば、次のコマンドは、既定の証明書を取得し、2012年7月1日の時点で、現在の OAuthTokenIssuer 証明書としてその証明書を設定するように構成します。</span><span class="sxs-lookup"><span data-stu-id="74ad2-124">For example, this command retrieves the default certificate and then configure that certificate to take over as the current OAuthTokenIssuer certificate as of July 1, 2012:</span></span>
+
+    $x = (Get-CsCertificate -Type Default).Thumbprint
+    Set-CsCertificate -Identity global -Type OAuthTokenIssuer -Thumbprint $x -EffectiveDate "7/1/2012" -Roll
+
+<span data-ttu-id="74ad2-125">2012年7月1日に、新しい証明書は現在の OAuthTokenIssuer 証明書として構成され、"old" OAuthTokenIssuer 証明書は前の証明書として構成されます。</span><span class="sxs-lookup"><span data-stu-id="74ad2-125">On July 1, 2012 the new certificate will be configured as the current OAuthTokenIssuer certificate and the "old" OAuthTokenIssuer certificate will be configured as the previous certificate.</span></span>
+
+<span data-ttu-id="74ad2-126">Windows PowerShell を使用しない場合は、[証明書] MMC コンソールを使用して、1つのフロントエンドサーバーから証明書をエクスポートし、その同じ証明書を他のすべてのフロントエンドサーバーにインポートすることもできます。</span><span class="sxs-lookup"><span data-stu-id="74ad2-126">If you do not want to use Windows PowerShell you can also use the Certificates MMC console to export a certificate from one Front End Server and then import that same certificate on all your other Front End Servers.</span></span> <span data-ttu-id="74ad2-127">これを行う場合は、証明書とともに秘密キーを必ずエクスポートしてください。</span><span class="sxs-lookup"><span data-stu-id="74ad2-127">If you do this, make sure that you export the private key along with the certificate itself.</span></span>
+
+<div>
+
+
+> [!WARNING]
+> <span data-ttu-id="74ad2-128">この場合は、各フロントエンドサーバーで手順を実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="74ad2-128">In this case, the procedure must be performed on each Front End Server.</span></span> <span data-ttu-id="74ad2-129">この方法で証明書をエクスポートおよびインポートするときに、Lync Server 2013 では、各フロントエンドサーバーに証明書が複製されることはありません。</span><span class="sxs-lookup"><span data-stu-id="74ad2-129">When exporting and importing certificates in this manner Lync Server 2013 will not replicate that certificate to each Front End Server.</span></span>
+
+
+
+</div>
+
+<span data-ttu-id="74ad2-130">証明書がすべてのフロントエンドサーバーにインポートされたら、Windows PowerShell の代わりに Lync Server 展開ウィザードを使用して証明書を割り当てることができます。</span><span class="sxs-lookup"><span data-stu-id="74ad2-130">After the certificate has been imported to all your Front End Servers, that certificate can then be assigned by using the Lync Server Deployment Wizard instead of Windows PowerShell.</span></span> <span data-ttu-id="74ad2-131">展開ウィザードを使用して証明書を割り当てるには、展開ウィザードがインストールされているコンピューターで以下の手順に従います。</span><span class="sxs-lookup"><span data-stu-id="74ad2-131">To assign a certificate by using the Deployment Wizard, complete the following steps on a computer where the Deployment Wizard has been installed:</span></span>
+
+1.  <span data-ttu-id="74ad2-132">[スタート] をクリックし、[すべてのプログラム] をクリックし、[ **Microsoft Lync server 2013**] をクリックして、[ **Lync server Deployment Wizard**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="74ad2-132">Click Start, click All Programs, click **Microsoft Lync Server 2013**, and then click **Lync Server Deployment Wizard**.</span></span>
+
+2.  <span data-ttu-id="74ad2-133">展開ウィザードで、[ **Lync Server System のインストールまたは更新**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="74ad2-133">In the Deployment Wizard, click **Install or Update Lync Server System**.</span></span>
+
+3.  <span data-ttu-id="74ad2-134">Microsoft Lync Server 2013 ページで、「**手順 3: 証明書の要求、インストール、または割り当て** を行う」の下にある [**実行**] ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="74ad2-134">On the Microsoft Lync Server 2013 page, click the **Run** button under the heading **Step 3: Request, Install or Assign Certificates**.</span></span> <span data-ttu-id="74ad2-135">(注: このコンピューターに既に証明書をインストールしている場合は、[ **実行** ] ボタンは **もう一度 [実行**] というラベルが付けられます。)</span><span class="sxs-lookup"><span data-stu-id="74ad2-135">(Note: If you have already installed certificates on this computer then the **Run** button will be labeled **Run Again**.)</span></span>
+
+4.  <span data-ttu-id="74ad2-136">証明書ウィザードで、**OAuthTokenIssuer** 証明書を選択してから [**割り当て**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="74ad2-136">In the Certificate Wizard, select the **OAuthTokenIssuer** certificate and then click **Assign**.</span></span>
+
+5.  <span data-ttu-id="74ad2-137">証明書の割り当てウィザードの [**証明書の割り当て**] ページで、[**次へ**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="74ad2-137">In the Certificate Assignment wizard, on the **Certificate Assignment** page, click **Next**.</span></span>
+
+6.  <span data-ttu-id="74ad2-138">[**証明書ストア**] ページで、サーバー対サーバーの認証に使用する証明書を選択して [**次へ**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="74ad2-138">On the **Certificate Store** page, select the certificate to be used for server-to-server authentication and then click **Next**.</span></span>
+
+7.  <span data-ttu-id="74ad2-139">[証明書の割り当ての概要] ページで、[**次へ**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="74ad2-139">On the Certificate Assignment Summary page, click **Next**.</span></span>
+
+8.  <span data-ttu-id="74ad2-140">[コマンドを実行しています] ページで、[**完了**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="74ad2-140">On the Executing Commands page, click **Finish**.</span></span>
+
+9.  <span data-ttu-id="74ad2-141">証明書ウィザードと展開ウィザードを閉じます。</span><span class="sxs-lookup"><span data-stu-id="74ad2-141">Close the Certificate Wizard and the Deployment Wizard.</span></span>
+
+<span data-ttu-id="74ad2-142"></div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</span><span class="sxs-lookup"><span data-stu-id="74ad2-142"></div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</span></span></div>
+
