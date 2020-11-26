@@ -1,0 +1,67 @@
+---
+title: 'Lync Server 2013: ワークフロー作成のシナリオの概要'
+description: 'Lync Server 2013: ワークフローの作成シナリオの概要。'
+ms.reviewer: ''
+ms.author: v-lanac
+author: lanachin
+f1.keywords:
+- NOCSH
+TOCTitle: Overview of workflow creation scenarios
+ms:assetid: 05e0c175-0f1a-4bb1-b048-c68584d00649
+ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ204646(v=OCS.15)
+ms:contentKeyID: 48183309
+ms.date: 07/23/2014
+manager: serdars
+mtps_version: v=OCS.15
+ms.openlocfilehash: a38627e7abb058be2050c0db0b46fa06dfd75287
+ms.sourcegitcommit: 36fee89bb887bea4f18b19f17a8c69daf5bc423d
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "49437169"
+---
+# <a name="overview-of-workflow-creation-scenarios-in-lync-server-2013"></a>Lync Server 2013 でのワークフロー作成のシナリオの概要
+
+<div data-xmlns="http://www.w3.org/1999/xhtml">
+
+<div class="topic" data-xmlns="http://www.w3.org/1999/xhtml" data-msxsl="urn:schemas-microsoft-com:xslt" data-cs="https://msdn.microsoft.com/">
+
+<div data-asp="https://msdn2.microsoft.com/asp">
+
+
+
+</div>
+
+<div id="mainSection">
+
+<div id="mainBody">
+
+<span> </span>
+
+_**最終更新日:** 2012-10-17_
+
+ワークフローを作成する際には、考えられるシナリオとして次の 2 つがあります。
+
+  - **管理者がワークフローを作成して構成する** - CsResponseGroupAdministrator の役割のメンバー (または同等のメンバー) は、ワークフローおよびワークフローの全要素 (エージェント グループ、キュー、休日と営業時間、保留音など) を作成し、アクティブ化します。
+
+  - **管理者がワークフローを作成してマネージャーがオプションを構成する** - CsResponseGroupAdministrator の役割のメンバー (または同等のメンバー) は、プライマリ SIP URI や表示名を定義し、CsResponseGroupManager の役割のメンバーを割り当て、キューの選択とワークフローのアクティブ化を行います。その後、CsResponseGroupManager は、ログオンしてワークフローの構成を編集できます。具体的には、エージェント グループの作成、キューへのグループの割り当て、電話番号、休日と営業時間、保留音などの構成が実行できます。
+    
+    <div>
+    
+
+    > [!NOTE]  
+    > 管理ワークフローを作成する際には、そのワークフローをアクティブなものとして作成する必要があります。アクティブな管理ワークフローは、保存後に変更したり非アクティブにしたりできます。
+
+    
+    </div>
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</div>
+

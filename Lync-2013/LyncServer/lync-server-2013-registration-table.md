@@ -1,0 +1,198 @@
+---
+title: 'Lync Server 2013: Registration テーブル'
+description: 'Lync Server 2013: 登録テーブル。'
+ms.reviewer: ''
+ms.author: v-lanac
+author: lanachin
+f1.keywords:
+- NOCSH
+TOCTitle: Registration table
+ms:assetid: 05ff9dd3-1aaa-4af0-bd69-8789fb8eaeb3
+ms:mtpsurl: https://technet.microsoft.com/en-us/library/Gg398114(v=OCS.15)
+ms:contentKeyID: 48183298
+ms.date: 07/23/2014
+manager: serdars
+mtps_version: v=OCS.15
+ms.openlocfilehash: 806e1a4e944c9bc04ebdd167c41c80a57fde3f29
+ms.sourcegitcommit: 36fee89bb887bea4f18b19f17a8c69daf5bc423d
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "49436567"
+---
+# <a name="registration-table-in-lync-server-2013"></a>Lync Server 2013 の Registration テーブル
+
+<div data-xmlns="http://www.w3.org/1999/xhtml">
+
+<div class="topic" data-xmlns="http://www.w3.org/1999/xhtml" data-msxsl="urn:schemas-microsoft-com:xslt" data-cs="https://msdn.microsoft.com/">
+
+<div data-asp="https://msdn2.microsoft.com/asp">
+
+
+
+</div>
+
+<div id="mainSection">
+
+<div id="mainBody">
+
+<span> </span>
+
+_**最終更新日:** 2012-09-28_
+
+各レコードは、1つのユーザー登録イベントを表します。
+
+
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>列</th>
+<th>データ型</th>
+<th>キー/インデックス</th>
+<th>詳細</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><strong>セッション Id</strong></p></td>
+<td><p>datetime</p></td>
+<td><p>プライマリ、外部</p></td>
+<td><p>セッション要求の時刻。 セッションを一意に識別するために <strong>Sessionidseq</strong> と組み合わせて使用されます。 詳細については、「 <a href="lync-server-2013-dialogs-table.md">Lync Server 2013 のダイアログテーブル</a> 」を参照してください。</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>SessionIdSeq</strong></p></td>
+<td><p>int</p></td>
+<td><p>プライマリ、外部</p></td>
+<td><p>セッションを識別する ID 番号。 セッションを一意に識別するために <strong>Sessionidtime</strong> と組み合わせて使用されます。 詳細については、「 <a href="lync-server-2013-dialogs-table.md">Lync Server 2013 のダイアログテーブル</a> 」を参照してください。</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>UserId</strong></p></td>
+<td><p>int</p></td>
+<td><p>外部</p></td>
+<td><p>ユーザー ID。 詳細については、「 <a href="lync-server-2013-users-table.md">Lync Server 2013 のユーザーテーブル</a> 」を参照してください。</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>EndpointId</strong></p></td>
+<td><p>長さ</p></td>
+<td></td>
+<td><p>登録エンドポイントを識別する GUID。 通常、同じユーザーの同じコンピューターの register イベントには、同じエンドポイント ID があります。 各コンピューターには、別のエンドポイント ID があります。</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>Endポインタ a</strong></p></td>
+<td><p>長さ</p></td>
+<td></td>
+<td><p>同じユーザーと同じエンドポイントを含む登録を区別するために使用される ID です。</p>
+<p>このフィールドは、Microsoft Lync Server 2013 で導入されました。</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>ClientVersionId</strong></p></td>
+<td><p>int</p></td>
+<td><p>外部</p></td>
+<td><p>現在のユーザーのクライアントバージョン。 詳細については、「 <a href="lync-server-2013-clientversions-table.md">Lync Server 2013 の Clientversions の表</a> 」を参照してください。</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>RegistrarId</strong></p></td>
+<td><p>int</p></td>
+<td><p>外部</p></td>
+<td><p>登録に使用されるレジストラーサーバーの ID です。 詳細については、「 <a href="lync-server-2013-servers-table.md">Lync Server 2013 のサーバーの表</a> 」を参照してください。</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>PoolId</strong></p></td>
+<td><p>int</p></td>
+<td><p>外部</p></td>
+<td><p>セッションがキャプチャされたプールの ID です。 詳細については、「 <a href="lync-server-2013-pools-table.md">Lync Server 2013 のプールテーブル</a> 」を参照してください。</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>EdgeServerId</strong></p></td>
+<td><p>int</p></td>
+<td><p>外部</p></td>
+<td><p>エッジサーバーの登録が進行中です。 詳細については、「 <a href="lync-server-2013-edgeservers-table.md">Lync Server 2013 の EdgeServers テーブル</a> 」を参照してください。</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>IsInternal</strong></p></td>
+<td><p>わずか</p></td>
+<td></td>
+<td><p>ユーザーが内部からログオンしているかどうか。</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>IsUserServiceAvailable</strong></p></td>
+<td><p>bit</p></td>
+<td></td>
+<td><p>UserService が利用できるかどうか。</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>IsPrimaryRegistrar</strong></p></td>
+<td><p>bit</p></td>
+<td></td>
+<td><p>プライマリレジストラーに登録するかどうかを指定します。</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>IsPrimaryRegistrarCentral</strong></p></td>
+<td><p>bit</p></td>
+<td></td>
+<td><p>ユーザーが survivable branch アプライアンスに登録されているかどうかを示します。</p>
+<p>このフィールドは、Microsoft Lync Server 2013 で導入されました。</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>RegisterTime</strong></p></td>
+<td><p>datetime</p></td>
+<td></td>
+<td><p>登録時間。</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>DeRegisterTime</strong></p></td>
+<td><p>datetime</p></td>
+<td></td>
+<td><p>De-Registration 時間。</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>返信</strong></p></td>
+<td><p>int</p></td>
+<td></td>
+<td><p>Register 要求の応答コード。</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>DiagnosticId</strong></p></td>
+<td><p>int</p></td>
+<td></td>
+<td><p>Register 要求の診断 ID。 これにより、診断情報の種類が示されます。</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>DeviceId</strong></p></td>
+<td><p>int</p></td>
+<td><p>外部</p></td>
+<td><p>Register 要求の取得元のデバイス。 詳細については、「 <a href="lync-server-2013-devices-table.md">Lync Server 2013 のデバイスの表</a> 」を参照してください。</p></td>
+</tr>
+<tr class="odd">
+<td><p><strong>DeRegisterTypeId</strong></p></td>
+<td><p>tinyint</p></td>
+<td><p>外部</p></td>
+<td><p>"ユーザーが開始しました"、"登録の期限切れ"、"クライアントが失敗しました" などの de レジスタの理由。 詳細については、「 <a href="lync-server-2013-deregistertype-table.md">Lync Server 2013 の DeRegisterType テーブル</a> 」を参照してください。</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>IPAddress</strong></p></td>
+<td><p>nvarchar(256)</p></td>
+<td></td>
+<td><p>ユーザーが登録したエンドポイントの IP アドレス。 これは IPv4 アドレスまたは IPv6 アドレスにすることができます。</p>
+<p>このフィールドは、Microsoft Lync Server 2013 で導入されました。</p></td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</div>
+
