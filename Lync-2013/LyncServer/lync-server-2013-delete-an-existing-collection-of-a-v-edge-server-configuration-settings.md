@@ -1,0 +1,117 @@
+---
+title: 既存の A/V Edge サーバー構成設定のコレクションを削除する
+description: 既存の A/V Edge サーバー構成設定のコレクションを削除します。
+ms.reviewer: ''
+ms.author: v-lanac
+author: lanachin
+f1.keywords:
+- NOCSH
+TOCTitle: Delete an existing collection of A/V Edge Server configuration settings
+ms:assetid: 668d3613-e464-4b68-967a-cfff90b9ce4b
+ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ688077(v=OCS.15)
+ms:contentKeyID: 49733673
+ms.date: 07/23/2014
+manager: serdars
+mtps_version: v=OCS.15
+ms.openlocfilehash: d7fe444e8bcb7e7e8e2633e59c23aeb2e80e9b98
+ms.sourcegitcommit: 36fee89bb887bea4f18b19f17a8c69daf5bc423d
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "49430575"
+---
+# <a name="delete-an-existing-collection-of-av-edge-server-configuration-settings-in-lync-server-2013"></a><span data-ttu-id="75e92-103">Lync Server 2013 での既存の A/V エッジサーバー構成の設定を削除する</span><span class="sxs-lookup"><span data-stu-id="75e92-103">Delete an existing collection of A/V Edge Server configuration settings in Lync Server 2013</span></span>
+
+<div data-xmlns="http://www.w3.org/1999/xhtml">
+
+<div class="topic" data-xmlns="http://www.w3.org/1999/xhtml" data-msxsl="urn:schemas-microsoft-com:xslt" data-cs="https://msdn.microsoft.com/">
+
+<div data-asp="https://msdn2.microsoft.com/asp">
+
+
+
+</div>
+
+<div id="mainSection">
+
+<div id="mainBody"><span data-ttu-id="75e92-104">
+
+<span> </span></span><span class="sxs-lookup"><span data-stu-id="75e92-104">
+
+<span> </span></span></span>
+
+<span data-ttu-id="75e92-105">_**最終更新日:** 2012-11-01_</span><span class="sxs-lookup"><span data-stu-id="75e92-105">_**Topic Last Modified:** 2012-11-01_</span></span>
+
+<span data-ttu-id="75e92-106">A/V Edge サービスは、内部ユーザー (組織のネットワークにログオンしているユーザー) が、外部ユーザー (組織のネットワークにログオンしていないユーザー) とオーディオやビデオを共有できるようにするための手段を提供します。</span><span class="sxs-lookup"><span data-stu-id="75e92-106">The A/V Edge service provide a way for your internal users (users who are logged on to your organizational network) to share audio and video with external users (users who are not logged on to your organizational network).</span></span> <span data-ttu-id="75e92-107">A/V edge サービスは、主に、A/V Edge 構成設定を使用して管理されます。これは、サイトスコープまたはサービスの範囲で構成できます (つまり、個々の A/V Edge サーバー用に構成できます)。</span><span class="sxs-lookup"><span data-stu-id="75e92-107">The A/V Edge service is primarily managed by using A/V Edge configuration settings, setting that can be configured at the site scope or at the service scope (that is, can be configured for an individual A/V Edge server).</span></span>
+
+<span data-ttu-id="75e92-108">Lync Server をインストールすると、A/V Edge のグローバルコレクションが設定されます。</span><span class="sxs-lookup"><span data-stu-id="75e92-108">When you install Lync Server, a global collection of A/V Edge configuration settings is created for you.</span></span> <span data-ttu-id="75e92-109">このグローバルコレクションは削除できません。</span><span class="sxs-lookup"><span data-stu-id="75e92-109">This global collection cannot be deleted.</span></span> <span data-ttu-id="75e92-110">ただし、Windows PowerShell と Remove-CsAVEdgeConfiguration コマンドレットを使用して、グローバルコレクションを "リセット" することができます。つまり、グローバルコレクションのすべてのプロパティ値が既定値にリセットされるということです。</span><span class="sxs-lookup"><span data-stu-id="75e92-110">However, you can use the Windows PowerShell and the Remove-CsAVEdgeConfiguration cmdlet to "reset" the global collection; that simply means that all the property values in the global collection will be reset to their default value.</span></span> <span data-ttu-id="75e92-111">たとえば、MaxTokenLifetime プロパティを16時間として設定した場合、そのプロパティは既定値の8時間にリセットされます。</span><span class="sxs-lookup"><span data-stu-id="75e92-111">For example, if you have set the MaxTokenLifetime property for 16 hours, that property will be reset to its default value of 8 hours.</span></span>
+
+<span data-ttu-id="75e92-112">ただし、サイトスコープまたはサービスのスコープで作成したカスタム設定コレクションは Remove-CsAVEdgeConfiguration コマンドレットを使用して削除できます。</span><span class="sxs-lookup"><span data-stu-id="75e92-112">However, custom settings collections that you have created at either the site scope or the service scope can be deleted by using the Remove-CsAVEdgeConfiguration cmdlet.</span></span> <span data-ttu-id="75e92-113">サイトの設定を削除すると、そのサイトの A/V エッジサーバーはグローバル設定によって管理されます。</span><span class="sxs-lookup"><span data-stu-id="75e92-113">If you delete site settings then A/V Edge servers in that site will be managed by the global settings.</span></span> <span data-ttu-id="75e92-114">サービス範囲の設定を削除すると、そのサーバーはそのサイトの設定 (存在する場合)、またはサイトの設定がない場合はグローバル設定によって管理されます。</span><span class="sxs-lookup"><span data-stu-id="75e92-114">If you delete service-scope settings,, that server will then be managed by its site settings, if they exist, or by the global settings if no site settings are available.</span></span>
+
+<span data-ttu-id="75e92-115">詳細については、 [CsAVEdgeConfiguration](https://technet.microsoft.com/library/Gg398786(v=OCS.15)) コマンドレットのヘルプトピックを参照してください。</span><span class="sxs-lookup"><span data-stu-id="75e92-115">For more information, see the help topic for the [Remove-CsAVEdgeConfiguration](https://technet.microsoft.com/library/Gg398786(v=OCS.15)) cmdlet.</span></span>
+
+<div>
+
+## <a name="to-reset-the-global-collection"></a><span data-ttu-id="75e92-116">グローバルコレクションをリセットするには</span><span class="sxs-lookup"><span data-stu-id="75e92-116">To reset the global collection</span></span>
+
+  - <span data-ttu-id="75e92-117">次のコマンドを実行すると、A/V Edge の構成設定のグローバルコレクションがリセットされます。</span><span class="sxs-lookup"><span data-stu-id="75e92-117">The following command resets the global collection of A/V Edge configuration settings:</span></span>
+    
+        Remove-CsAVEdgeConfiguration -Identity "global"
+
+</div>
+
+<div>
+
+## <a name="to-remove-a-collection-from-the-site-scope"></a><span data-ttu-id="75e92-118">サイトのスコープからコレクションを削除するには</span><span class="sxs-lookup"><span data-stu-id="75e92-118">To remove a collection from the site scope</span></span>
+
+  - <span data-ttu-id="75e92-119">このコマンドは、Redmond サイトに適用されている A/V Edge 構成設定を削除します。</span><span class="sxs-lookup"><span data-stu-id="75e92-119">This command removes the A/V Edge configuration settings applied to the Redmond site:</span></span>
+    
+        Remove-CsAVEdgeConfiguration -Identity "site:Redmond"
+
+</div>
+
+<div>
+
+## <a name="to-remove-a-collection-from-the-service-scope"></a><span data-ttu-id="75e92-120">サービスのスコープからコレクションを削除するには</span><span class="sxs-lookup"><span data-stu-id="75e92-120">To remove a collection from the service scope</span></span>
+
+  - <span data-ttu-id="75e92-121">このコマンドは、A/V Edge サーバー atl-edge-001.litwareinc.com に適用されている設定を削除します。</span><span class="sxs-lookup"><span data-stu-id="75e92-121">This command removes the settings applied to the A/V Edge server atl-edge-001.litwareinc.com:</span></span>
+    
+        Remove-CsAVEdgeConfiguration -Identity "service:EdgeServer:atl-edge-001.litwareinc.com"
+
+</div>
+
+<div>
+
+## <a name="see-also"></a><span data-ttu-id="75e92-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="75e92-122">See Also</span></span>
+
+
+[<span data-ttu-id="75e92-123">Lync Server 2013 で A/V Edge サーバーの構成情報を返す</span><span class="sxs-lookup"><span data-stu-id="75e92-123">Return A/V Edge Server configuration information in Lync Server 2013</span></span>](lync-server-2013-return-a-v-edge-server-configuration-information.md)  
+[<span data-ttu-id="75e92-124">Lync Server 2013 での A/V Edge サーバー構成設定のコレクションを作成または変更する</span><span class="sxs-lookup"><span data-stu-id="75e92-124">Create or modify a collection of A/V Edge Server configuration settings in Lync Server 2013</span></span>](lync-server-2013-create-or-modify-a-collection-of-a-v-edge-server-configuration-settings.md)  
+
+
+[<span data-ttu-id="75e92-125">Lync Server 2013 の音声/ビデオ (A/V) エッジサーバー</span><span class="sxs-lookup"><span data-stu-id="75e92-125">Audio/Video (A/V) Edge Servers in Lync Server 2013</span></span>](lync-server-2013-audio-video-a-v-edge-servers.md)  
+<span data-ttu-id="75e92-126">[Remove-CsAVEdgeConfiguration](https://technet.microsoft.com/library/Gg398786(v=OCS.15))</span><span class="sxs-lookup"><span data-stu-id="75e92-126">[Remove-CsAVEdgeConfiguration](https://technet.microsoft.com/library/Gg398786(v=OCS.15))</span></span>  
+  
+
+<span data-ttu-id="75e92-127"></div>
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</span><span class="sxs-lookup"><span data-stu-id="75e92-127"></div>
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</span></span></div>
+

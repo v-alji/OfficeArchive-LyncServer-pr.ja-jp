@@ -1,0 +1,481 @@
+---
+title: 'Lync Server 2013: 対話ワークフローの作成または変更'
+description: 'Lync Server 2013: 対話型ワークフローを作成または変更します。'
+ms.reviewer: ''
+ms.author: v-lanac
+author: lanachin
+f1.keywords:
+- NOCSH
+TOCTitle: Create or modify an interactive workflow
+ms:assetid: bc7bb1bc-bf6a-4636-ae93-c56fa22613fa
+ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ205213(v=OCS.15)
+ms:contentKeyID: 48185260
+ms.date: 07/23/2014
+manager: serdars
+mtps_version: v=OCS.15
+ms.openlocfilehash: 470a073322c48c351dbfdfb24ce376731b3e7512
+ms.sourcegitcommit: 36fee89bb887bea4f18b19f17a8c69daf5bc423d
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "49431695"
+---
+# <a name="create-or-modify-an-interactive-workflow-in-lync-server-2013"></a><span data-ttu-id="25b5d-103">Lync Server 2013 での対話ワークフローの作成または変更</span><span class="sxs-lookup"><span data-stu-id="25b5d-103">Create or modify an interactive workflow in Lync Server 2013</span></span>
+
+<div data-xmlns="http://www.w3.org/1999/xhtml">
+
+<div class="topic" data-xmlns="http://www.w3.org/1999/xhtml" data-msxsl="urn:schemas-microsoft-com:xslt" data-cs="https://msdn.microsoft.com/">
+
+<div data-asp="https://msdn2.microsoft.com/asp">
+
+
+
+</div>
+
+<div id="mainSection">
+
+<div id="mainBody"><span data-ttu-id="25b5d-104">
+
+<span> </span></span><span class="sxs-lookup"><span data-stu-id="25b5d-104">
+
+<span> </span></span></span>
+
+<span data-ttu-id="25b5d-105">_**最終更新日:** 2013-09-11_</span><span class="sxs-lookup"><span data-stu-id="25b5d-105">_**Topic Last Modified:** 2013-09-11_</span></span>
+
+<span data-ttu-id="25b5d-106">対話型ワークフローを作成または変更するには、次のいずれかの手順を使用します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-106">Use one of the following procedures to create or modify an interactive workflow.</span></span>
+
+<div>
+
+
+> [!NOTE]  
+> <span data-ttu-id="25b5d-107">Lync Server 管理シェルまたは応答グループ構成ツールを使用して、対話型ワークフローの作成と変更を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="25b5d-107">You can use Lync Server Management Shell or the Response Group Configuration Tool to create and modify interactive workflows.</span></span> <span data-ttu-id="25b5d-108">Lync Server コントロールパネルから応答グループの構成ツールにアクセスするか、次の URL を入力して web ブラウザーから直接 web ページを開く ( <STRONG>Https://</STRONG> &lt; webpoolfqdn/RgsConfig) ことができ &gt; <STRONG>/RgsConfig</STRONG>ます。</span><span class="sxs-lookup"><span data-stu-id="25b5d-108">You can access the Response Group Configuration Tool from Lync Server Control Panel, or by opening the webpage directly from a web browser by typing the following URL: <STRONG>https://</STRONG>&lt;webPoolFqdn&gt;<STRONG>/RgsConfig</STRONG>.</span></span>
+
+
+
+</div>
+
+<div>
+
+## <a name="to-use-response-group-configuration-tool-to-create-or-modify-an-interactive-workflow"></a><span data-ttu-id="25b5d-109">応答グループ構成ツールを使用して対話型ワークフローを作成または変更するには</span><span class="sxs-lookup"><span data-stu-id="25b5d-109">To use Response Group Configuration Tool to create or modify an Interactive workflow</span></span>
+
+1.  <span data-ttu-id="25b5d-110">RTCUniversalServerAdmins グループのメンバーまたは応答グループをサポートする定義済みの管理者の役割のいずれかのメンバーとしてログオンします。</span><span class="sxs-lookup"><span data-stu-id="25b5d-110">Log on as a member of the RTCUniversalServerAdmins group, or as a member of one of the predefined administrative roles that support Response Group.</span></span>
+
+2.  <span data-ttu-id="25b5d-111">ブラウザーウィンドウを開き、管理 URL を入力して Lync Server コントロールパネルを開きます。</span><span class="sxs-lookup"><span data-stu-id="25b5d-111">Open a browser window, and then enter the Admin URL to open the Lync Server Control Panel.</span></span> <span data-ttu-id="25b5d-112">Lync Server コントロールパネルを起動するために使用できるさまざまな方法について詳しくは、「 [Lync server 2013 管理ツールを開く](lync-server-2013-open-lync-server-administrative-tools.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="25b5d-112">For details about the different methods you can use to start Lync Server Control Panel, see [Open Lync Server 2013 administrative tools](lync-server-2013-open-lync-server-administrative-tools.md).</span></span>
+
+3.  <span data-ttu-id="25b5d-113">左側のナビゲーション バーで、[**応答グループ**] をクリックし、[**ワークフロー**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="25b5d-113">In the left navigation bar, click **Response Groups**, and then click **Workflow**.</span></span>
+
+4.  <span data-ttu-id="25b5d-114">[**ワークフロー**] ページで、[**ワークフローの作成または編集**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="25b5d-114">On the **Workflow** page, click **Create or edit a workflow**.</span></span>
+
+5.  <span data-ttu-id="25b5d-115">[**サービスの選択**] 検索フィールドに、作成または変更するワークフローをホストする **ApplicationServer** サービスの名前の全体または一部を入力します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-115">In the **Select a Service** search field, type all or part of the name of the **ApplicationServer** service that hosts the workflow that you want to create or modify.</span></span> <span data-ttu-id="25b5d-116">サービスの結果一覧で、対象のサービスをクリックして [**OK**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="25b5d-116">In the resulting list of services, click the service that you want, and then click **OK**.</span></span>
+    
+    <div>
+    
+
+    > [!NOTE]  
+    > <span data-ttu-id="25b5d-117">応答グループ構成ツールが開きます。</span><span class="sxs-lookup"><span data-stu-id="25b5d-117">The Response Group Configuration Tool opens.</span></span> <span data-ttu-id="25b5d-118">次の URL を入力して、web ブラウザーから直接応答グループ構成ツールを開くこともできます。 <STRONG>Https://</STRONG> &lt; webpoolfqdn &gt; <STRONG>/RgsConfig</STRONG>。</span><span class="sxs-lookup"><span data-stu-id="25b5d-118">You can also open the Response Group Configuration Tool directly from a web browser by typing the following URL: <STRONG>https://</STRONG>&lt;webPoolFqdn&gt;<STRONG>/RgsConfig</STRONG>.</span></span>
+
+    
+    </div>
+
+6.  <span data-ttu-id="25b5d-119">次のいずれかの操作を行います。</span><span class="sxs-lookup"><span data-stu-id="25b5d-119">Do one of the following:</span></span>
+    
+      - <span data-ttu-id="25b5d-120">[**新規ワークフローの作成**] の [**対話型**] の横にある [**作成**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="25b5d-120">Under **Create a New Workflow**, next to **Interactive**, click **Create**.</span></span>
+    
+      - <span data-ttu-id="25b5d-121">[**既存ワークフローの管理**] で変更するワークフローを見つけて、[**アクション**] の [**編集**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="25b5d-121">Under **Manage an Existing Workflow**, locate the workflow you want to change, and then under **Action**, click **Edit**.</span></span>
+
+7.  <span data-ttu-id="25b5d-122">ユーザーがワークフローへの通話を開始できる状態ではない場合は、[**ワークフローのアクティブ化**] チェック ボックスをオフにします。</span><span class="sxs-lookup"><span data-stu-id="25b5d-122">If you are not ready for users to start calling the workflow, clear the **Activate the workflow** check box.</span></span>
+    
+    <div>
+    
+
+    > [!NOTE]  
+    > <span data-ttu-id="25b5d-p105">管理ワークフローを作成する場合は、[<STRONG>ワークフローのアクティブ化</STRONG>] を選択する必要があります。アクティブな管理ワークフローを保存した後、そのワークフローを変更したり、非アクティブ化したりできます。</span><span class="sxs-lookup"><span data-stu-id="25b5d-p105">If you are to creating a managed workflow, you need to select <STRONG>Activate the workflow</STRONG>. After you save the active, managed workflow, you can then modify and deactivate it.</span></span>
+
+    
+    </div>
+
+8.  <span data-ttu-id="25b5d-125">フェデレーション ユーザーにグループへの通話を許可するには、[**フェデレーションを有効にする**] チェック ボックスをオンにします。</span><span class="sxs-lookup"><span data-stu-id="25b5d-125">To allow federated users to call the group, select the **Enable for federation** check box.</span></span> <span data-ttu-id="25b5d-126">フェデレーション用に構成された応答グループアプリケーションに適用される外部アクセスポリシーも必要です。</span><span class="sxs-lookup"><span data-stu-id="25b5d-126">You must also have an external access policy that applies to the Response Group application configured for federation.</span></span>
+    
+    <div>
+    
+
+    > [!NOTE]  
+    > <span data-ttu-id="25b5d-127">グローバル外部アクセスポリシーは、応答グループアプリケーションに適用されます。</span><span class="sxs-lookup"><span data-stu-id="25b5d-127">The global external access policy applies to the Response Group application.</span></span> <span data-ttu-id="25b5d-128">Lync Server コントロールパネルを使用するか、 <STRONG>CsExternalAccessPolicy</STRONG> コマンドレットを使用して EnableOutsideAccess パラメーターを True に設定することによって、応答グループのフェデレーションのグローバルポリシーを構成できます。</span><span class="sxs-lookup"><span data-stu-id="25b5d-128">You can configure the global policy for response group federation by using Lync Server Control Panel or by using the <STRONG>Set-CsExternalAccessPolicy</STRONG> cmdlet to set the EnableOutsideAccess parameter to True.</span></span> <span data-ttu-id="25b5d-129">グローバル ポリシー設定は、サイトやユーザー ポリシーに割り当てられていない限り、すべてのユーザーに適用されることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="25b5d-129">Keep in mind that global policy settings apply to all users unless they are assigned a site or user policy.</span></span> <span data-ttu-id="25b5d-130">そのため、応答グループ向けにこの設定を変更する前に、フェデレーション設定が組織の要件を満たしていることを確認してください。</span><span class="sxs-lookup"><span data-stu-id="25b5d-130">Therefore, before changing this setting for response groups, make sure that the federation setting meets the requirements of your organization.</span></span> <span data-ttu-id="25b5d-131">ポリシーがユーザーに適用される方法の詳細については、「 <A href="lync-server-2013-manage-external-access-policy-for-your-organization.md">Lync Server 2013 で外部アクセスポリシーを管理</A>する」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="25b5d-131">For details about how policies apply to users, see <A href="lync-server-2013-manage-external-access-policy-for-your-organization.md">Manage external access policy in Lync Server 2013</A>.</span></span> <span data-ttu-id="25b5d-132">フェデレーション設定の詳細については、「Lync Server 管理シェルドキュメントの <STRONG>CsExternalAccessPolicy</STRONG> 」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="25b5d-132">For details about the federation setting, see <STRONG>Set-CsExternalAccessPolicy</STRONG> in Lync Server Management Shell documentation.</span></span>
+
+    
+    </div>
+    
+    <div>
+    
+
+    > [!NOTE]  
+    > <span data-ttu-id="25b5d-133">Lync Online でホストされているユーザーは、オンプレミスの展開でホストされている応答グループに通話を発信することはできません。</span><span class="sxs-lookup"><span data-stu-id="25b5d-133">Users who are hosted in Lync Online can’t place calls to response groups that are hosted in an on-premise deployment.</span></span> <span data-ttu-id="25b5d-134">これは、ハイブリッド展開と、オンプレミスの展開が Lync Online 展開とフェデレーションされている場合に当てはまります。</span><span class="sxs-lookup"><span data-stu-id="25b5d-134">This is true in both hybrid deployments and in cases where an on-premise deployment is federated with a Lync Online deployment.</span></span>
+
+    
+    </div>
+
+9.  <span data-ttu-id="25b5d-135">通話中、エージェントの ID を非表示にするには、[**エージェントの匿名性を有効にする**] チェック ボックスをオンにします。</span><span class="sxs-lookup"><span data-stu-id="25b5d-135">To hide the identity of agents during calls, select the **Enable agent anonymity** check box.</span></span>
+    
+    <div>
+    
+
+    > [!NOTE]  
+    > <span data-ttu-id="25b5d-p109">匿名の通話は、インスタント メッセージング (IM) やビデオから開始することはできません。ただし、通話の確立後、エージェントまたは発信者が IM やビデオを追加することはできます。匿名のエージェントは、通話の保留、通話の転送 (無条件転送と取次転送)、および通話の保留と保留解除を行うこともできます。匿名の通話では、会議、アプリケーション共有とデスクトップ共有、ファイル転送、ホワイトボードとデータのグループ作業、および通話の記録はサポートされません。Lync VDI プラグインを使用するエージェントは、着信通話を匿名で受信できますが、発信通話を匿名で行うことはできません。</span><span class="sxs-lookup"><span data-stu-id="25b5d-p109">Anonymous calls cannot start with instant messaging (IM) or video, although the agent or the caller can add IM and video after the call is established. An anonymous agent can also put calls on hold, transfer calls (both blind and consultative transfers), and park and retrieve calls. Anonymous calls do not support conferencing, application sharing and desktop sharing, file transfer, whiteboarding and data collaboration, and call recording. Agents using the Lync VDI Plugin can receive incoming calls anonymously, but they cannot make outgoing calls anonymously.</span></span>
+
+    
+    </div>
+
+10. <span data-ttu-id="25b5d-140">[**通話を受けるグループのアドレスを入力します**] に、ワークフローへの通話に応答するグループのプライマリ SIP Uniform Resource Identifier (URI) アドレスを入力します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-140">Under **Enter the address of the group that will receive the calls**, type the primary SIP uniform resource identifier (URI) address of the group that will answer calls to the workflow.</span></span>
+
+11. <span data-ttu-id="25b5d-141">[**表示名**] に、ワークフローに表示する名前を入力します (入力例: Sales IVR Response Group)。</span><span class="sxs-lookup"><span data-stu-id="25b5d-141">In **Display name**, type the name that you want to display for the workflow (for example, Sales IVR Response Group).</span></span>
+    
+    <div>
+    
+
+    > [!NOTE]  
+    > <span data-ttu-id="25b5d-142">&lt;表示名に "" または "" という文字を含めないでください &gt; 。</span><span class="sxs-lookup"><span data-stu-id="25b5d-142">Do not include the "&lt;" or "&gt;" characters in the display name.</span></span> <span data-ttu-id="25b5d-143">以下の表示名は、予約されているため使用しないでください。 RG プレゼンスウォッチャーまたはお知らせサービス。</span><span class="sxs-lookup"><span data-stu-id="25b5d-143">Do not use the following display names because they are reserved: RGS Presence Watcher or Announcement Service.</span></span>
+
+    
+    </div>
+
+12. <span data-ttu-id="25b5d-144">[**電話番号**] に、応答グループの回線 URI を入力します (入力例 +14255550165)。</span><span class="sxs-lookup"><span data-stu-id="25b5d-144">In **Telephone number**, type the line URI for the response group (for example, +14255550165).</span></span>
+
+13. <span data-ttu-id="25b5d-145">[**表示番号**] に、応答グループに対して表示する番号を入力します (入力例 +1 (425) 555-0165)。</span><span class="sxs-lookup"><span data-stu-id="25b5d-145">In **Display number**, type the number as you want it to appear for the response group (for example, +1 (425) 555-0165).</span></span>
+
+14. <span data-ttu-id="25b5d-146">省略[ **説明**] に、Lync クライアントの連絡先カードに表示するワークフローの説明を入力します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-146">(Optional) In **Description**, type a description for the workflow that you want to appear on the contact card in the Lync client.</span></span>
+
+15. <span data-ttu-id="25b5d-147">このワークフローを応答グループのマネージャーが管理する場合は、[**ワークフローの種類**] で [**管理**] を選択します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-147">In **Workflow Type**, select **Managed** if this workflow will be managed by a Response Group Manager.</span></span> <span data-ttu-id="25b5d-148">応答グループマネージャーをワークフローに割り当てるには、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-148">Do the following to assign Response Group Managers to the workflow:</span></span>
+    
+    1.  <span data-ttu-id="25b5d-149">このワークフローのマネージャーの SIP URI を入力して、[**追加**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="25b5d-149">Type the SIP URI of a manager for this workflow, and click **Add**..</span></span>
+    
+    2.  <span data-ttu-id="25b5d-150">ワークフローに追加するマネージャーの SIP URI を入力して、[**追加**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="25b5d-150">Type the SIP URI of additional managers to add to the workflow, and click **Add**..</span></span>
+    
+    <div>
+    
+
+    > [!IMPORTANT]  
+    > <span data-ttu-id="25b5d-p112">応答グループのマネージャーに指定されているすべてのユーザーに CsResponseGroupManager ロールを割り当てる必要があります。このロールが割り当てられていない場合、ユーザーは応答グループを管理できません。</span><span class="sxs-lookup"><span data-stu-id="25b5d-p112">Every user who is designated as a manager of a response group must be assigned the CsResponseGroupManager role. If users are not assigned this role, they cannot manage response groups.</span></span>
+
+    
+    </div>
+
+16. <span data-ttu-id="25b5d-153">[**ステップ 2 言語の選択**] で、音声認識と音声合成で使用する言語をクリックします。</span><span class="sxs-lookup"><span data-stu-id="25b5d-153">Under **Step 2 Select a Language**, click the language to use for speech recognition and text-to-speech.</span></span>
+
+17. <span data-ttu-id="25b5d-154">開始メッセージを構成する場合は、[**ステップ 3 開始メッセージの構成**] で [**開始メッセージを再生する**] チェック ボックスをオンにして、次のいずれかの操作を行います。</span><span class="sxs-lookup"><span data-stu-id="25b5d-154">If you want to configure a welcome message, under **Step 3 Configure a Welcome Message**, select the **Play a welcome message** check box, and then do one of the following:</span></span>
+    
+      - <span data-ttu-id="25b5d-155">発信者用の音声に変換される開始メッセージをテキストとして入力するには、[**音声合成を使用する**] をクリックして、テキスト ボックスに開始メッセージを入力します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-155">To enter the welcome message as text that is converted to speech for callers, click **Use text-to-speech**, and then type the welcome message in the text box.</span></span>
+        
+        <div>
+        
+
+        > [!NOTE]  
+        > <span data-ttu-id="25b5d-p113">入力するテキストに HTML タグを含めないでください。HTML タグを含めると、エラー メッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="25b5d-p113">Do not include HTML tags in the text you enter. If you include HTML tags, you will receive an error message.</span></span>
+
+        
+        </div>
+    
+      - <span data-ttu-id="25b5d-p114">開始メッセージに Wave または Windows Media オーディオ ファイルの録音を使用するには、[**録音を選択する**] をクリックします。新しいオーディオ ファイルをアップロードする場合は、[**録音**] リンクをクリックしてください。新しいブラウザー ウィンドウで [**参照**] をクリックし、使用するオーディオ ファイルを選択して、[**開く**] をクリックします。[**アップロード**] をクリックしてオーディオ ファイルを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="25b5d-p114">To use a Wave or Windows Media Audio file recording for the welcome message, click **Select a recording**. If you want to upload a new audio file, click the **a recording** link. In the new browser window, click **Browse**, select the audio file that you want to use, and then click **Open**. Click **Upload** to load the audio file.</span></span>
+        
+        <div>
+        
+
+        > [!NOTE]  
+        > <span data-ttu-id="25b5d-162">ユーザーが指定したすべてのオーディオ ファイルは、特定の要件を満たしている必要があります。</span><span class="sxs-lookup"><span data-stu-id="25b5d-162">All user-provided audio files must meet certain requirements.</span></span> <span data-ttu-id="25b5d-163">サポートされているファイル形式の詳細については、「 <A href="lync-server-2013-technical-requirements-for-response-group.md">Lync Server 2013 の「回答グループの技術要件</A>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="25b5d-163">For details about supported file formats, see <A href="lync-server-2013-technical-requirements-for-response-group.md">Technical requirements for Response Group in Lync Server 2013</A>.</span></span>
+
+        
+        </div>
+
+18. <span data-ttu-id="25b5d-164">[**ステップ 4 営業時間の指定**] の [**タイム ゾーン**] ボックスで、ワークフローのタイム ゾーンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="25b5d-164">Under **Step 4 Specify Your Business Hours**, in the **Your time zone** box, click the time zone of the workflow.</span></span>
+    
+    <div>
+    
+
+    > [!NOTE]  
+    > <span data-ttu-id="25b5d-p116">このタイム ゾーンは、ワークフローの発信者とエージェントの所在地のタイム ゾーンです。これを使用して、始業時間と終業時間が計算されます。たとえば、北アメリカ東部標準時を使用するようにワークフローが構成されており、ワークフローで始業が午前 7:00、終業が午後 11:00 にスケジュールされている場合は、東部標準時の 7:00 と 23:00 がそれぞれ始業時刻と終業時刻になります (時間は 24 時間表記で入力する必要があります)。</span><span class="sxs-lookup"><span data-stu-id="25b5d-p116">The time zone is the time zone where the callers and agents of the workflow reside. It is used to calculate the open and close hours. For example, if the workflow is configured to use the North American Eastern Time zone and the workflow is scheduled to open at 7:00 A.M. and close at 11:00 P.M., the open and close times are assumed to be 7:00 Eastern Time and 11:00 Eastern Time respectively. (You must enter the times in 24-hour time notation.)</span></span>
+
+    
+    </div>
+
+19. <span data-ttu-id="25b5d-170">次のいずれかの操作を実行して、使用する営業時間スケジュールの種類を選択します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-170">Select the type of business hours schedule you want to use by doing one of the following:</span></span>
+    
+      - <span data-ttu-id="25b5d-171">事前に定義した営業時間スケジュールを使用するには、[**プリセット スケジュールを使用する**] をクリックして、ドロップダウン リストから使用するスケジュールを選択します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-171">To use a predefined schedule of business hours, click **Use a preset schedule**, and then select the schedule you want to use from the drop-down list.</span></span>
+        
+        <div>
+        
+
+        > [!NOTE]  
+        > <span data-ttu-id="25b5d-172">このオプションを選択できるようにするには、あらかじめ少なくとも 1 つのプリセット スケジュールを定義しておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="25b5d-172">You must have defined at least one preset schedule previously to be able to select this option.</span></span> <span data-ttu-id="25b5d-173"><STRONG>New-CSRgsHoursOfBusiness</STRONG> コマンドレットを使用してプリセット スケジュールを定義します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-173">You define preset schedules by using the <STRONG>New-CSRgsHoursOfBusiness</STRONG> cmdlet.</span></span> <span data-ttu-id="25b5d-174">詳細については、「 <A href="lync-server-2013-optional-define-response-group-business-hours.md">(オプション) Lync Server 2013 で回答グループの営業時間を定義</A>する」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="25b5d-174">For details, see <A href="lync-server-2013-optional-define-response-group-business-hours.md">(Optional) Define Response Group business hours in Lync Server 2013</A>.</span></span> <span data-ttu-id="25b5d-175">プリセット スケジュールを選択すると、応答グループの対応日時で、[<STRONG>曜日</STRONG>]、[<STRONG>開始</STRONG>]、[<STRONG>終了</STRONG>] が自動的に設定されます。</span><span class="sxs-lookup"><span data-stu-id="25b5d-175">When you select a preset schedule, <STRONG>Day</STRONG>, <STRONG>Open</STRONG>, and <STRONG>Close</STRONG> are automatically filled with the days and hours that the response group is available.</span></span>
+
+        
+        </div>
+    
+      - <span data-ttu-id="25b5d-176">このワークフローのみに適用するカスタム スケジュールを使用するには、[**カスタム スケジュールを使用する**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="25b5d-176">To use a custom schedule that applies only to this workflow, click **Use a custom schedule**.</span></span>
+
+20. <span data-ttu-id="25b5d-177">このワークフロー用のカスタム スケジュールを作成する場合は、応答グループが対応可能な曜日のチェック ボックスをオンにします。</span><span class="sxs-lookup"><span data-stu-id="25b5d-177">If you are creating a custom schedule for this workflow, click the check boxes for the days of the week that the response group is available.</span></span>
+
+21. <span data-ttu-id="25b5d-178">カスタム スケジュールを作成する場合は、応答グループが対応可能な [**開始**] 時間と [**終了**] 時間を入力します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-178">If you are creating a custom schedule, type the **Open** and **Close** hours when the response group available.</span></span>
+    
+    <div>
+    
+
+    > [!NOTE]  
+    > <span data-ttu-id="25b5d-p118">[<STRONG>開始</STRONG>] 時間と [<STRONG>終了</STRONG>] 時間は 24 時間表記で入力する必要があります。たとえば、職場の営業時間が営業日の 9 時から 5 時までで、昼休みのために正午にオフィスを一度閉める場合、営業時間は [<STRONG>開始</STRONG>] 9:00、[<STRONG>終了</STRONG>] 12:00、[<STRONG>開始</STRONG>] 13:00、[<STRONG>終了</STRONG>] 17:00 として指定します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-p118">The <STRONG>Open</STRONG> and <STRONG>Close</STRONG> hours must be in 24-hour time notation. For example, if your office works a 9-to-5 work day and closes at noon for lunch, the business hours are specified as <STRONG>Open</STRONG> 9:00, <STRONG>Close</STRONG> 12:00, <STRONG>Open</STRONG> 13:00, and <STRONG>Close</STRONG> 17:00.</span></span>
+
+    
+    </div>
+
+22. <span data-ttu-id="25b5d-181">営業時間外にメッセージを再生するには、[**応答グループの営業時間外にメッセージを再生する**] チェック ボックスをオンにしてから、次のいずれかの操作を実行して再生するメッセージを指定します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-181">If you want to play a message when the office is not open, select the **Play a message when the response group is outside of business hours** check box, and then specify the message to play by doing one of the following:</span></span>
+    
+      - <span data-ttu-id="25b5d-182">発信者用に音声に変換されるメッセージをテキストとして入力するには、[**音声合成を使用する**] をクリックして、テキスト ボックスにメッセージを入力します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-182">To enter the message as text that is converted to speech for the caller, click **Use text-to-speech**, and then type the message in the text box.</span></span>
+        
+        <div>
+        
+
+        > [!NOTE]  
+        > <span data-ttu-id="25b5d-p119">入力するテキストに HTML タグを含めないでください。HTML タグを含めると、エラー メッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="25b5d-p119">Do not include HTML tags in the text you enter. If you include HTML tags, you will receive an error message.</span></span>
+
+        
+        </div>
+    
+      - <span data-ttu-id="25b5d-p120">メッセージにオーディオ ファイルの録音を使用するには、[**録音を選択する**] をクリックします。新しいオーディオ ファイルをアップロードする場合は、[**録音**] リンクをクリックしてください。新しいブラウザー ウィンドウで [**参照**] をクリックし、使用するファイルを選択して、[**開く**] をクリックします。[**アップロード**] をクリックしてオーディオ ファイルを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="25b5d-p120">To use an audio file recording for the message, click **Select a recording**. If you want to upload a new audio file, click the **a recording** link. In the new browser window, click **Browse**, select the file that you want to use, and then click **Open**. Click **Upload** to load the audio file.</span></span>
+        
+        <div>
+        
+
+        > [!NOTE]  
+        > <span data-ttu-id="25b5d-189">ユーザーが指定したすべてのオーディオ ファイルは、特定の要件を満たしている必要があります。</span><span class="sxs-lookup"><span data-stu-id="25b5d-189">All user-provided audio files must meet certain requirements.</span></span> <span data-ttu-id="25b5d-190">サポートされているファイル形式の詳細については、「 <A href="lync-server-2013-technical-requirements-for-response-group.md">Lync Server 2013 の「回答グループの技術要件</A>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="25b5d-190">For details about supported file formats, see <A href="lync-server-2013-technical-requirements-for-response-group.md">Technical requirements for Response Group in Lync Server 2013</A>.</span></span>
+
+        
+        </div>
+
+23. <span data-ttu-id="25b5d-191">メッセージが構成されている場合は、メッセージ再生後の通話の処理方法を次のように指定します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-191">Specify how to handle calls after the message is played (if a message is configured):</span></span>
+    
+      - <span data-ttu-id="25b5d-192">通話を終了するには、[**終話**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="25b5d-192">To disconnect the call, click **Disconnect Call**.</span></span>
+    
+      - <span data-ttu-id="25b5d-193">通話をボイス メールに転送するには、[**ボイス メールに転送**] をクリックして、ボイス メール アドレスを入力します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-193">To forward the call to voice mail, click **Forward to voice mail**, and then type the voice mail address.</span></span> <span data-ttu-id="25b5d-194">ボイスメールのアドレスの形式 \<username\> @ \<domainname\> (たとえば、bob@contoso.com)。</span><span class="sxs-lookup"><span data-stu-id="25b5d-194">The format for the voice mail address is \<username\>@\<domainname\> (for example, bob@contoso.com).</span></span>
+    
+      - <span data-ttu-id="25b5d-195">通話を別のユーザーに転送するには、[**SIP URI に転送**] をクリックして、ユーザー アドレスを入力します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-195">To forward the call to another user, click **Forward to SIP URI**, and then type a user address.</span></span> <span data-ttu-id="25b5d-196">ユーザーアドレスの形式は \<username\> @ \<domainname\> です。</span><span class="sxs-lookup"><span data-stu-id="25b5d-196">The format for the user address is \<username\>@\<domainname\>.</span></span>
+    
+      - <span data-ttu-id="25b5d-197">通話を別の電話番号に転送するには、[**電話番号に転送**] をクリックして、電話番号を入力します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-197">To forward the call to another telephone number, click **Forward to telephone number**, and then type the telephone number.</span></span> <span data-ttu-id="25b5d-198">電話番号の形式 \<number\> @ \<domainname\> (+ 14255550121@contoso.com など)。</span><span class="sxs-lookup"><span data-stu-id="25b5d-198">The format for the telephone number is \<number\>@\<domainname\> (for example, +14255550121@contoso.com).</span></span> <span data-ttu-id="25b5d-199">発信者は、ドメイン名を使用して適切な宛先にルーティングされます。</span><span class="sxs-lookup"><span data-stu-id="25b5d-199">The domain name is used to route the caller to the correct destination.</span></span>
+
+24. <span data-ttu-id="25b5d-200">[**ステップ 5 休日の指定**] で、応答グループが営業しない日を定義する、1 つまたは複数の休日セットのチェック ボックスをオンにします。</span><span class="sxs-lookup"><span data-stu-id="25b5d-200">Under **Step 5 Specify Your Holidays**, click the check boxes for one or more sets of holidays that define the days when the response group is closed for business.</span></span>
+    
+    <div>
+    
+
+    > [!NOTE]  
+    > <span data-ttu-id="25b5d-201">ワークフローを構成する前に、休日および休日セットを定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="25b5d-201">You need to define holidays and holiday sets before you configure the workflow.</span></span> <span data-ttu-id="25b5d-202">休日および休日セットを定義するには、<STRONG>New-CsRgsHoliday</STRONG> コマンドレットおよび <STRONG>New-CsRgsHolidaySet</STRONG> コマンドレットを使用します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-202">Use the <STRONG>New-CsRgsHoliday</STRONG> and <STRONG>New-CsRgsHolidaySet</STRONG> cmdlets to define holidays and holiday sets.</span></span> <span data-ttu-id="25b5d-203">詳細については、「 <A href="lync-server-2013-optional-define-response-group-holiday-sets.md">(オプション) Lync Server 2013 で応答グループの休日セットを定義</A>する」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="25b5d-203">For details, see <A href="lync-server-2013-optional-define-response-group-holiday-sets.md">(Optional) Define Response Group holiday sets in Lync Server 2013</A>.</span></span>
+
+    
+    </div>
+
+25. <span data-ttu-id="25b5d-204">休日にメッセージを再生するには、[**休日にメッセージを再生する**] チェック ボックスをオンにしてから、次のいずれかの操作を実行して再生するメッセージを指定します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-204">If you want to play a message on holidays, select the **Play a message during holidays** check box, and then specify the message to play by doing one of the following:</span></span>
+    
+      - <span data-ttu-id="25b5d-205">発信者用に音声に変換されるメッセージをテキストとして入力するには、[**音声合成を使用する**] をクリックして、テキスト ボックスにメッセージを入力します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-205">To enter the message as text that is converted to speech for the caller, click **Use text-to-speech**, and then type the message in the text box.</span></span>
+        
+        <div>
+        
+
+        > [!NOTE]  
+        > <span data-ttu-id="25b5d-p126">入力するテキストに HTML タグを含めないでください。HTML タグを含めると、エラー メッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="25b5d-p126">Do not include HTML tags in the text you enter. If you include HTML tags, you will receive an error message.</span></span>
+
+        
+        </div>
+    
+      - <span data-ttu-id="25b5d-p127">メッセージにオーディオ ファイルの録音を使用するには、[**録音を選択する**] をクリックします。新しいオーディオ ファイルをアップロードする場合は、[**録音**] リンクをクリックしてください。新しいブラウザー ウィンドウで [**参照**] をクリックし、使用するファイルを選択して、[**開く**] をクリックします。[**アップロード**] をクリックしてオーディオ ファイルを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="25b5d-p127">To use an audio file recording for the message, click **Select a recording**. If you want to upload a new audio file, click the **a recording** link. In the new browser window, click **Browse**, select the file that you want to use, and then click **Open**. Click **Upload** to load the audio file.</span></span>
+        
+        <div>
+        
+
+        > [!NOTE]  
+        > <span data-ttu-id="25b5d-212">ユーザーが指定したすべてのオーディオ ファイルは、特定の要件を満たしている必要があります。</span><span class="sxs-lookup"><span data-stu-id="25b5d-212">All user-provided audio files must meet certain requirements.</span></span> <span data-ttu-id="25b5d-213">サポートされているオーディオファイル形式の詳細については、「 <A href="lync-server-2013-technical-requirements-for-response-group.md">Lync Server 2013 の「応答グループの技術要件</A>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="25b5d-213">For details about supported audio file formats, see <A href="lync-server-2013-technical-requirements-for-response-group.md">Technical requirements for Response Group in Lync Server 2013</A>.</span></span>
+
+        
+        </div>
+
+26. <span data-ttu-id="25b5d-214">メッセージが構成されている場合は、メッセージ再生後の通話の処理方法を次のように指定します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-214">Specify how to handle calls after the message is played (if a message is configured):</span></span>
+    
+      - <span data-ttu-id="25b5d-215">通話を終了するには、[**終話**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="25b5d-215">To disconnect the call, click **Disconnect Call**.</span></span>
+    
+      - <span data-ttu-id="25b5d-216">通話をボイス メールに転送するには、[**ボイス メールに転送**] をクリックして、ボイス メール アドレスを入力します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-216">To forward the call to voice mail, click **Forward to voice mail**, and then type the voice mail address.</span></span> <span data-ttu-id="25b5d-217">ボイスメールのアドレスの形式 \<username\> @ \<domainname\> (たとえば、bob@contoso.com)。</span><span class="sxs-lookup"><span data-stu-id="25b5d-217">The format for the voice mail address is \<username\>@\<domainname\> (for example, bob@contoso.com).</span></span>
+    
+      - <span data-ttu-id="25b5d-218">通話を別のユーザーに転送するには、[**SIP URI に転送**] をクリックして、ユーザー アドレスを入力します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-218">To forward the call to another user, click **Forward to SIP URI**, and then type a user address.</span></span> <span data-ttu-id="25b5d-219">ユーザーアドレスの形式は \<username\> @ \<domainname\> です。</span><span class="sxs-lookup"><span data-stu-id="25b5d-219">The format for the user address is \<username\>@\<domainname\>.</span></span>
+    
+      - <span data-ttu-id="25b5d-220">通話を別の電話番号に転送するには、[**電話番号に転送**] をクリックして、電話番号を入力します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-220">To forward the call to another telephone number, click **Forward to telephone number**, and then type the telephone number.</span></span> <span data-ttu-id="25b5d-221">電話番号の形式 \<number\> @ \<domainname\> (+ 14255550121@contoso.com など)。</span><span class="sxs-lookup"><span data-stu-id="25b5d-221">The format for the telephone number is \<number\>@\<domainname\> (for example, +14255550121@contoso.com).</span></span> <span data-ttu-id="25b5d-222">発信者は、ドメイン名を使用して適切な宛先にルーティングされます。</span><span class="sxs-lookup"><span data-stu-id="25b5d-222">The domain name is used to route the caller to the correct destination.</span></span>
+
+27. <span data-ttu-id="25b5d-223">[**ステップ 6 保留音の構成**] で、次のいずれかの操作を実行して、発信者がエージェントの応答を待機しているときの保留音を選択します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-223">Under **Step 6 Configure Music on Hold**, choose what you want callers to listen to while waiting for an agent by doing one of the following:</span></span>
+    
+      - <span data-ttu-id="25b5d-224">既定の保留音の録音を使用するには、[**既定値を使用する**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="25b5d-224">To use the default music on-hold recording, click **Use default**.</span></span>
+    
+      - <span data-ttu-id="25b5d-p132">保留音にオーディオ ファイルの録音を使用するには、[**音楽ファイルを選択する**] をクリックします。新しいオーディオ ファイルをアップロードする場合は、[**音楽ファイル**] リンクをクリックします。新しいブラウザー ウィンドウで [**参照**] をクリックし、使用するファイルを選択して、[**開く**] をクリックします。[**アップロード**] をクリックしてオーディオ ファイルを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="25b5d-p132">To use an audio file recording for the on-hold music, click **Select a music file**. If you want to upload a new audio file, click the **a music file** link. In the new browser window, click **Browse**, select the file that you want to use, and then click **Open**. Click **Upload** to load the audio file.</span></span>
+        
+        <div>
+        
+
+        > [!NOTE]  
+        > <span data-ttu-id="25b5d-229">ユーザーが指定したすべてのオーディオ ファイルは、特定の要件を満たしている必要があります。</span><span class="sxs-lookup"><span data-stu-id="25b5d-229">All user-provided audio files must meet certain requirements.</span></span> <span data-ttu-id="25b5d-230">サポートされているファイル形式の詳細については、「 <A href="lync-server-2013-technical-requirements-for-response-group.md">Lync Server 2013 の「回答グループの技術要件</A>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="25b5d-230">For details about supported file formats, see <A href="lync-server-2013-technical-requirements-for-response-group.md">Technical requirements for Response Group in Lync Server 2013</A>.</span></span>
+
+        
+        </div>
+
+28. <span data-ttu-id="25b5d-231">[**ステップ 7 対話型音声応答の構成**] の [**ユーザーには、次のテキストまたは録音メッセージを再生します**] という見出しの下で、次のように発信者に対する質問を指定します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-231">Under **Step 7 Configure Interactive Voice Response**, under the **The user will hear the following text or recorded message** heading, specify the question to ask callers as follows:</span></span>
+    
+      - <span data-ttu-id="25b5d-232">質問をテキスト形式で入力するには、[**音声合成を使用する**] をクリックして、テキスト ボックスに質問を入力します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-232">To enter the question in text format, click **Use text-to-speech**, and type the question in the text box.</span></span>
+        
+        <div>
+        
+
+        > [!NOTE]  
+        > <span data-ttu-id="25b5d-p134">入力するテキストに HTML タグを含めないでください。HTML タグを含めると、エラー メッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="25b5d-p134">Do not include HTML tags in the text you enter. If you include HTML tags, you will receive an error message.</span></span>
+
+        
+        </div>
+        
+        <div>
+        
+
+        > [!NOTE]  
+        > <span data-ttu-id="25b5d-235">"#" 記号は、音声合成エンジンによって "番号" という語に変換されます。</span><span class="sxs-lookup"><span data-stu-id="25b5d-235">The "#" symbol is translated by the text-to-speech engine as the word "number".</span></span> <span data-ttu-id="25b5d-236"># キーを示す必要がある場合は、記号ではなく、キーの名前を質問に使用してください。</span><span class="sxs-lookup"><span data-stu-id="25b5d-236">If you need to refer to the # key, you should use the key name, rather than the symbol, in your prompt.</span></span> <span data-ttu-id="25b5d-237">たとえば、「営業部門をご希望の場合は、シャープを押してください」とします。</span><span class="sxs-lookup"><span data-stu-id="25b5d-237">For example, "To talk to sales, press the pound key."</span></span>
+
+        
+        </div>
+    
+      - <span data-ttu-id="25b5d-p136">質問を含む録音済みのオーディオ ファイルを使用する場合は、[**録音を選択する**] をクリックし、[**録音**] リンクをクリックしてファイルをアップロードします。新しいブラウザー ウィンドウで [**参照**] をクリックし、オーディオ ファイルを選択して、[**開く**] をクリックします。[**アップロード**] をクリックしてファイルを読み込んでから、必要な場合はテキスト ボックスに質問を入力します (これにより、質問と発信者の応答を応答エージェントに転送できるようになります)。</span><span class="sxs-lookup"><span data-stu-id="25b5d-p136">To use a prerecorded audio file that contains the question, click **Select a recording**, and then click the **a recording** link to upload the file. In the new browser window, click **Browse**, select the audio file, and then click **Open**. Click **Upload** to load the file, and then optionally you can type the question in the text box (this enables the question, and the caller’s response, to be forwarded to the responding agent).</span></span>
+        
+        <div>
+        
+
+        > [!NOTE]  
+        > <span data-ttu-id="25b5d-241">ユーザーが指定したすべてのオーディオ ファイルは、特定の要件を満たしている必要があります。</span><span class="sxs-lookup"><span data-stu-id="25b5d-241">All user-provided audio files must meet certain requirements.</span></span> <span data-ttu-id="25b5d-242">サポートされているファイル形式の詳細については、「 <A href="lync-server-2013-technical-requirements-for-response-group.md">Lync Server 2013 の「回答グループの技術要件</A>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="25b5d-242">For details about supported file formats, see <A href="lync-server-2013-technical-requirements-for-response-group.md">Technical requirements for Response Group in Lync Server 2013</A>.</span></span>
+
+        
+        </div>
+
+29. <span data-ttu-id="25b5d-243">[**応答 1**] で次の操作を実行して、質問に対する 1 つ目の回答を指定します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-243">Under **Response 1**, specify the first possible answer to the question by doing the following:</span></span>
+    
+    <div>
+    
+
+    > [!IMPORTANT]  
+    > <span data-ttu-id="25b5d-p138">いずれの音声応答にも引用符 (") を使用しないでください。引用符は IVR が失敗する原因になります。</span><span class="sxs-lookup"><span data-stu-id="25b5d-p138">Do not use quotation marks (") in any voice responses. Quotation marks cause the IVR to fail.</span></span>
+
+    
+    </div>
+    
+    <div>
+    
+
+    > [!NOTE]  
+    > <span data-ttu-id="25b5d-246">発信者が音声、英数字のキーパッド入力、または両方を使用して回答できるようにすることもできます。</span><span class="sxs-lookup"><span data-stu-id="25b5d-246">You can choose to allow callers to answer using speech, alphanumeric keypad input, or both.</span></span>
+
+    
+    </div>
+    
+      - <span data-ttu-id="25b5d-247">発信者が音声で応答できるようにする場合は、[**音声応答の入力**] に応答を入力します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-247">If you want to allow the caller to respond using speech, enter the answer in **Enter a voice response**.</span></span>
+    
+      - <span data-ttu-id="25b5d-248">発信者がキーパッドのキー入力で応答できるようにする場合は、[**数字**] で、目的のキーパッドの数字をクリックします。</span><span class="sxs-lookup"><span data-stu-id="25b5d-248">If you want to allow the caller to respond by pressing a key on the keypad, in **Digit**, click the keypad digit.</span></span>
+
+30. <span data-ttu-id="25b5d-249">次のように、発信者をキューにルーティングするか、もう 1 つ質問するかを指定します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-249">Specify whether to route the caller to a queue, or to ask another question as follows:</span></span>
+    
+      - <span data-ttu-id="25b5d-250">発信者をキューにルーティングするには [**キューに送る**] をクリックし、[**キューの選択**] で、使用するキューをクリックします。</span><span class="sxs-lookup"><span data-stu-id="25b5d-250">To route the caller to a queue, click **Send to a queue**, and in **Select a queue**, click the queue that you want to use.</span></span>
+    
+      - <span data-ttu-id="25b5d-p139">もう 1 つ質問をするには、[**もう 1 つ質問する**] をクリックしてから、[**音声合成を使用する**] をクリックして質問を入力するか、[**録音を選択する**] をクリックします。このセクションにある応答グループを使用して、追加の質問に対する最大 4 つの応答と、各応答で使用するキューを指定します。3 番目または 4 番目の応答を指定するには、[**応答 3**] チェック ボックスまたは [**応答 4**] チェック ボックスをオンにします。</span><span class="sxs-lookup"><span data-stu-id="25b5d-p139">To ask another question, click **Ask another question**, and then click **Use text-to-speech** and type the question, or click **Select a recording**. Use the response groupings in this section to specify up to four possible responses to the additional question and the queue to use for each response. To specify a third or fourth possible response, click the **Response 3** check box or the **Response 4** check box.</span></span>
+
+31. <span data-ttu-id="25b5d-p140">手順 28 と 29 を繰り返して応答と各応答に対するアクションを指定し、元の質問に対する回答を最大 3 つ追加します。3 番目または 4 番目の回答を指定するには、[**応答 3**] チェック ボックスまたは [**応答 4**] チェック ボックスをオンにします。</span><span class="sxs-lookup"><span data-stu-id="25b5d-p140">Specify up to three more possible answers to the original question by repeating steps 28 and 29 to specify the possible responses and the action to take for each response. To specify a third or fourth possible answer, click the **Response 3** check box or the **Response 4** check box.</span></span>
+
+32. <span data-ttu-id="25b5d-256">[**展開**] をクリックします。</span><span class="sxs-lookup"><span data-stu-id="25b5d-256">Click **Deploy**.</span></span>
+
+</div>
+
+<div>
+
+## <a name="to-use-windows-powershell-to-create-or-modify-an-interactive-workflow"></a><span data-ttu-id="25b5d-257">Windows PowerShell を使用して対話型ワークフローを作成または変更するには</span><span class="sxs-lookup"><span data-stu-id="25b5d-257">To use Windows PowerShell to create or modify an Interactive workflow</span></span>
+
+1.  <span data-ttu-id="25b5d-258">RTCUniversalServerAdmins グループのメンバーまたは応答グループをサポートする定義済みの管理者の役割のいずれかのメンバーとしてログオンします。</span><span class="sxs-lookup"><span data-stu-id="25b5d-258">Log on as a member of the RTCUniversalServerAdmins group, or as a member of one of the predefined administrative roles that support Response Group.</span></span>
+
+2.  <span data-ttu-id="25b5d-259">Lync Server 管理シェルを起動します。 [ **スタート**] をクリックし、[ **すべてのプログラム**]、[ **Microsoft Lync Server 2013**]、[ **lync server 管理シェル**] の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="25b5d-259">Start the Lync Server Management Shell: Click **Start**, click **All Programs**, click **Microsoft Lync Server 2013**, and then click **Lync Server Management Shell**.</span></span>
+
+3.  <span data-ttu-id="25b5d-p141">応答グループ サービスのサービス名を取得し、変数に割り当てます。コマンド ラインで、次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-p141">Retrieve the service name for the Response Group service and assign it to a variable. At the command line, run:</span></span>
+    
+        $serviceId="service:"+(Get-CSService | ?{$_.Applications -like "*RGS*"}).ServiceId;
+
+4.  <span data-ttu-id="25b5d-p142">対話ワークフローには、2 つ以上のキューと 2 つ以上のエージェント グループが必要です。まず、エージェント グループを作成します。次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-p142">An interactive workflow requires two or more queues and two or more agent groups. First, create the agent groups. Run:</span></span>
+    
+        $AGSupport = New-CsRgsAgentGroup -Parent $serviceId -Name "Technical Support" [-AgentAlertTime "20"] [-ParticipationPolicy "Informal"] [-RoutingMethod LongestIdle] [-AgentsByUri("sip:agent1@contoso.com", "sip:agent2@contoso.com")]
+        $AGSales = New-CsRgsAgentGroup -Parent $serviceId -Name "Sales Team" [-AgentAlertTime "20"] [-ParticipationPolicy "Informal"] [-RoutingMethod LongestIdle] [-AgentsByUri("sip:bob@contoso.com", "sip:alice@contoso.com")]
+
+5.  <span data-ttu-id="25b5d-p143">キューを作成します。次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-p143">Create the queues. Run:</span></span>
+    
+        $QSupport = New-CsRgsQueue -Parent $ServiceId -Name "Contoso Support" -AgentGroupIDList($AG-Support.Identity)
+        $QSales = New-CsRgsQueue -Parent $ServiceId -Name "Contoso Sales" -AgentGroupIDList($AG-Sales.Identity)
+
+6.  <span data-ttu-id="25b5d-p144">応答グループ プロンプトを作成します。次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-p144">Create the first response group prompt. Run:</span></span>
+    
+        $SupportPrompt = New-CsRgsPrompt -TextToSpeechPrompt "Please be patient while we connect you with Contoso Technical Support."
+
+7.  <span data-ttu-id="25b5d-p145">次に、プロンプトの後に実行するアクションを作成します。次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-p145">Then create the action to be performed after the prompt. Run:</span></span>
+    
+        $SupportAction = New-CsRgsCallAction -Prompt $SupportPrompt -Action TransferToQueue -QueueID $QSupport.Identity
+
+8.  <span data-ttu-id="25b5d-p146">最初の応答グループ回答を作成します。次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-p146">Create the first response group answer. Run:</span></span>
+    
+        $SupportAnswer = New-CsRgsAnswer -Action $SupportAction [-DtmfResponse 1]
+
+9.  <span data-ttu-id="25b5d-p147">2 番目のプロンプト、通話アクション、および回答を作成します。まず、プロンプトを作成します。次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-p147">Now create the second prompt, call action, and answer. First create the prompt. Run:</span></span>
+    
+        $SalesPrompt = New-CsRgsPrompt -TextToSpeechPrompt "Please hold while we connect you with Contoso Sales."
+
+10. <span data-ttu-id="25b5d-p148">2 番目の通話アクションを作成します。次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-p148">Create the second call action. Run:</span></span>
+    
+        $SalesAction = New-CsRgsCallAction -Prompt $SalesPrompt -Action TransferToQueue -QueueID $QSales.Identity
+
+11. <span data-ttu-id="25b5d-p149">2 番目の応答グループ回答を作成します。次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-p149">Create the second response group answer. Run:</span></span>
+    
+        $SalesAnswer = New-CsRgsAnswer -Action $SalesAction [-DtmfResponse 2]
+
+12. <span data-ttu-id="25b5d-p150">最上位のプロンプトを作成します。次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-p150">Create the top-level prompt. Run:</span></span>
+    
+        $TopLevelPrompt = New-CsRgsPrompt -TextToSpeechPrompt "Thank you for calling Contoso. For Technical Support, press 1. For a Sales Representative, press 2."
+
+13. <span data-ttu-id="25b5d-p151">最上位の質問を作成します。次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-p151">Create the top-level question. Run:</span></span>
+    
+        $TopLevelQuestion = New-CsRgsQuestion -Prompt $TopLevelPrompt [-AnswerList ($SupportAnswer, $SalesAnswer)]
+
+14. <span data-ttu-id="25b5d-p152">ここで、ワークフローを作成します。次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="25b5d-p152">Now create the workflow. Run:</span></span>
+    
+        $IVRAction = New-CsRgsCallAction -Action TransferToQuestion [-Question $Question]
+        $IVRWorkflow = New-CsRgsWorkflow -Parent $ServiceId -Name "Contoso Helpdesk" [-Description "The Contoso Helpdesk line."] -PrimaryUri "sip:helpdesk@contoso.com" [-LineUri tel:+14255554321] [-DisplayNumber "+1 (425) 555-4321"] [-Active $true] [-Anonymous $true] [-DefaultAction $IVRAction] [-Managed $true] [-ManagersByURI ("sip:mindy@contoso.com", "sip:bob@contoso.com")]
+    
+    <div>
+    
+
+    > [!NOTE]  
+    > <span data-ttu-id="25b5d-p153">応答グループのマネージャーに指定されているすべてのユーザーに CsResponseGroupManager ロールを割り当てる必要があります。このロールが割り当てられていない場合、ユーザーは応答グループを管理できません。</span><span class="sxs-lookup"><span data-stu-id="25b5d-p153">All users who have been designated as manager of a response group must be assigned th CsResponseGroupManager role. If users are not assigned this role, they cannot manage response groups.</span></span>
+
+    
+    <span data-ttu-id="25b5d-288"></div>
+
+</div>
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</span><span class="sxs-lookup"><span data-stu-id="25b5d-288"></div>
+
+</div>
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</span></span></div>
+
