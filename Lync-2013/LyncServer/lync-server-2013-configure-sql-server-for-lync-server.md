@@ -1,0 +1,74 @@
+---
+title: 'Lync Server 2013: Lync Server 用 SQL Server の構成'
+description: 'Lync Server 2013: Lync Server 用の SQL Server を構成します。'
+ms.reviewer: ''
+ms.author: v-lanac
+author: lanachin
+f1.keywords:
+- NOCSH
+TOCTitle: Configure SQL Server for Lync Server 2013
+ms:assetid: 375e5cc4-e436-46dc-9b02-5063f35cdcc1
+ms:mtpsurl: https://technet.microsoft.com/en-us/library/Gg425848(v=OCS.15)
+ms:contentKeyID: 48183869
+ms.date: 07/23/2014
+manager: serdars
+mtps_version: v=OCS.15
+ms.openlocfilehash: d9ac7d8f14c64f3b7935df3f48602a6df1791c7a
+ms.sourcegitcommit: 36fee89bb887bea4f18b19f17a8c69daf5bc423d
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "49433711"
+---
+# <a name="configure-sql-server-for-lync-server-2013"></a>Lync Server 2013 用 SQL Server の構成
+
+<div data-xmlns="http://www.w3.org/1999/xhtml">
+
+<div class="topic" data-xmlns="http://www.w3.org/1999/xhtml" data-msxsl="urn:schemas-microsoft-com:xslt" data-cs="https://msdn.microsoft.com/">
+
+<div data-asp="https://msdn2.microsoft.com/asp">
+
+
+
+</div>
+
+<div id="mainSection">
+
+<div id="mainBody">
+
+<span> </span>
+
+_**最終更新日:** 2013-08-12_
+
+このセクションのトピックでは、Lync Server のエンタープライズ展開で使用するように SQL Server を展開して構成する方法について説明します。 Standard Edition サーバーでは、標準エディションサーバーのワークロードに合わせて適切にサイズ調整された sql Server Express バージョンの SQL Server を使用します。
+
+Lync Server 2013 の中央管理ストアは、プール内のすべての Enterprise Edition サーバーのユーザーデータを保持し、SQL Server ベースのバックエンドサーバーに配置されるように設計されています。 一元的なリポジトリとして、中央管理ストアは、他の Lync Server 2013 の役割と同じコンピューターにインストールすることはできません。 中央管理ストアは、プール内の Enterprise Edition サーバー上に配置できません。 最初にトポロジを公開し、選択してデータベースを作成すると、中央管理ストアが自動的に作成されます。 インストールを正常に実行するためには、バックエンドサーバーとして指定したコンピューターで SQL Server データベースソフトウェアが実行されている必要があります。
+
+<div>
+
+## <a name="in-this-section"></a>このセクション中
+
+  - [Lync Server 2013 の SQL Server データとログ ファイルの配置](lync-server-2013-sql-server-data-and-log-file-placement.md)
+
+  - [Lync Server 2013 での SQL Server の構成](lync-server-2013-configure-sql-server.md)
+
+  - [Lync Server 2013 の SQL Server の展開のアクセス許可](lync-server-2013-deployment-permissions-for-sql-server.md)
+
+  - [Lync Server 2013 での Lync Server 管理シェルを使用したデータベースのインストール](lync-server-2013-database-installation-using-lync-server-management-shell.md)
+
+  - [Lync Server 2013 での SQL Server のファイアウォール要件について](lync-server-2013-understanding-firewall-requirements-for-sql-server.md)
+
+  - [Lync Server 2013 用の SQL Server クラスタリングを構成する](lync-server-2013-configure-sql-server-clustering.md)
+
+</div>
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</div>
+
