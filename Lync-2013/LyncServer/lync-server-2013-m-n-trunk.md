@@ -1,0 +1,80 @@
+---
+title: 'Lync Server 2013: M:N トランク'
+description: 'Lync Server 2013: M:N トランク。'
+ms.reviewer: ''
+ms.author: v-lanac
+author: lanachin
+f1.keywords:
+- NOCSH
+TOCTitle: M:N trunk
+ms:assetid: dc4c5d66-297c-48a5-91b9-b9b8ce44a6e0
+ms:mtpsurl: https://technet.microsoft.com/en-us/library/Gg398971(v=OCS.15)
+ms:contentKeyID: 48185592
+ms.date: 07/23/2014
+manager: serdars
+mtps_version: v=OCS.15
+ms.openlocfilehash: 5e0bcee237128046985b5313a47872ad83bf6513
+ms.sourcegitcommit: 36fee89bb887bea4f18b19f17a8c69daf5bc423d
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "49426173"
+---
+# <a name="mn-trunk-in-lync-server-2013"></a><span data-ttu-id="94e09-103">Lync Server 2013 の M:N トランク</span><span class="sxs-lookup"><span data-stu-id="94e09-103">M:N trunk in Lync Server 2013</span></span>
+
+<div data-xmlns="http://www.w3.org/1999/xhtml">
+
+<div class="topic" data-xmlns="http://www.w3.org/1999/xhtml" data-msxsl="urn:schemas-microsoft-com:xslt" data-cs="https://msdn.microsoft.com/">
+
+<div data-asp="https://msdn2.microsoft.com/asp">
+
+
+
+</div>
+
+<div id="mainSection">
+
+<div id="mainBody"><span data-ttu-id="94e09-104">
+
+<span> </span></span><span class="sxs-lookup"><span data-stu-id="94e09-104">
+
+<span> </span></span></span>
+
+<span data-ttu-id="94e09-105">_**最終更新日:** 2012-10-01_</span><span class="sxs-lookup"><span data-stu-id="94e09-105">_**Topic Last Modified:** 2012-10-01_</span></span>
+
+<span data-ttu-id="94e09-106">Lync Server 2013 は、以前のリリースからの呼び出しルーティングのために、トランクの定義をより柔軟にサポートします。</span><span class="sxs-lookup"><span data-stu-id="94e09-106">Lync Server 2013 supports greater flexibility in the definition of a trunk for call routing purposes from previous releases.</span></span> <span data-ttu-id="94e09-107">トランクは、仲介サーバーとリッスンポート番号との間の論理的な関連であり、ゲートウェイとリスニングポート番号を使用します。</span><span class="sxs-lookup"><span data-stu-id="94e09-107">A trunk is a logical association between a Mediation Server and listening port number with a gateway and a listening port number.</span></span> <span data-ttu-id="94e09-108">これはいくつかのことを意味します。仲介サーバーは、同じゲートウェイに対して複数の trunks を持つことができます。仲介サーバーは、さまざまなゲートウェイに対して複数の trunks を持つことができます。逆に、ゲートウェイは、異なる仲介サーバーに対して複数の trunks を持つことができます。</span><span class="sxs-lookup"><span data-stu-id="94e09-108">This implies several things: A Mediation Server can have multiple trunks to the same gateway; a Mediation Server can have multiple trunks to different gateways; conversely a gateway can have multiple trunks to different Mediation Servers.</span></span>
+
+<span data-ttu-id="94e09-109">ルートトランクは、トポロジビルダーを使用して、ゲートウェイが Lync トポロジに追加された場合でも、作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="94e09-109">A root trunk is still required to be created when a gateway is added to the Lync topology using Topology Builder.</span></span> <span data-ttu-id="94e09-110">特定の仲介サーバーが処理できるゲートウェイの数は、混雑している時間帯のサーバーの処理能力によって異なります。</span><span class="sxs-lookup"><span data-stu-id="94e09-110">The number of gateways that a given Mediation Server can handle depends on the processing capacity of the server during peak busy hours.</span></span> <span data-ttu-id="94e09-111">サポートドキュメントの [Lync server 2013 でサポートさ](lync-server-2013-supported-hardware.md) れているハードウェアについて説明されているように、lync server 2013 の最小ハードウェア要件を超えるハードウェアに仲介サーバーを展開している場合、スタンドアロンの仲介サーバーが処理できるアクティブな非バイパス通話の数は約1000通話になります。</span><span class="sxs-lookup"><span data-stu-id="94e09-111">If you deploy a Mediation Server on hardware that exceeds the minimum hardware requirements for Lync Server 2013, as described in [Supported hardware for Lync Server 2013](lync-server-2013-supported-hardware.md) in the Supportability documentation, then the estimate of how many active non-bypass calls a stand-alone Mediation Server can handle is approximately 1000 calls.</span></span> <span data-ttu-id="94e09-112">これらの仕様を満たしているハードウェアで展開された場合、仲介サーバーはトランスコードを実行する必要があります。ただし、ゲートウェイがメディアバイパスをサポートしていない場合でも、複数のゲートウェイに対して呼び出しをルーティングします。</span><span class="sxs-lookup"><span data-stu-id="94e09-112">When deployed on hardware meeting these specifications, the Mediation Server is expected to perform transcoding, but still route calls for multiple gateways even if the gateways do not support media bypass.</span></span>
+
+<span data-ttu-id="94e09-113">通話ルートを定義する場合は、そのルートに関連付けられている trunks を指定しますが、そのルートに関連付けられている仲介サーバーは指定しません。</span><span class="sxs-lookup"><span data-stu-id="94e09-113">When defining a call route, you specify the trunks associated with that route, but you do not specify which Mediation Servers are associated with that route.</span></span> <span data-ttu-id="94e09-114">代わりに、トポロジビルダーを使用して、trunks を仲介サーバーに関連付けます。</span><span class="sxs-lookup"><span data-stu-id="94e09-114">Instead, you use Topology Builder to associate trunks with Mediation Servers.</span></span> <span data-ttu-id="94e09-115">つまり、ルーティングでは、通話に使うトランクが決定され、その後、そのトランクに関連付けられた仲介サーバーがその呼び出しの通知を送信します。</span><span class="sxs-lookup"><span data-stu-id="94e09-115">In other words, routing determines which trunk to use for a call, and, subsequently, the Mediation Server associated with that trunk is sent the signaling for that call.</span></span>
+
+<span data-ttu-id="94e09-116">仲介サーバーはプールとして展開できます。このプールは、フロントエンドプールと併置することも、スタンドアロンプールとして展開することもできます。</span><span class="sxs-lookup"><span data-stu-id="94e09-116">The Mediation Server can be deployed as a pool; this pool can be collocated with a Front End pool, or it can be deployed as a stand-alone pool.</span></span> <span data-ttu-id="94e09-117">仲介サーバーがフロントエンドプールと連携している場合、プールサイズは、最大で 12 (レジストラープールサイズの上限) までにすることができます。</span><span class="sxs-lookup"><span data-stu-id="94e09-117">When a Mediation Server is collocated with a Front End pool, the pool size can be at most 12 (the limit of the Registrar pool size).</span></span> <span data-ttu-id="94e09-118">これらの新機能を組み合わせることで、仲介サーバーの信頼性と展開の柔軟性が向上しますが、次のピアエンティティに関連する機能が必要になります。</span><span class="sxs-lookup"><span data-stu-id="94e09-118">Taken together, these new capabilities increase the reliability and deployment flexibility for Mediation Servers, but they require associated capabilities in the following peer entities:</span></span>
+
+  - <span data-ttu-id="94e09-119">**PSTN ゲートウェイ。**</span><span class="sxs-lookup"><span data-stu-id="94e09-119">**PSTN gateway.**</span></span> <span data-ttu-id="94e09-120">Lync Server 2013 修飾ゲートウェイでは、DNS 負荷分散を実装する必要があります。これにより、認定された公衆交換電話網 (PSTN) ゲートウェイは、仲介サーバーの1つのプールのロードバランサーとして機能し、プール全体での通話の負荷分散を行うことができます。</span><span class="sxs-lookup"><span data-stu-id="94e09-120">A Lync Server 2013 qualified gateway must implement DNS load balancing, which enables a qualified public switched telephone network (PSTN) gateway to act as a load balancer for one pool of Mediation Servers, and thereby to load-balance calls across the pool.</span></span>
+
+  - <span data-ttu-id="94e09-121">**セッション ボーダー コントローラー。**</span><span class="sxs-lookup"><span data-stu-id="94e09-121">**Session Border Controller.**</span></span> <span data-ttu-id="94e09-122">SIP トランクの場合には、ピア エンティティはインターネット テレフォニー サービス プロバイダーのセッション ボーダー コントローラー (SBC) です。</span><span class="sxs-lookup"><span data-stu-id="94e09-122">For a SIP trunk, the peer entity is a Session Border Controller (SBC) at an Internet telephony service provider.</span></span> <span data-ttu-id="94e09-123">仲介サーバープールから SBC までの方向に、SBC はプール内の任意の仲介サーバーから接続を受け取ることができます。</span><span class="sxs-lookup"><span data-stu-id="94e09-123">In the direction from the Mediation Server pool to the SBC, the SBC can receive connections from any Mediation Server in the pool.</span></span> <span data-ttu-id="94e09-124">SBC からプールまでの方向に、トラフィックがプール内の任意の仲介サーバーに送信されます。</span><span class="sxs-lookup"><span data-stu-id="94e09-124">In the direction from the SBC to the pool, traffic can be sent to any Mediation Server in the pool.</span></span> <span data-ttu-id="94e09-125">サービス プロバイダーと SBC で DNS 負荷分散がサポートされている場合には、DNS 負荷分散でこれを実現できます。</span><span class="sxs-lookup"><span data-stu-id="94e09-125">One method of achieving this is through DNS load balancing, if supported by the service provider and SBC.</span></span> <span data-ttu-id="94e09-126">別の方法として、サービスプロバイダにプール内のすべての仲介サーバーの IP アドレスを指定し、サービスプロバイダが各仲介サーバー用の個別の SIP トランクとしてこれらのアドレスをプロビジョニングすることができます。</span><span class="sxs-lookup"><span data-stu-id="94e09-126">An alternative is to give the service provider the IP addresses of all Mediation Servers in the pool, and the service provider will provision these in their SBC as a separate SIP trunk for each Mediation Server.</span></span> <span data-ttu-id="94e09-127">この場合、サービス プロバイダーのサーバーに対してサービス プロバイダーが負荷分散を処理します。</span><span class="sxs-lookup"><span data-stu-id="94e09-127">The service provider will then handle the load balancing for its own servers.</span></span> <span data-ttu-id="94e09-128">サービス プロバイダーや SBC によっては、これらの機能をサポートしていないことがあります。</span><span class="sxs-lookup"><span data-stu-id="94e09-128">Not all service providers or SBCs may support these capabilities.</span></span> <span data-ttu-id="94e09-129">さらに、サービス プロバイダーによってはこの機能に別料金を課すことがあります。</span><span class="sxs-lookup"><span data-stu-id="94e09-129">Furthermore, the service provider may charge extra for this capability.</span></span> <span data-ttu-id="94e09-130">一般的には、SBC への SIP トランクごとに月額料金が発生します。</span><span class="sxs-lookup"><span data-stu-id="94e09-130">Typically, each SIP trunk to the SBC incurs a monthly fee.</span></span>
+
+  - <span data-ttu-id="94e09-131">**IP-PBX。**</span><span class="sxs-lookup"><span data-stu-id="94e09-131">**IP-PBX.**</span></span> <span data-ttu-id="94e09-132">仲介サーバープールから IP PBX SIP ターミネーションまでの方向に、IP PBX はプール内の任意の仲介サーバーから接続を受信できます。</span><span class="sxs-lookup"><span data-stu-id="94e09-132">In the direction from the Mediation Server pool to the IP-PBX SIP termination, the IP-PBX can receive connections from any Mediation Server in the pool.</span></span> <span data-ttu-id="94e09-133">IP PBX からプールまでの方向に、プール内の任意の仲介サーバーにトラフィックを送信できます。</span><span class="sxs-lookup"><span data-stu-id="94e09-133">In the direction from the IP-PBX to the pool, traffic can be sent to any Mediation Server in the pool.</span></span> <span data-ttu-id="94e09-134">ほとんどの IP-PBXs は DNS の負荷分散をサポートしていないため、個々の直接 SIP 接続は、IP PBX からプール内の各仲介サーバーに対して定義することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="94e09-134">Because most IP-PBXs do not support DNS load balancing, we recommend that individual direct SIP connections be defined from the IP-PBX to each Mediation Server in the pool.</span></span> <span data-ttu-id="94e09-135">トランク グループにトラフィックが分散されることで、IP-PBX により IP-PBX の負荷分散が処理されます。</span><span class="sxs-lookup"><span data-stu-id="94e09-135">The IP-PBX will then handle its own load balancing by distributing traffic over the trunk group.</span></span> <span data-ttu-id="94e09-136">このトランク グループには IP-PBX での一貫したルーティング ルールがあることが前提とされています。</span><span class="sxs-lookup"><span data-stu-id="94e09-136">The assumption is that the trunk group has a consistent set of routing rules at the IP-PBX.</span></span> <span data-ttu-id="94e09-137">特定の IP PBX がこのトランクグループの概念をサポートしているかどうか、また、ip PBX 固有の冗長性との相互作用がどのようになっているかを判断するには、仲介サーバークラスターが IP-PBX を正しく操作できるかどうかを決定する前に、クラスタリングアーキテクチャを決定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="94e09-137">Whether a particular IP-PBX supports this trunk group concept and how it intersects with the IP-PBX’s own redundancy and clustering architecture needs to be determined before you can decide whether a Mediation Server cluster can interact correctly with an IP-PBX.</span></span>
+
+<span data-ttu-id="94e09-138">仲介サーバープールは、通信相手のピアゲートウェイの一貫したビューを持っている必要があります。</span><span class="sxs-lookup"><span data-stu-id="94e09-138">A Mediation Server pool must have a uniform view of the peer gateway with which it interacts.</span></span> <span data-ttu-id="94e09-139">つまり、プールのすべてのメンバーが、ピア ゲートウェイの同一定義に構成ストアからアクセスし、発信通話のために同様にピア ゲートウェイと対話するということです。</span><span class="sxs-lookup"><span data-stu-id="94e09-139">This means that all members of the pool access the same definition of the peer gateway from the configuration store and are equally likely to interact with it for outgoing calls.</span></span> <span data-ttu-id="94e09-140">そのため、プールを分割する方法はありません。一部の仲介サーバーが、発信通話の特定のゲートウェイピアだけと通信できるようにすることはできません。</span><span class="sxs-lookup"><span data-stu-id="94e09-140">Therefore, there is no way to segment the pool so that some Mediation Servers communicate with only certain gateway peers for outgoing calls.</span></span> <span data-ttu-id="94e09-141">このようなセグメンテーションが必要な場合は、仲介サーバーのプールを個別に使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="94e09-141">If such segmentation is necessary, a separate pool of Mediation Servers must be used.</span></span> <span data-ttu-id="94e09-142">たとえば、このトピックでこれまでに詳しく説明した、プールと対話するための関連機能が PSTN ゲートウェイ、SIP トランク、または IP-PBX にない場合がこれに当てはまります。</span><span class="sxs-lookup"><span data-stu-id="94e09-142">This would be the case, for example, if the associated capabilities in PSTN gateways, SIP trunks, or IP-PBXs to interact with a pool as detailed earlier in this topic are not present.</span></span>
+
+<span data-ttu-id="94e09-143">特定の PSTN ゲートウェイ、IP PBX、または SIP トランクピアでは、複数の仲介サーバーまたは trunks にルーティングすることができます。</span><span class="sxs-lookup"><span data-stu-id="94e09-143">A particular PSTN gateway, IP-PBX, or SIP trunk peer can route to multiple Mediation Servers or trunks.</span></span> <span data-ttu-id="94e09-144">仲介サーバーの特定のプールが制御できるゲートウェイの数は、メディアバイパスを使う通話の数によって異なります。</span><span class="sxs-lookup"><span data-stu-id="94e09-144">The number of gateways that a particular pool of Mediation Servers can control depends on the number of calls that use media bypass.</span></span> <span data-ttu-id="94e09-145">多数の通話でメディアのバイパスが使用されている場合、プール内の仲介サーバーは、シグナルレイヤー処理のみが必要であるため、多くの通話を処理できます。</span><span class="sxs-lookup"><span data-stu-id="94e09-145">If a large number of calls use media bypass, a Mediation Server in the pool can handle many more calls, because only signaling layer processing is necessary.</span></span>
+
+<span data-ttu-id="94e09-146"></div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</span><span class="sxs-lookup"><span data-stu-id="94e09-146"></div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</span></span></div>
+

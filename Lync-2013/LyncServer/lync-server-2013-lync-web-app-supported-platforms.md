@@ -1,0 +1,222 @@
+---
+title: 'Lync Server 2013: Lync Web App でサポートされているプラットフォーム'
+description: 'Lync Server 2013: Lync Web App でサポートされているプラットフォーム'
+ms.reviewer: ''
+ms.author: v-lanac
+author: lanachin
+f1.keywords:
+- NOCSH
+TOCTitle: Lync Web App supported platforms
+ms:assetid: 31e95e16-f79f-46c6-b123-973fa56a824e
+ms:mtpsurl: https://technet.microsoft.com/en-us/library/Gg425820(v=OCS.15)
+ms:contentKeyID: 48183808
+ms.date: 06/12/2019
+manager: serdars
+mtps_version: v=OCS.15
+ms.openlocfilehash: 92fd1e73a087cb20e311857a8ec93cdabd5bc794
+ms.sourcegitcommit: 36fee89bb887bea4f18b19f17a8c69daf5bc423d
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "49426236"
+---
+# <a name="lync-web-app-supported-platforms-for-lync-server-2013"></a><span data-ttu-id="1d754-103">Lync Web App が Lync Server 2013 用にサポートされているプラットフォーム</span><span class="sxs-lookup"><span data-stu-id="1d754-103">Lync Web App supported platforms for Lync Server 2013</span></span>
+
+<div data-xmlns="http://www.w3.org/1999/xhtml">
+
+<div class="topic" data-xmlns="http://www.w3.org/1999/xhtml" data-msxsl="urn:schemas-microsoft-com:xslt" data-cs="https://msdn.microsoft.com/">
+
+<div data-asp="https://msdn2.microsoft.com/asp">
+
+
+
+</div>
+
+<div id="mainSection">
+
+<div id="mainBody"><span data-ttu-id="1d754-104">
+
+<span> </span></span><span class="sxs-lookup"><span data-stu-id="1d754-104">
+
+<span> </span></span></span>
+
+<span data-ttu-id="1d754-105">_**最終更新日:** 2017-02-07_</span><span class="sxs-lookup"><span data-stu-id="1d754-105">_**Topic Last Modified:** 2017-02-07_</span></span>
+
+<span data-ttu-id="1d754-106">Lync Web App を使用するには、次のサポートされているオペレーティングシステムとブラウザーの組み合わせのいずれかが必要です。</span><span class="sxs-lookup"><span data-stu-id="1d754-106">To use Lync Web App, you must have one of the following supported operating system and browser combinations.</span></span>
+
+<div>
+
+
+> [!NOTE]  
+> <span data-ttu-id="1d754-107">プラグインは、コンピューターベースの音声、ビデオ、共有、進行中の画面共有の表示など、Lync Web App の特定の機能に必要です。</span><span class="sxs-lookup"><span data-stu-id="1d754-107">A plug-in is required for certain Lync Web App features, including computer-based voice, video, sharing, and viewing of ongoing screen sharing.</span></span> <span data-ttu-id="1d754-108">共有プラグインは、会議に参加するとき、または次のいずれかの機能を開始したときにインストールできます。</span><span class="sxs-lookup"><span data-stu-id="1d754-108">You can install the sharing plug-in either when you join the meeting or when you initiate one of these features.</span></span> <span data-ttu-id="1d754-109">1</span><span class="sxs-lookup"><span data-stu-id="1d754-109">1</span></span><BR>
+
+
+
+</div>
+
+<div>
+
+## <a name="supported-operating-system-and-browser-combinations-for-lync-web-app"></a><span data-ttu-id="1d754-110">Lync Web App でサポートされているオペレーティングシステムとブラウザーの組み合わせ</span><span class="sxs-lookup"><span data-stu-id="1d754-110">Supported Operating System and Browser Combinations for Lync Web App</span></span>
+
+
+<table style="width:100%;">
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><p><span data-ttu-id="1d754-111">オペレーティング システム</span><span class="sxs-lookup"><span data-stu-id="1d754-111">Operating system</span></span></p></td>
+<td><p><span data-ttu-id="1d754-112">Edge</span><span class="sxs-lookup"><span data-stu-id="1d754-112">Edge</span></span></p></td>
+<td><p><span data-ttu-id="1d754-113">Internet Explorer 11</span><span class="sxs-lookup"><span data-stu-id="1d754-113">Internet Explorer 11</span></span></p></td>
+<td><p><span data-ttu-id="1d754-114">32ビット Internet Explorer 10</span><span class="sxs-lookup"><span data-stu-id="1d754-114">32-bit Internet Explorer 10</span></span></p></td>
+<td><p><span data-ttu-id="1d754-115">64ビット Internet Explorer 10</span><span class="sxs-lookup"><span data-stu-id="1d754-115">64-bit Internet Explorer 10</span></span></p></td>
+<td><p><span data-ttu-id="1d754-116">32ビット Internet Explorer 9</span><span class="sxs-lookup"><span data-stu-id="1d754-116">32-bit Internet Explorer 9</span></span></p></td>
+<td><p><span data-ttu-id="1d754-117">64ビット Internet Explorer 9</span><span class="sxs-lookup"><span data-stu-id="1d754-117">64-bit Internet Explorer 9</span></span></p></td>
+<td><p><span data-ttu-id="1d754-118">Firefox 32-bit<sup>4</sup></span><span class="sxs-lookup"><span data-stu-id="1d754-118">Firefox 32-bit<sup>4</sup></span></span></p></td>
+<td><p><span data-ttu-id="1d754-119">Firefox 64-bit<sup>4</sup></span><span class="sxs-lookup"><span data-stu-id="1d754-119">Firefox 64-bit<sup>4</sup></span></span></p></td>
+<td><p><span data-ttu-id="1d754-120">Safari</span><span class="sxs-lookup"><span data-stu-id="1d754-120">Safari</span></span></p></td>
+<td><p><span data-ttu-id="1d754-121">Chrome<sup>4</sup></span><span class="sxs-lookup"><span data-stu-id="1d754-121">Chrome<sup>4</sup></span></span></p></td>
+</tr>
+<tr class="even">
+<td><p><span data-ttu-id="1d754-122">Windows 10</span><span class="sxs-lookup"><span data-stu-id="1d754-122">Windows 10</span></span></p></td>
+<td><p><span data-ttu-id="1d754-123">はい</span><span class="sxs-lookup"><span data-stu-id="1d754-123">Yes</span></span></p></td>
+<td><p><span data-ttu-id="1d754-124">はい</span><span class="sxs-lookup"><span data-stu-id="1d754-124">Yes</span></span></p></td>
+<td><p><span data-ttu-id="1d754-125">該当なし</span><span class="sxs-lookup"><span data-stu-id="1d754-125">N/A</span></span></p></td>
+<td><p><span data-ttu-id="1d754-126">該当なし</span><span class="sxs-lookup"><span data-stu-id="1d754-126">N/A</span></span></p></td>
+<td><p><span data-ttu-id="1d754-127">該当なし</span><span class="sxs-lookup"><span data-stu-id="1d754-127">N/A</span></span></p></td>
+<td><p><span data-ttu-id="1d754-128">該当なし</span><span class="sxs-lookup"><span data-stu-id="1d754-128">N/A</span></span></p></td>
+<td><p><span data-ttu-id="1d754-129">いいえ</span><span class="sxs-lookup"><span data-stu-id="1d754-129">No</span></span></p></td>
+<td><p><span data-ttu-id="1d754-130">いいえ</span><span class="sxs-lookup"><span data-stu-id="1d754-130">No</span></span></p></td>
+<td><p><span data-ttu-id="1d754-131">該当なし</span><span class="sxs-lookup"><span data-stu-id="1d754-131">N/A</span></span></p></td>
+<td><p><span data-ttu-id="1d754-132">いいえ</span><span class="sxs-lookup"><span data-stu-id="1d754-132">No</span></span></p></td>
+</tr>
+<tr class="odd">
+<td><p><span data-ttu-id="1d754-133">Windows 8.1<sup>1</sup></span><span class="sxs-lookup"><span data-stu-id="1d754-133">Windows 8.1<sup>1</sup></span></span></p></td>
+<td><p><span data-ttu-id="1d754-134">該当なし</span><span class="sxs-lookup"><span data-stu-id="1d754-134">N/A</span></span></p></td>
+<td><p><span data-ttu-id="1d754-135">はい</span><span class="sxs-lookup"><span data-stu-id="1d754-135">Yes</span></span></p></td>
+<td><p><span data-ttu-id="1d754-136">該当なし</span><span class="sxs-lookup"><span data-stu-id="1d754-136">N/A</span></span></p></td>
+<td><p><span data-ttu-id="1d754-137">該当なし</span><span class="sxs-lookup"><span data-stu-id="1d754-137">N/A</span></span></p></td>
+<td><p><span data-ttu-id="1d754-138">該当なし</span><span class="sxs-lookup"><span data-stu-id="1d754-138">N/A</span></span></p></td>
+<td><p><span data-ttu-id="1d754-139">該当なし</span><span class="sxs-lookup"><span data-stu-id="1d754-139">N/A</span></span></p></td>
+<td><p><span data-ttu-id="1d754-140">いいえ</span><span class="sxs-lookup"><span data-stu-id="1d754-140">No</span></span></p></td>
+<td><p><span data-ttu-id="1d754-141">いいえ</span><span class="sxs-lookup"><span data-stu-id="1d754-141">No</span></span></p></td>
+<td><p><span data-ttu-id="1d754-142">該当なし</span><span class="sxs-lookup"><span data-stu-id="1d754-142">N/A</span></span></p></td>
+<td><p><span data-ttu-id="1d754-143">いいえ</span><span class="sxs-lookup"><span data-stu-id="1d754-143">No</span></span></p></td>
+</tr>
+<tr class="even">
+<td><p><span data-ttu-id="1d754-144">Windows 8 (Intel ベース)<sup>1</sup></span><span class="sxs-lookup"><span data-stu-id="1d754-144">Windows 8 (Intel based)<sup>1</sup></span></span></p></td>
+<td><p><span data-ttu-id="1d754-145">該当なし</span><span class="sxs-lookup"><span data-stu-id="1d754-145">N/A</span></span></p></td>
+<td><p><span data-ttu-id="1d754-146">該当なし</span><span class="sxs-lookup"><span data-stu-id="1d754-146">N/A</span></span></p></td>
+<td><p><span data-ttu-id="1d754-147">はい</span><span class="sxs-lookup"><span data-stu-id="1d754-147">Yes</span></span></p></td>
+<td><p><span data-ttu-id="1d754-148">はい</span><span class="sxs-lookup"><span data-stu-id="1d754-148">Yes</span></span></p></td>
+<td><p><span data-ttu-id="1d754-149">該当なし</span><span class="sxs-lookup"><span data-stu-id="1d754-149">N/A</span></span></p></td>
+<td><p><span data-ttu-id="1d754-150">該当なし</span><span class="sxs-lookup"><span data-stu-id="1d754-150">N/A</span></span></p></td>
+<td><p><span data-ttu-id="1d754-151">いいえ</span><span class="sxs-lookup"><span data-stu-id="1d754-151">No</span></span></p></td>
+<td><p><span data-ttu-id="1d754-152">いいえ</span><span class="sxs-lookup"><span data-stu-id="1d754-152">No</span></span></p></td>
+<td><p><span data-ttu-id="1d754-153">該当なし</span><span class="sxs-lookup"><span data-stu-id="1d754-153">N/A</span></span></p></td>
+<td><p><span data-ttu-id="1d754-154">いいえ</span><span class="sxs-lookup"><span data-stu-id="1d754-154">No</span></span></p></td>
+</tr>
+<tr class="odd">
+<td><p><span data-ttu-id="1d754-155">Windows 7 と SP1<sup>2</sup></span><span class="sxs-lookup"><span data-stu-id="1d754-155">Windows 7 with SP1<sup>2</sup></span></span></p></td>
+<td><p><span data-ttu-id="1d754-156">該当なし</span><span class="sxs-lookup"><span data-stu-id="1d754-156">N/A</span></span></p></td>
+<td><p><span data-ttu-id="1d754-157">はい</span><span class="sxs-lookup"><span data-stu-id="1d754-157">Yes</span></span></p></td>
+<td><p><span data-ttu-id="1d754-158">はい</span><span class="sxs-lookup"><span data-stu-id="1d754-158">Yes</span></span></p></td>
+<td><p><span data-ttu-id="1d754-159">はい</span><span class="sxs-lookup"><span data-stu-id="1d754-159">Yes</span></span></p></td>
+<td><p><span data-ttu-id="1d754-160">はい</span><span class="sxs-lookup"><span data-stu-id="1d754-160">Yes</span></span></p></td>
+<td><p><span data-ttu-id="1d754-161">はい</span><span class="sxs-lookup"><span data-stu-id="1d754-161">Yes</span></span></p></td>
+<td><p><span data-ttu-id="1d754-162">いいえ</span><span class="sxs-lookup"><span data-stu-id="1d754-162">No</span></span></p></td>
+<td><p><span data-ttu-id="1d754-163">いいえ</span><span class="sxs-lookup"><span data-stu-id="1d754-163">No</span></span></p></td>
+<td><p><span data-ttu-id="1d754-164">該当なし</span><span class="sxs-lookup"><span data-stu-id="1d754-164">N/A</span></span></p></td>
+<td><p><span data-ttu-id="1d754-165">いいえ</span><span class="sxs-lookup"><span data-stu-id="1d754-165">No</span></span></p></td>
+</tr>
+<tr class="even">
+<td><p><span data-ttu-id="1d754-166">Windows Server 2008 R2 SP1<sup>2</sup></span><span class="sxs-lookup"><span data-stu-id="1d754-166">Windows Server 2008 R2 with SP1<sup>2</sup></span></span></p></td>
+<td><p><span data-ttu-id="1d754-167">該当なし</span><span class="sxs-lookup"><span data-stu-id="1d754-167">N/A</span></span></p></td>
+<td><p><span data-ttu-id="1d754-168">はい</span><span class="sxs-lookup"><span data-stu-id="1d754-168">Yes</span></span></p></td>
+<td><p><span data-ttu-id="1d754-169">はい</span><span class="sxs-lookup"><span data-stu-id="1d754-169">Yes</span></span></p></td>
+<td><p><span data-ttu-id="1d754-170">はい</span><span class="sxs-lookup"><span data-stu-id="1d754-170">Yes</span></span></p></td>
+<td><p><span data-ttu-id="1d754-171">はい</span><span class="sxs-lookup"><span data-stu-id="1d754-171">Yes</span></span></p></td>
+<td><p><span data-ttu-id="1d754-172">はい</span><span class="sxs-lookup"><span data-stu-id="1d754-172">Yes</span></span></p></td>
+<td><p><span data-ttu-id="1d754-173">いいえ</span><span class="sxs-lookup"><span data-stu-id="1d754-173">No</span></span></p></td>
+<td><p><span data-ttu-id="1d754-174">いいえ</span><span class="sxs-lookup"><span data-stu-id="1d754-174">No</span></span></p></td>
+<td><p><span data-ttu-id="1d754-175">該当なし</span><span class="sxs-lookup"><span data-stu-id="1d754-175">N/A</span></span></p></td>
+<td><p><span data-ttu-id="1d754-176">いいえ</span><span class="sxs-lookup"><span data-stu-id="1d754-176">No</span></span></p></td>
+</tr>
+<tr class="odd">
+<td><p><span data-ttu-id="1d754-177">Windows Server 2008 (SP2<sup>3</sup> )</span><span class="sxs-lookup"><span data-stu-id="1d754-177">Windows Server 2008 with SP2<sup>3</sup></span></span></p></td>
+<td><p><span data-ttu-id="1d754-178">該当なし</span><span class="sxs-lookup"><span data-stu-id="1d754-178">N/A</span></span></p></td>
+<td><p><span data-ttu-id="1d754-179">はい</span><span class="sxs-lookup"><span data-stu-id="1d754-179">Yes</span></span></p></td>
+<td><p><span data-ttu-id="1d754-180">はい</span><span class="sxs-lookup"><span data-stu-id="1d754-180">Yes</span></span></p></td>
+<td><p><span data-ttu-id="1d754-181">いいえ</span><span class="sxs-lookup"><span data-stu-id="1d754-181">No</span></span></p></td>
+<td><p><span data-ttu-id="1d754-182">はい</span><span class="sxs-lookup"><span data-stu-id="1d754-182">Yes</span></span></p></td>
+<td><p><span data-ttu-id="1d754-183">いいえ</span><span class="sxs-lookup"><span data-stu-id="1d754-183">No</span></span></p></td>
+<td><p><span data-ttu-id="1d754-184">いいえ</span><span class="sxs-lookup"><span data-stu-id="1d754-184">No</span></span></p></td>
+<td><p><span data-ttu-id="1d754-185">いいえ</span><span class="sxs-lookup"><span data-stu-id="1d754-185">No</span></span></p></td>
+<td><p><span data-ttu-id="1d754-186">該当なし</span><span class="sxs-lookup"><span data-stu-id="1d754-186">N/A</span></span></p></td>
+<td><p><span data-ttu-id="1d754-187">いいえ</span><span class="sxs-lookup"><span data-stu-id="1d754-187">No</span></span></p></td>
+</tr>
+<tr class="even">
+<td><p><span data-ttu-id="1d754-188">Mac OS X 10.7 以降 (Intel ベース)<sup>2</sup></span><span class="sxs-lookup"><span data-stu-id="1d754-188">Mac OS X 10.7 and later (Intel-based)<sup>2</sup></span></span></p></td>
+<td><p><span data-ttu-id="1d754-189">該当なし</span><span class="sxs-lookup"><span data-stu-id="1d754-189">N/A</span></span></p></td>
+<td><p><span data-ttu-id="1d754-190">該当なし</span><span class="sxs-lookup"><span data-stu-id="1d754-190">N/A</span></span></p></td>
+<td><p><span data-ttu-id="1d754-191">該当なし</span><span class="sxs-lookup"><span data-stu-id="1d754-191">N/A</span></span></p></td>
+<td><p><span data-ttu-id="1d754-192">該当なし</span><span class="sxs-lookup"><span data-stu-id="1d754-192">N/A</span></span></p></td>
+<td><p><span data-ttu-id="1d754-193">該当なし</span><span class="sxs-lookup"><span data-stu-id="1d754-193">N/A</span></span></p></td>
+<td><p><span data-ttu-id="1d754-194">該当なし</span><span class="sxs-lookup"><span data-stu-id="1d754-194">N/A</span></span></p></td>
+<td><p><span data-ttu-id="1d754-195">いいえ</span><span class="sxs-lookup"><span data-stu-id="1d754-195">No</span></span></p></td>
+<td><p><span data-ttu-id="1d754-196">いいえ</span><span class="sxs-lookup"><span data-stu-id="1d754-196">No</span></span></p></td>
+<td><p><span data-ttu-id="1d754-197">はい</span><span class="sxs-lookup"><span data-stu-id="1d754-197">Yes</span></span></p></td>
+<td><p><span data-ttu-id="1d754-198">いいえ</span><span class="sxs-lookup"><span data-stu-id="1d754-198">No</span></span></p></td>
+</tr>
+</tbody>
+</table>
+
+
+<span data-ttu-id="1d754-199"><sup>1</sup> windows 8 および windows 8.1 の場合、コンピューターベースの音声、ビデオ、アプリケーションの表示、アプリケーション共有、デスクトップ表示、デスクトップ共有を使用するために必要なプラグインは、internet explorer 10 または internet explorer 11 を実行している場合にのみインストールできます。</span><span class="sxs-lookup"><span data-stu-id="1d754-199"><sup>1</sup> On Windows 8 and Windows 8.1, the plug-in required to use computer-based audio, video, application viewing, application sharing, desktop viewing, and desktop sharing can be installed only if you’re running Internet Explorer 10 or Internet Explorer 11 for the desktop.</span></span> <span data-ttu-id="1d754-200">これらの機能は、デスクトップ以外のバージョンの Internet Explorer 10 または Internet Explorer 11 では使用できません。</span><span class="sxs-lookup"><span data-stu-id="1d754-200">These features are not available with non-desktop versions of Internet Explorer 10 or Internet Explorer 11.</span></span>
+
+<span data-ttu-id="1d754-201"><sup>2</sup> サポートされている windows 7、windows Server 2008 R2、および Macintosh オペレーティングシステムでは、コンピューターベースの音声、ビデオ、アプリケーションの表示、アプリケーション共有、デスクトップ表示、デスクトップ共有などのすべての機能を利用できます。</span><span class="sxs-lookup"><span data-stu-id="1d754-201"><sup>2</sup> On supported Windows 7, Windows Server 2008 R2, and Macintosh operating systems, all features are available including computer-based voice, video, application viewing, application sharing, desktop viewing, and desktop sharing.</span></span> <span data-ttu-id="1d754-202">これらの機能を使用するには、画面の指示に従ってプラグインをインストールする必要があります。</span><span class="sxs-lookup"><span data-stu-id="1d754-202">To use these features, you must install a plug-in when prompted.</span></span> <span data-ttu-id="1d754-203">Mac OS X バージョン10.6 はサポートされなくなったことに注意してください。</span><span class="sxs-lookup"><span data-stu-id="1d754-203">Note that Mac OS X version 10.6 is no longer supported.</span></span>
+
+<span data-ttu-id="1d754-204"><sup>3</sup> サポートされている Windows Server 2008 オペレーティングシステムでは、コンピュータベースの音声およびビデオは使用できません。</span><span class="sxs-lookup"><span data-stu-id="1d754-204"><sup>3</sup> On supported Windows Server 2008 operating systems, computer-based voice and video are not available.</span></span> <span data-ttu-id="1d754-205">アプリケーションの表示、アプリケーション共有、デスクトップ表示、デスクトップ共有を使用できます。</span><span class="sxs-lookup"><span data-stu-id="1d754-205">Application viewing, application sharing, desktop viewing, and desktop sharing are available.</span></span>
+
+<span data-ttu-id="1d754-206"><sup>4</sup>  プラグインを使用するには、ブラウザーで npapi がサポートされている必要があります。</span><span class="sxs-lookup"><span data-stu-id="1d754-206"><sup>4</sup>  The plug-in requires support for NPAPI in the browser.</span></span> <span data-ttu-id="1d754-207">Firefox はバージョン52.0 の NPAPI のサポートを削除しました。また、バージョン45で Chrome がサポートされていないため、これらのブラウザーは現在のバージョンではサポートされなくなりました。</span><span class="sxs-lookup"><span data-stu-id="1d754-207">Firefox removed support for NPAPI in version 52.0, and Chrome removed support in version 45, so these browsers are no longer supported in their current versions.</span></span>
+
+</div>
+
+<div>
+
+## <a name="hardware-requirements"></a><span data-ttu-id="1d754-208">ハードウェア要件</span><span class="sxs-lookup"><span data-stu-id="1d754-208">Hardware Requirements</span></span>
+
+<span data-ttu-id="1d754-209">コンピューターのハードウェア要件はオペレーティング システムとブラウザーによって決まります。</span><span class="sxs-lookup"><span data-stu-id="1d754-209">Computer hardware requirements are determined by the operating system and browser.</span></span> <span data-ttu-id="1d754-210">音声機能とテレフォニー機能には、コンピューターと互換性のあるマイクおよびスピーカー、マイク付きヘッドセット、または同等のデバイスが必要です。</span><span class="sxs-lookup"><span data-stu-id="1d754-210">Voice and telephony features require a microphone and speakers, headset with microphone, or equivalent device compatible with the computer.</span></span> <span data-ttu-id="1d754-211">ビデオ機能には、コンピューターと互換性のあるビデオ デバイスが必要です。</span><span class="sxs-lookup"><span data-stu-id="1d754-211">Video features require a video device compatible with the computer.</span></span> <span data-ttu-id="1d754-212">ビデオハードウェアのサポートと予測されるビデオの品質の詳細については、「lync [Server 2013 の lync クライアントのビデオ要件](lync-server-2013-lync-client-video-requirements.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1d754-212">For detailed information about video hardware support and expected video quality, see [Lync client video requirements for Lync Server 2013](lync-server-2013-lync-client-video-requirements.md).</span></span>
+
+<span data-ttu-id="1d754-213"></div>
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</span><span class="sxs-lookup"><span data-stu-id="1d754-213"></div>
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</span></span></div>
+

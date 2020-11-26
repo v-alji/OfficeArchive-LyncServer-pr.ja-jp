@@ -1,0 +1,188 @@
+---
+title: 'Lync Server 2013: Lync Server 管理ツール'
+description: 'Lync Server 2013: Lync Server 管理ツール'
+ms.reviewer: ''
+ms.author: v-lanac
+author: lanachin
+f1.keywords:
+- NOCSH
+TOCTitle: Lync Server administrative tools
+ms:assetid: 9b006f93-4f3d-461d-89b8-e80a34fdb3c5
+ms:mtpsurl: https://technet.microsoft.com/en-us/library/Gg195756(v=OCS.15)
+ms:contentKeyID: 48184972
+ms.date: 07/23/2014
+manager: serdars
+mtps_version: v=OCS.15
+ms.openlocfilehash: b654d48c6ad52175bfdfe745518007d76d626a37
+ms.sourcegitcommit: 36fee89bb887bea4f18b19f17a8c69daf5bc423d
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "49426299"
+---
+# <a name="lync-server-2013-administrative-tools"></a><span data-ttu-id="55ae4-103">Lync Server 2013 管理ツール</span><span class="sxs-lookup"><span data-stu-id="55ae4-103">Lync Server 2013 administrative tools</span></span>
+
+<div data-xmlns="http://www.w3.org/1999/xhtml">
+
+<div class="topic" data-xmlns="http://www.w3.org/1999/xhtml" data-msxsl="urn:schemas-microsoft-com:xslt" data-cs="https://msdn.microsoft.com/">
+
+<div data-asp="https://msdn2.microsoft.com/asp">
+
+
+
+</div>
+
+<div id="mainSection">
+
+<div id="mainBody"><span data-ttu-id="55ae4-104">
+
+<span> </span></span><span class="sxs-lookup"><span data-stu-id="55ae4-104">
+
+<span> </span></span></span>
+
+<span data-ttu-id="55ae4-105">_**最終更新日:** 2013-02-21_</span><span class="sxs-lookup"><span data-stu-id="55ae4-105">_**Topic Last Modified:** 2013-02-21_</span></span>
+
+<span data-ttu-id="55ae4-106">このトピックでは、Lync Server 2013 の管理ツールについて説明します。</span><span class="sxs-lookup"><span data-stu-id="55ae4-106">This topic describes the administrative tools for Lync Server 2013.</span></span>
+
+<span data-ttu-id="55ae4-107">各 Lync Server サーバーには、既定で管理ツールがインストールされています。</span><span class="sxs-lookup"><span data-stu-id="55ae4-107">The administrative tools are installed by default on each Lync Server server.</span></span> <span data-ttu-id="55ae4-108">さらに、専用の管理コンソールなど、他のコンピューターにも管理ツールをインストールできます。</span><span class="sxs-lookup"><span data-stu-id="55ae4-108">Additionally, you can install the administrative tools on other computers, such as dedicated administrative consoles.</span></span> <span data-ttu-id="55ae4-109">管理ツールをインストールする手順については、「 [Lync Server 2013 管理ツールをインストール](lync-server-2013-install-lync-server-administrative-tools.md)する」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="55ae4-109">For procedures to install the administrative tools, see [Install Lync Server 2013 administrative tools](lync-server-2013-install-lync-server-administrative-tools.md).</span></span> <span data-ttu-id="55ae4-110">管理タスクを実行するためのツールを開く手順については、「 [Lync Server 2013 管理ツールを開く](lync-server-2013-open-lync-server-administrative-tools.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="55ae4-110">For procedures to open the tools to perform management tasks, see [Open Lync Server 2013 administrative tools](lync-server-2013-open-lync-server-administrative-tools.md).</span></span>
+
+<span data-ttu-id="55ae4-111">Lync Server 管理ツールをインストールまたは使用する前に、インフラストラクチャ、オペレーティングシステム、ソフトウェア、および管理者の権限の要件を確認してください。</span><span class="sxs-lookup"><span data-stu-id="55ae4-111">Ensure that you review infrastructure, operating system, software, and administrator rights requirements before you install or use the Lync Server administrative tools.</span></span> <span data-ttu-id="55ae4-112">インフラストラクチャの要件の詳細については、「 [Lync Server 2013 での管理ツールインフラストラクチャの要件](lync-server-2013-administrative-tools-infrastructure-requirements.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="55ae4-112">For details about infrastructure requirements, see [Administrative tools infrastructure requirements in Lync Server 2013](lync-server-2013-administrative-tools-infrastructure-requirements.md).</span></span> <span data-ttu-id="55ae4-113">Lync Server 管理ツールをインストールするためのオペレーティングシステムとソフトウェアの要件の詳細については、「 [lync server 2013 のサーバーとツールのオペレーティングシステムサポート](lync-server-2013-server-and-tools-operating-system-support.md)」、「 [lync server 2013 のその他のソフトウェア要件](lync-server-2013-additional-software-requirements.md)」、「lync [server 2013 でのサーバーのサポートと要件](lync-server-2013-additional-server-support-and-requirements.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="55ae4-113">For details about operating system and software requirements to install the Lync Server administrative tools, see [Server and tools operating system support in Lync Server 2013](lync-server-2013-server-and-tools-operating-system-support.md), [Additional software requirements for Lync Server 2013](lync-server-2013-additional-software-requirements.md), and [Additional server support and requirements in Lync Server 2013](lync-server-2013-additional-server-support-and-requirements.md).</span></span> <span data-ttu-id="55ae4-114">ツールをインストールして使用するために必要なユーザー権限とアクセス許可については、「 [Lync Server 2013 のセットアップと管理に必要な管理者権限とアクセス許可](lync-server-2013-administrator-rights-and-permissions-required-for-setup-and-administration.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="55ae4-114">The user rights and permissions required to install and use the tools are described in [Administrator rights and permissions required for setup and administration of Lync Server 2013](lync-server-2013-administrator-rights-and-permissions-required-for-setup-and-administration.md).</span></span>
+
+<span data-ttu-id="55ae4-115">管理ツールは次の要素で構成されています。</span><span class="sxs-lookup"><span data-stu-id="55ae4-115">The administrative tools consist of the following:</span></span>
+
+  - <span data-ttu-id="55ae4-116">**Lync Server 展開ウィザード**   Lync Server を展開し、すべての管理ツールをインストールするために使用します。</span><span class="sxs-lookup"><span data-stu-id="55ae4-116">**Lync Server Deployment Wizard**   Use to deploy Lync Server and to install all administrative tools.</span></span>
+
+  - <span data-ttu-id="55ae4-117">**Lync Server トポロジビルダー**   展開で構成要素を定義するために使用します。</span><span class="sxs-lookup"><span data-stu-id="55ae4-117">**Lync Server Topology Builder**   Use to define components in your deployment.</span></span>
+
+  - <span data-ttu-id="55ae4-118">**Lync Server コントロールパネル**   Web ベースのインターフェイスを使用して展開を継続的に管理する場合に使用します。</span><span class="sxs-lookup"><span data-stu-id="55ae4-118">**Lync Server Control Panel**   Use for ongoing management of your deployment by using a web-based interface.</span></span>
+
+  - <span data-ttu-id="55ae4-119">**Lync Server 管理シェル**   コマンドラインを使用して展開を継続的に管理する場合に使用します。</span><span class="sxs-lookup"><span data-stu-id="55ae4-119">**Lync Server Management Shell**   Use for ongoing management of your deployment by using the command line.</span></span>
+
+  - <span data-ttu-id="55ae4-120">**Lync Server ログツール**   展開の問題のトラブルシューティングに使用します。</span><span class="sxs-lookup"><span data-stu-id="55ae4-120">**Lync Server Logging tool**   Use to troubleshoot problems in your deployment.</span></span>
+
+  - <span data-ttu-id="55ae4-121">**一元的なログサービス**   1台のコンピューター、プール、サイト、またはグローバルからログとトレースファイルを収集します。</span><span class="sxs-lookup"><span data-stu-id="55ae4-121">**Centralized Logging Service**   Collect logs and trace files from one computer, pool, site or global.</span></span> <span data-ttu-id="55ae4-122">プロバイダー、フラグ、トレースレベルを含むシナリオを選択して定義します。</span><span class="sxs-lookup"><span data-stu-id="55ae4-122">Select and define scenarios that contain providers, flags and trace levels.</span></span> <span data-ttu-id="55ae4-123">ログは、テキストベースのツールや Snooper.exe などのツールを使って収集、集計、表示されます。</span><span class="sxs-lookup"><span data-stu-id="55ae4-123">Logging is collected, aggregated and displayed with tools such as any text-based tool or Snooper.exe.</span></span>
+
+<span data-ttu-id="55ae4-124">主にトポロジビルダーと Lync Server コントロールパネルを使用して、展開を管理することができます。</span><span class="sxs-lookup"><span data-stu-id="55ae4-124">You can manage your deployment by primarily using Topology Builder and Lync Server Control Panel.</span></span>
+
+<div>
+
+## <a name="deployment-wizard"></a><span data-ttu-id="55ae4-125">展開ウィザード</span><span class="sxs-lookup"><span data-stu-id="55ae4-125">Deployment Wizard</span></span>
+
+<span data-ttu-id="55ae4-126">Lync server をまだインストールしていないコンピューターにすべての管理ツールをインストールするには、インストールメディアに含まれている Lync Server 展開ウィザードを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="55ae4-126">You must use the Lync Server Deployment Wizard included on the installation media to install all administrative tools onto a computer on which you have not already installed Lync Server.</span></span> <span data-ttu-id="55ae4-127">管理ツールのインストールプロセスでは、Lync Server 展開ウィザードが他のツールと共にインストールされるので、後でその他のコンポーネントのためにファイルをインストールしたり、コンピューターに不要なコンポーネントのファイルを削除したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="55ae4-127">During the administrative tools installation process, the Lync Server Deployment Wizard is installed locally along with the other tools so that you can later use it to install files for additional components or remove files for components that you do not want on the computer.</span></span>
+
+<span data-ttu-id="55ae4-128">Lync server のインストールメディアから初めて Lync Server Deployment ウィザードを実行する方法の詳細については、「 [Lync server 2013 管理ツールをインストール](lync-server-2013-install-lync-server-administrative-tools.md)する」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="55ae4-128">For details about how to run the Lync Server Deployment Wizard for the first time from the Lync Server installation media, see [Install Lync Server 2013 administrative tools](lync-server-2013-install-lync-server-administrative-tools.md).</span></span>
+
+</div>
+
+<div>
+
+## <a name="topology-builder"></a><span data-ttu-id="55ae4-129">トポロジ ビルダー</span><span class="sxs-lookup"><span data-stu-id="55ae4-129">Topology Builder</span></span>
+
+<span data-ttu-id="55ae4-130">トポロジビルダーを使用して実行できる展開タスクの詳細については、各サーバーの役割の展開ドキュメントを参照してください。</span><span class="sxs-lookup"><span data-stu-id="55ae4-130">For details about deployment tasks that you can you perform by using Topology Builder, see the Deployment documentation for each server role.</span></span>
+
+</div>
+
+<div>
+
+## <a name="lync-server-control-panel"></a><span data-ttu-id="55ae4-131">Lync Server コントロール パネル</span><span class="sxs-lookup"><span data-stu-id="55ae4-131">Lync Server Control Panel</span></span>
+
+<span data-ttu-id="55ae4-132">Lync Server 2013 コントロールパネルを使用すると、Lync Server 2013 の管理と保守に必要な管理タスクのほとんどを実行できます。</span><span class="sxs-lookup"><span data-stu-id="55ae4-132">You can use Lync Server 2013 Control Panel to perform most of the administrative tasks required to manage and maintain Lync Server 2013.</span></span> <span data-ttu-id="55ae4-133">Lync Server コントロールパネルには、組織内のユーザー、クライアント、およびデバイスに加えて、Lync Server を実行しているサーバーの構成を管理するグラフィカルユーザーインターフェイス (GUI) が用意されています。</span><span class="sxs-lookup"><span data-stu-id="55ae4-133">Lync Server Control Panel provides you with a graphical user interface (GUI) to manage the configuration of the servers running Lync Server, in addition to the users, clients, and devices in your organization.</span></span> <span data-ttu-id="55ae4-134">Lync server 管理シェルは、lync server のコントロールパネルを使用して、Lync Server の構成を実行するための基盤となるメカニズムとして使用します。</span><span class="sxs-lookup"><span data-stu-id="55ae4-134">Lync Server Management Shell uses Lync Server Control Panel as the underlying mechanism to perform Lync Server configuration.</span></span>
+
+<span data-ttu-id="55ae4-135">Lync Server コントロールパネルは、Lync Server のすべてのフロントエンドサーバーまたは Standard Edition サーバーに自動的にインストールされます。</span><span class="sxs-lookup"><span data-stu-id="55ae4-135">Lync Server Control Panel is automatically installed on every Lync Server Front End Server or Standard Edition server.</span></span> <span data-ttu-id="55ae4-136">このリリースでは、リモートでエッジサーバーを管理します。</span><span class="sxs-lookup"><span data-stu-id="55ae4-136">In this release, you administer Edge Servers remotely.</span></span> <span data-ttu-id="55ae4-137">Lync server コントロールパネルは、Lync Server を一元管理する管理コンソールなどの、別のコンピューターにインストールすることもできます。</span><span class="sxs-lookup"><span data-stu-id="55ae4-137">You can also install Lync Server Control Panel on another computer, such as a management console from which you want to centrally manage Lync Server.</span></span> <span data-ttu-id="55ae4-138">詳細については、「 [Lync Server 2013 管理ツールをインストール](lync-server-2013-install-lync-server-administrative-tools.md)する」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="55ae4-138">For details, see [Install Lync Server 2013 administrative tools](lync-server-2013-install-lync-server-administrative-tools.md).</span></span>
+
+<div>
+
+
+> [!IMPORTANT]  
+> <UL>
+> <LI>
+> <P><span data-ttu-id="55ae4-139">Lync Server コントロールパネルを使用して設定を構成するには、CsAdministrator の役割に割り当てられているアカウントを使用してログインしている必要があります。</span><span class="sxs-lookup"><span data-stu-id="55ae4-139">To configure settings using Lync Server Control Panel, you must be logged in using an account that is assigned to the CsAdministrator role.</span></span> <span data-ttu-id="55ae4-140">Lync Server 2013 で利用できる定義済みの管理者ロールの詳細については、「 <A href="lync-server-2013-planning-for-role-based-access-control.md">Lync server 2013 でのロールベースのアクセス制御の計画</A>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="55ae4-140">For details about the predefined administrative roles available in Lync Server 2013, see <A href="lync-server-2013-planning-for-role-based-access-control.md">Planning for role-based access control in Lync Server 2013</A>.</span></span></P>
+> <LI>
+> <P><span data-ttu-id="55ae4-141">Lync Server コントロールパネルを使用して設定を構成するには、最低でも 1024 x 768 の画面解像度を備えたコンピューターを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="55ae4-141">To configure settings using Lync Server Control Panel, you must also use a computer with a minimum screen resolution of 1024 x 768.</span></span></P></LI></UL>
+
+
+
+</div>
+
+</div>
+
+<div>
+
+## <a name="lync-server-management-shell"></a><span data-ttu-id="55ae4-142">Lync Server 管理シェル</span><span class="sxs-lookup"><span data-stu-id="55ae4-142">Lync Server Management Shell</span></span>
+
+<span data-ttu-id="55ae4-143">Lync server の管理シェルでは、管理と管理のための新しい方法が用意されています。</span><span class="sxs-lookup"><span data-stu-id="55ae4-143">In Lync Server, the Lync Server Management Shell provides a new method for administration and management.</span></span> <span data-ttu-id="55ae4-144">Lync Server Management Shell は、Windows PowerShell コマンドラインインターフェイスに基づいて構築された強力な管理インターフェイスであり、Lync Server 固有の一連の包括的なコマンドレットが含まれています。</span><span class="sxs-lookup"><span data-stu-id="55ae4-144">Lync Server Management Shell is a powerful management interface, built on the Windows PowerShell command-line interface, that includes a comprehensive set of cmdlets that are specific to Lync Server.</span></span> <span data-ttu-id="55ae4-145">Lync Server 管理シェルを使用すると、豊富な構成とオートメーションコントロールのセットを入手できます。</span><span class="sxs-lookup"><span data-stu-id="55ae4-145">With Lync Server Management Shell, you gain a rich set of configuration and automation controls.</span></span> <span data-ttu-id="55ae4-146">トポロジビルダーと Lync Server コントロールパネルはどちらも、Lync Server の管理をサポートするために、これらのコマンドレットのサブセットを実装しています。</span><span class="sxs-lookup"><span data-stu-id="55ae4-146">Topology Builder and Lync Server Control Panel both implement subsets of these cmdlets to support management of Lync Server.</span></span> <span data-ttu-id="55ae4-147">Lync Server 管理シェルには、すべての Lync Server 管理タスク用のコマンドレットが含まれています。また、コマンドレットを個別に使用して展開を管理することもできます。</span><span class="sxs-lookup"><span data-stu-id="55ae4-147">The Lync Server Management Shell includes cmdlets for all Lync Server administration tasks, and you can use the cmdlets individually to manage your deployment.</span></span> <span data-ttu-id="55ae4-148">詳細については、「 [Lync Server 2013 管理シェル](lync-server-2013-lync-server-management-shell.md) ドキュメント」または各コマンドレットのコマンドラインヘルプを参照してください。</span><span class="sxs-lookup"><span data-stu-id="55ae4-148">For details, see [Lync Server 2013 Management Shell](lync-server-2013-lync-server-management-shell.md) documentation or the command-line help for each cmdlet.</span></span>
+
+</div>
+
+<div>
+
+## <a name="logging-tool"></a><span data-ttu-id="55ae4-149">ログツール</span><span class="sxs-lookup"><span data-stu-id="55ae4-149">Logging Tool</span></span>
+
+<span data-ttu-id="55ae4-150">Lync Server ログツールを使って、製品の実行中に製品からログとトレース情報をキャプチャすることで、トラブルシューティングを容易に行うことができます。</span><span class="sxs-lookup"><span data-stu-id="55ae4-150">The Lync Server Logging Tool facilitates troubleshooting by capturing logging and tracing information from the product while the product is running.</span></span> <span data-ttu-id="55ae4-151">このツールを使用して、任意の Lync Server サーバーの役割でデバッグセッションを実行できます。</span><span class="sxs-lookup"><span data-stu-id="55ae4-151">You can use the tool to run debug sessions on any Lync Server server role.</span></span> <span data-ttu-id="55ae4-152">ログツールの詳細については、TechNet ライブラリの Lync Server 2010 Logging Tool のマニュアルを参照してください [https://go.microsoft.com/fwlink/p/?linkId=199265](https://go.microsoft.com/fwlink/p/?linkid=199265) 。</span><span class="sxs-lookup"><span data-stu-id="55ae4-152">For details about the Logging Tool, see the Lync Server 2010 Logging Tool documentation on the TechNet Library at [https://go.microsoft.com/fwlink/p/?linkId=199265](https://go.microsoft.com/fwlink/p/?linkid=199265).</span></span>
+
+<div>
+
+
+> [!IMPORTANT]  
+> <span data-ttu-id="55ae4-153">すべての状況で Lync Server ログツールを介してすべてのログ収集を行う場合は、一元ログサービスをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="55ae4-153">The Centralized Logging Service is recommended for all logging collection over the Lync Server Logging Tool in all circumstances.</span></span> <span data-ttu-id="55ae4-154">Lync Server ログツールは引き続き動作しますが、集中化されたログサービスが既に実行されている場合は、ほとんどの場合、影響を受ける可能性があります。</span><span class="sxs-lookup"><span data-stu-id="55ae4-154">The Lync Server Logging Tool will still work, but it will interfere or be rendered mostly ineffective if the Centralized Logging Service is already running.</span></span> <span data-ttu-id="55ae4-155">一元管理サービスまたは Lync Server ログツールのみを使用する必要がありますが、同時に両方を使用することはできません。</span><span class="sxs-lookup"><span data-stu-id="55ae4-155">You should use only the Centralized Logging Service or the Lync Server Logging Tool, but never both concurrently.</span></span> <span data-ttu-id="55ae4-156">一元管理サービスの詳細と、それを排他的に使用する理由については、「 <A href="lync-server-2013-using-the-centralized-logging-service.md">Lync Server 2013 での集中ログサービスの使用</A>」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="55ae4-156">For more information on the Centralized Logging Service and why you should use it exclusively, see <A href="lync-server-2013-using-the-centralized-logging-service.md">Using the Centralized Logging Service in Lync Server 2013</A>.</span></span>
+
+
+
+</div>
+
+</div>
+
+<div>
+
+## <a name="in-this-section"></a><span data-ttu-id="55ae4-157">このセクション中</span><span class="sxs-lookup"><span data-stu-id="55ae4-157">In This Section</span></span>
+
+  - [<span data-ttu-id="55ae4-158">Lync Server 2013 での管理ツールインフラストラクチャの要件</span><span class="sxs-lookup"><span data-stu-id="55ae4-158">Administrative tools infrastructure requirements in Lync Server 2013</span></span>](lync-server-2013-administrative-tools-infrastructure-requirements.md)
+
+  - [<span data-ttu-id="55ae4-159">Lync Server 2013 でのサーバーおよびツールのオペレーティング システムのサポート</span><span class="sxs-lookup"><span data-stu-id="55ae4-159">Server and tools operating system support in Lync Server 2013</span></span>](lync-server-2013-server-and-tools-operating-system-support.md)
+
+  - [<span data-ttu-id="55ae4-160">Lync Server 2013 の管理ツールのソフトウェア要件</span><span class="sxs-lookup"><span data-stu-id="55ae4-160">Administrative tools software requirements in Lync Server 2013</span></span>](lync-server-2013-administrative-tools-software-requirements.md)
+
+  - [<span data-ttu-id="55ae4-161">Lync Server 2013 のセットアップと管理に必要な管理者権限およびアクセス許可</span><span class="sxs-lookup"><span data-stu-id="55ae4-161">Administrator rights and permissions required for setup and administration of Lync Server 2013</span></span>](lync-server-2013-administrator-rights-and-permissions-required-for-setup-and-administration.md)
+
+  - [<span data-ttu-id="55ae4-162">Lync Server 2013 でトポロジを公開する場合の要件</span><span class="sxs-lookup"><span data-stu-id="55ae4-162">Requirements to publish a topology in Lync Server 2013</span></span>](lync-server-2013-requirements-to-publish-a-topology.md)
+
+  - [<span data-ttu-id="55ae4-163">Lync Server 2013 管理ツールをインストールする</span><span class="sxs-lookup"><span data-stu-id="55ae4-163">Install Lync Server 2013 administrative tools</span></span>](lync-server-2013-install-lync-server-administrative-tools.md)
+
+  - [<span data-ttu-id="55ae4-164">Lync Server 2013 管理ツールを開く</span><span class="sxs-lookup"><span data-stu-id="55ae4-164">Open Lync Server 2013 administrative tools</span></span>](lync-server-2013-open-lync-server-administrative-tools.md)
+
+  - [<span data-ttu-id="55ae4-165">Lync Server 2013 コントロールパネルのトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="55ae4-165">Troubleshooting Lync Server 2013 Control Panel</span></span>](lync-server-2013-troubleshooting-lync-server-2013-control-panel.md)
+
+  - [<span data-ttu-id="55ae4-166">Lync Server 2013 での一元管理ログサービスの使用</span><span class="sxs-lookup"><span data-stu-id="55ae4-166">Using the Centralized Logging Service in Lync Server 2013</span></span>](lync-server-2013-using-the-centralized-logging-service.md)
+
+</div>
+
+<div>
+
+## <a name="see-also"></a><span data-ttu-id="55ae4-167">関連項目</span><span class="sxs-lookup"><span data-stu-id="55ae4-167">See Also</span></span>
+
+
+[<span data-ttu-id="55ae4-168">Lync Server 2013 管理シェル</span><span class="sxs-lookup"><span data-stu-id="55ae4-168">Lync Server 2013 Management Shell</span></span>](lync-server-2013-lync-server-management-shell.md)  
+  
+
+<span data-ttu-id="55ae4-169"></div>
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</span><span class="sxs-lookup"><span data-stu-id="55ae4-169"></div>
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</span></span></div>
+

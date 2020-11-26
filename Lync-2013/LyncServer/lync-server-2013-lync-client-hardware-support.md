@@ -1,0 +1,131 @@
+---
+title: 'Lync Server 2013: Lync クライアントのハードウェアのサポート'
+description: 'Lync Server 2013: Lync クライアントハードウェアのサポート。'
+ms.reviewer: ''
+ms.author: v-lanac
+author: lanachin
+f1.keywords:
+- NOCSH
+TOCTitle: Lync client hardware support
+ms:assetid: 91b84b67-965c-45c0-808c-bab680a5e10a
+ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ688134(v=OCS.15)
+ms:contentKeyID: 49733734
+ms.date: 07/23/2014
+manager: serdars
+mtps_version: v=OCS.15
+ms.openlocfilehash: cf672738ce1a6093362d2bb006dbbd513a30a214
+ms.sourcegitcommit: 36fee89bb887bea4f18b19f17a8c69daf5bc423d
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "49426446"
+---
+# <a name="lync-client-hardware-support-in-lync-server-2013"></a><span data-ttu-id="21195-103">Lync Server 2013 での Lync クライアントのハードウェアのサポート</span><span class="sxs-lookup"><span data-stu-id="21195-103">Lync client hardware support in Lync Server 2013</span></span>
+
+<div data-xmlns="http://www.w3.org/1999/xhtml">
+
+<div class="topic" data-xmlns="http://www.w3.org/1999/xhtml" data-msxsl="urn:schemas-microsoft-com:xslt" data-cs="https://msdn.microsoft.com/">
+
+<div data-asp="https://msdn2.microsoft.com/asp">
+
+
+
+</div>
+
+<div id="mainSection">
+
+<div id="mainBody"><span data-ttu-id="21195-104">
+
+<span> </span></span><span class="sxs-lookup"><span data-stu-id="21195-104">
+
+<span> </span></span></span>
+
+<span data-ttu-id="21195-105">_**最終更新日:** 2012-12-14_</span><span class="sxs-lookup"><span data-stu-id="21195-105">_**Topic Last Modified:** 2012-12-14_</span></span>
+
+<span data-ttu-id="21195-106">このセクションでは、lync 2013 および Lync 2013 用のオンライン会議アドインに推奨されるハードウェアについて説明します。</span><span class="sxs-lookup"><span data-stu-id="21195-106">This section describes the recommended hardware for Lync 2013 and the Online Meeting Add-in for Lync 2013.</span></span>
+
+### <a name="recommended-hardware-for-lync-2013-and-the-online-meeting-add-in-for-lync-2013"></a><span data-ttu-id="21195-107">Lync 2013 用の推奨ハードウェアと Lync 2013 用のオンライン会議アドイン</span><span class="sxs-lookup"><span data-stu-id="21195-107">Recommended Hardware for Lync 2013 and the Online Meeting Add-in for Lync 2013</span></span>
+
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><span data-ttu-id="21195-108">システム コンポーネント</span><span class="sxs-lookup"><span data-stu-id="21195-108">System component</span></span></th>
+<th><span data-ttu-id="21195-109">最小要件</span><span class="sxs-lookup"><span data-stu-id="21195-109">Minimum requirement</span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><span data-ttu-id="21195-110">コンピュータ/プロセッサ</span><span class="sxs-lookup"><span data-stu-id="21195-110">Computer/processor</span></span></p></td>
+<td><p><span data-ttu-id="21195-111">Intel Pentium 4、AMD Athlon 64、または同等の機能</span><span class="sxs-lookup"><span data-stu-id="21195-111">Intel Pentium 4, AMD Athlon 64, or equivalent</span></span></p></td>
+</tr>
+<tr class="even">
+<td><p><span data-ttu-id="21195-112">メモリ</span><span class="sxs-lookup"><span data-stu-id="21195-112">Memory</span></span></p></td>
+<td><p><span data-ttu-id="21195-113">2ギガバイト (GB) の RAM</span><span class="sxs-lookup"><span data-stu-id="21195-113">2 gigabytes (GB) of RAM</span></span></p></td>
+</tr>
+<tr class="odd">
+<td><p><span data-ttu-id="21195-114">データと音声</span><span class="sxs-lookup"><span data-stu-id="21195-114">Data and Voice</span></span></p></td>
+<td><p><span data-ttu-id="21195-115">最小1.6 ギガヘルツ (GHz) 以上のプロセッサ。</span><span class="sxs-lookup"><span data-stu-id="21195-115">Minimum 1.6 gigahertz (GHz) or faster processor.</span></span> <span data-ttu-id="21195-116">2.0 ghz (32 ビットまたは64ビット) をお勧めします。</span><span class="sxs-lookup"><span data-stu-id="21195-116">We recommend 2.0 gigahertz (32-bit or 64- bit).</span></span></p></td>
+</tr>
+<tr class="even">
+<td><p><span data-ttu-id="21195-117">ビデオ</span><span class="sxs-lookup"><span data-stu-id="21195-117">Video</span></span></p></td>
+<td><p><span data-ttu-id="21195-118"><a href="lync-server-2013-lync-client-video-requirements.md">Lync Server 2013 の lync クライアントのビデオ要件を</a>参照してください。</span><span class="sxs-lookup"><span data-stu-id="21195-118">See <a href="lync-server-2013-lync-client-video-requirements.md">Lync client video requirements for Lync Server 2013</a></span></span></p></td>
+</tr>
+<tr class="odd">
+<td><p><span data-ttu-id="21195-119">表示解像度</span><span class="sxs-lookup"><span data-stu-id="21195-119">Display resolution</span></span></p></td>
+<td><p><span data-ttu-id="21195-120">1024x768 が必要</span><span class="sxs-lookup"><span data-stu-id="21195-120">1024x768 required</span></span></p></td>
+</tr>
+<tr class="even">
+<td><p><span data-ttu-id="21195-121">グラフィックス ハードウェア</span><span class="sxs-lookup"><span data-stu-id="21195-121">Graphics hardware</span></span></p></td>
+<td><ul>
+<li><p><span data-ttu-id="21195-122">Microsoft DirectX 9 アプリケーションプログラミングインターフェイスのサポート</span><span class="sxs-lookup"><span data-stu-id="21195-122">Support for Microsoft DirectX 9 application programming interface</span></span></p></li>
+<li><p><span data-ttu-id="21195-123">128 mb (MB) のグラフィックスメモリ (最小)</span><span class="sxs-lookup"><span data-stu-id="21195-123">128 megabytes (MB) of graphics memory (minimum).</span></span> <span data-ttu-id="21195-124">256 MB のグラフィックスメモリをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="21195-124">We recommend 256 MB of graphics memory.</span></span></p></li>
+<li><p><span data-ttu-id="21195-125">Windows ディスプレイドライバーモデルドライバー</span><span class="sxs-lookup"><span data-stu-id="21195-125">Windows Display Driver Model driver</span></span></p></li>
+<li><p><span data-ttu-id="21195-126">ハードウェアのピクセルシェーダー2.0</span><span class="sxs-lookup"><span data-stu-id="21195-126">Pixel Shader 2.0 in hardware</span></span></p></li>
+<li><p><span data-ttu-id="21195-127">1ピクセルあたり32ビット</span><span class="sxs-lookup"><span data-stu-id="21195-127">32 bits per pixel</span></span></p></li>
+</ul></td>
+</tr>
+<tr class="odd">
+<td><p><span data-ttu-id="21195-128">テレフォニー</span><span class="sxs-lookup"><span data-stu-id="21195-128">Telephony</span></span></p></td>
+<td><p><span data-ttu-id="21195-129">マイクとスピーカー、マイク付きヘッドセット、または同等のデバイス。</span><span class="sxs-lookup"><span data-stu-id="21195-129">Microphone and speakers, headset with microphone, or equivalent device(s).</span></span> <span data-ttu-id="21195-130">推奨されるデバイス:</span><span class="sxs-lookup"><span data-stu-id="21195-130">Recommended devices:</span></span></p>
+<ul>
+<li><p><span data-ttu-id="21195-131">"Microsoft Lync 用に最適化された" ロゴが表示された電話 (「Microsoft Lync で認定された電話とデバイス」をご覧ください <a href="https://go.microsoft.com/fwlink/p/?linkid=208938">https://go.microsoft.com/fwlink/p/?LinkID=208938</a> )</span><span class="sxs-lookup"><span data-stu-id="21195-131">Phones with the “Optimized for Microsoft Lync” logo (see Phones and Devices Qualified for Microsoft Lync at <a href="https://go.microsoft.com/fwlink/p/?linkid=208938">https://go.microsoft.com/fwlink/p/?LinkID=208938</a> for a list)</span></span></p></li>
+<li><p><span data-ttu-id="21195-132">Lync Phone Edition を実行する電話</span><span class="sxs-lookup"><span data-stu-id="21195-132">Phones that run Lync Phone Edition</span></span></p></li>
+</ul></td>
+</tr>
+<tr class="even">
+<td><p><span data-ttu-id="21195-133">ビデオソース</span><span class="sxs-lookup"><span data-stu-id="21195-133">Video source</span></span></p></td>
+<td><p><span data-ttu-id="21195-134">USB 2.0 ビデオカメラまたは Polycom CX5000 HD デバイス (会議デバイス)</span><span class="sxs-lookup"><span data-stu-id="21195-134">USB 2.0 video camera or Polycom CX5000 HD device (RoundTable device)</span></span></p></td>
+</tr>
+<tr class="odd">
+<td><p><span data-ttu-id="21195-135">帯域幅要件</span><span class="sxs-lookup"><span data-stu-id="21195-135">Bandwidth Requirements</span></span></p></td>
+<td><p><span data-ttu-id="21195-136">「 <a href="lync-server-2013-network-bandwidth-requirements-for-media-traffic.md">Lync Server 2013 でのメディアトラフィックのネットワーク帯域幅要件」を</a>参照してください。</span><span class="sxs-lookup"><span data-stu-id="21195-136">See <a href="lync-server-2013-network-bandwidth-requirements-for-media-traffic.md">Network bandwidth requirements for media traffic in Lync Server 2013</a></span></span></p></td>
+</tr>
+</tbody>
+</table><span data-ttu-id="21195-137">
+
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</span><span class="sxs-lookup"><span data-stu-id="21195-137">
+
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</span></span></div>
+
