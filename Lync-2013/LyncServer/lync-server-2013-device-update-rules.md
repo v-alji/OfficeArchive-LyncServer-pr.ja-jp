@@ -1,0 +1,76 @@
+---
+title: 'Lync Server 2013: デバイス更新ルール'
+description: 'Lync Server 2013: デバイス更新ルール。'
+ms.reviewer: ''
+ms.author: v-lanac
+author: lanachin
+f1.keywords:
+- NOCSH
+TOCTitle: Device Update rules
+ms:assetid: a2f7e293-3342-4566-9605-410cb95f3b3b
+ms:mtpsurl: https://technet.microsoft.com/en-us/library/JJ994062(v=OCS.15)
+ms:contentKeyID: 51803973
+ms.date: 07/23/2014
+manager: serdars
+mtps_version: v=OCS.15
+ms.openlocfilehash: bd6d34c290f4a08f67143294fcc5dd18e1acf9d1
+ms.sourcegitcommit: 36fee89bb887bea4f18b19f17a8c69daf5bc423d
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/26/2020
+ms.locfileid: "49429375"
+---
+# <a name="device-update-rules-in-lync-server-2013"></a>Lync Server 2013 のデバイス更新ルール
+
+<div data-xmlns="http://www.w3.org/1999/xhtml">
+
+<div class="topic" data-xmlns="http://www.w3.org/1999/xhtml" data-msxsl="urn:schemas-microsoft-com:xslt" data-cs="https://msdn.microsoft.com/">
+
+<div data-asp="https://msdn2.microsoft.com/asp">
+
+
+
+</div>
+
+<div id="mainSection">
+
+<div id="mainBody">
+
+<span> </span>
+
+_**トピックの最終更新日:** 2013-02-20_
+
+Microsoft は定期的に、Lync Phone Edition 用の新しいデバイスファームウェア更新プログラムセットをリリースします。 *デバイス更新ルール* は、Lync Phone Edition を実行している電話やその他のデバイスなどのファームウェア更新プログラムをハードウェアデバイスに関連付けます。
+
+最新のデバイス更新ルールのセットを取得するには、Microsoft web サイトの [ヘルプとサポート] ページに移動して、"Phone Edition" を検索します。 更新プログラムパッケージをダウンロードし、更新プログラムをアップロードするコンピューター上のフォルダーにファイルを抽出します。 ファイルを抽出した後、展開されたデバイス更新ルールをインポートします。CAB ファイル (名前 UCUpdates.cab)。 次に、Lync Server コントロールパネルまたは Windows PowerShell コマンドレットを使用して、組織のデバイスのこれらのルールを表示し、管理します。
+
+次のトピックでは、デバイス更新ルールをインポート、表示、管理する方法について説明します。
+
+<div>
+
+## <a name="in-this-section"></a>このセクション中
+
+  - [Lync Server 2013 でのデバイス更新ルールに関する情報を確認する](lync-server-2013-view-information-about-device-update-rules.md)
+
+  - [Lync Server 2013 でデバイス更新ルールをインポートする](lync-server-2013-import-device-update-rules.md)
+
+  - [Lync Server 2013 でデバイス更新ルールを承認する](lync-server-2013-approve-a-device-update-rule.md)
+
+  - [Lync Server 2013 でデバイス更新ルールを削除する](lync-server-2013-remove-a-device-update-rule.md)
+
+  - [Lync Server 2013 でのデバイス更新ルールのリセット](lync-server-2013-reset-a-device-update-rule.md)
+
+  - [Lync Server 2013 でデバイス更新ルールを復元する](lync-server-2013-restore-a-device-update-rule.md)
+
+</div>
+
+</div>
+
+<span> </span>
+
+</div>
+
+</div>
+
+</div>
+
